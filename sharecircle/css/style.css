@@ -1,0 +1,838 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap');
+/*@import url('https://fonts.googleapis.com/css?family=Lexend+Tera&display=swap');*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400&display=swap');
+
+body {
+  font-family: "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, sans-serif;
+  line-height: 1.5em;
+  background-color: #fff;
+}
+
+header,
+h2,
+h3,
+th,
+dt,
+p,
+a {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+
+/* 画面遷移時、fadein/out
+---------------------------------------*/
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  /* 背景カラー */
+  z-index: 9999;
+  /* 一番手前に */
+  pointer-events: none;
+  /* 他の要素にアクセス可能にするためにポインターイベントは無効に */
+  opacity: 0;
+  /* 初期値 : 透過状態 */
+  transition: opacity .8s ease;
+}
+
+body.fadeout::after {
+  opacity: 1;
+}
+
+/* div.wrapper
+---------------------------------------*/
+.wrapper {
+  /*  width: 1280px;*/
+  width: auto;
+  background-color: #eefffc;
+  margin: 0 auto;
+}
+
+/* header
+---------------------------------------*/
+header {
+  padding: 20px;
+  height: 65px;
+  /*スクロールしても固定*/
+  position: fixed;
+  /*  1番手前に表示*/
+  z-index: 2;
+  display: flex;
+  /*  flex-direction: column header内の要素は縦方向設置*/
+  flex-direction: column;
+  /*  flex-directionプロパティにcolumnを指定すると、justify-contentプロパティ, align-itemsプロパティで揃えられる向きが逆転するため 
+  align-itemsを使用してnavを中央に配置*/
+  align-items: center;
+  width: 100%;
+  font-size: 0.9em;
+  background: rgba(255, 255, 255, 0.1);
+  /*  background-color: #fff;*/
+  color: #fff;
+  transition: 0.3s;
+
+}
+
+header.is-animation {
+  background: #fff;
+  /*heightに変更がなくても指定する*/
+  height: 65px;
+}
+
+header.item {
+  background: #fff;
+}
+
+
+/*ロゴタイプ*/
+/*
+header h1 img {
+  height: 20px;
+  width: auto;
+}
+
+*/
+header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2em;
+  font-weight: 400;
+  letter-spacing: 5px;
+}
+
+header h1.is-animation {
+  color: #000;
+}
+
+header.item h1 {
+  color: #000;
+}
+
+/* nav.global
+---------------------------------------*/
+
+nav.global {
+  width: 100%;
+  margin-top: 20px;
+
+}
+
+nav.global ul {
+  /*  flex指定で要素を横並び*/
+  display: flex;
+  justify-content: center;
+  /* 最後の要素を右寄せするために親要素にposition指定 */
+  position: relative;
+}
+
+nav.global ul li {
+  margin-left: 40px;
+  padding: 5px;
+  letter-spacing: 1px;
+}
+
+nav.global ul li:last-child {
+  /* 最後の要素を右寄せするためにposition指定 */
+  position: absolute;
+  right: 50px;
+  bottom: 2px;
+}
+
+nav.global ul li a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 0.9em;
+  line-height: 30px;
+  /*  以下、下線を左から右に引く設定*/
+  display: block;
+  padding: 0 0 5px;
+  text-decoration: none;
+  color: #fff;
+}
+
+/*  下線を左から右に引く設定*/
+nav.global ul li a::after {
+  border-bottom: 2px solid #000;
+  bottom: 0;
+  content: "";
+  display: block;
+  transition: all .3s ease;
+  width: 0;
+}
+
+/*  下線を左から右に引く設定*/
+nav.global ul li a:hover::after {
+  width: 100%;
+}
+
+nav.global ul li a.is-animation {
+  color: #000;
+}
+
+nav.global ul li .fas {
+  transition-duration: .3s;
+}
+
+nav.global ul li .fas:hover {
+  color: #61bebf;
+}
+
+
+
+
+nav.item ul li a {
+  color: #000;
+}
+
+
+/* firstview-carousel
+---------------------------------------*/
+.firstview-carousel {
+  background: #222;
+}
+
+.firstview-carousel-cell {
+  width: 100%;
+  height: 700px;
+  /*  margin-right: 10px;*/
+  /* center images in cells with flexbox */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+}
+
+.firstview-carousel.is-fullscreen .firstview-carousel-cell {
+  height: 100%;
+}
+
+/*firstview上の文字
+---------------------------------------*/
+.firstview-carousel-cell p {
+  position: absolute;
+  padding: 30px;
+  color: #262626;
+  font-size: 1em;
+  letter-spacing: 5px;
+}
+
+.firstview-carousel-cell .first {
+  top: 80%;
+  left: 5%;
+}
+
+.firstview-carousel-cell .second {
+  top: 80%;
+  right: 5%;
+}
+
+
+
+.firstview-carousel-cell-image {
+  display: block;
+  /*  アスペクト比固定*/
+  height: auto;
+  width: 100%;
+}
+
+
+/* bx-sliderカスタム
+---------------------------------------*/
+
+/* border無しに設定*/
+/*セレクタ名から指定することで優先順位を高くする*/
+/*
+div.bx-wrapper {
+  border: 0;
+}
+*/
+
+/*球状のページャを画像内に設置*/
+/*セレクタ名から指定することで優先順位を高くする*/
+/*
+div.bx-wrapper div.bx-pager,
+div.bx-wrapper div.bx-controls-auto {
+  bottom: 30px;
+    right: -700px;
+}
+*/
+
+/*bx-slider 画像サイズの追加設定*/
+/*
+.bx-wrapper img {
+  width: 100%;
+}
+*/
+
+/*bx-slider 画像サイズの追加設定*/
+/*
+.bx-viewport {
+  max-height: 900px;
+}
+*/
+
+
+/*firstview上の文字
+---------------------------------------*/
+/*
+.firstview {
+  position: relative;
+}
+
+.firstview p {
+  position: absolute;
+  padding: 30px;
+  color: #262626;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 1em;
+  top: 80%;
+  left: 5%;
+  letter-spacing: 5px;
+}
+*/
+
+
+/* div.container
+---------------------------------------*/
+.index .container {
+  margin: 20px 0 30px;
+}
+
+.item .container {
+  margin: 0;
+}
+
+
+/* main
+---------------------------------------*/
+main {
+  /*  width: 630px;*/
+  width: auto;
+  float: none;
+}
+
+/*main img {*/
+/*  width: 90%;*/
+/*  縦の高さのみを固定*/
+/*  height: 90%;*/
+/*  トリミング*/
+/*  object-fit: cover;*/
+/*}*/
+
+/* parallax
+---------------------------------------*/
+
+.parallax {
+  min-height: 400px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  margin-top: 60px;
+}
+
+.parallax.bg-01 {
+  background-image: url(../images/small_AdobeStock_299119210.jpg);
+}
+
+main h2 {
+  font-weight: 500;
+  font-size: 1.25em;
+  /*  border-left: 14px solid #030;*/
+  padding-bottom: 10px;
+  line-height: 28px;
+  margin-bottom: 15px;
+  text-align: center;
+  /*clear: both;*/
+  letter-spacing: 1px;
+}
+
+main p {
+  margin-bottom: 10px;
+  margin-left: 24px;
+  text-align: center;
+}
+
+.index main section {
+  margin: 60px 0 100px
+}
+
+
+
+
+
+/* Flickity
+---------------------------------------*/
+
+/*firstview
+
+/*firstviewのdots*/
+.flickity-page-dots {
+  bottom: 25px;
+}
+
+/*pickup*/
+
+.pickup-carousel {
+  /*  margin-bottom: 30px;*/
+  margin: 90px;
+  /*  position: relative;*/
+
+}
+
+.pickup-carousel-cell {
+  /*  padding: 0 30px;*/
+  margin: 0 40px;
+  display: block;
+}
+
+.pickup-carousel-cell item {}
+
+
+/*hover設定*/
+/*img要素を包むa要素の背景画像に、マウスオーバー時の画像を指定して、img要素のopacityを徐々に変化させる*/
+/*.pickup-carousel-cell .item a #IMG*/
+.pickup-carousel-cell .item #IMG_6839 {
+  /*  ブロック要素にして背景画像を表示*/
+  display: block;
+  background: url(../images/IMG_6840.png) center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.pickup-carousel-cell .item #IMG_6851 {
+  /*  ブロック要素にして背景画像を表示*/
+  display: block;
+  background: url(../images/IMG_6852.png) center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.pickup-carousel-cell .item #IMG_6854 {
+  /*  ブロック要素にして背景画像を表示*/
+  display: block;
+  background: url(../images/IMG_6860.png) center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.pickup-carousel-cell .item #IMG_6885 {
+  /*  ブロック要素にして背景画像を表示*/
+  display: block;
+  background: url(../images/IMG_6886.png) center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.pickup-carousel-cell .item #IMG_6895 {
+  /*  ブロック要素にして背景画像を表示*/
+  display: block;
+  background: url(../images/IMG_6896.png) center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.pickup-carousel-cell .item #IMG_6904 {
+  /*  ブロック要素にして背景画像を表示*/
+  display: block;
+  background: url(../images/IMG_6906.png) center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.pickup-carousel-cell .item #IMG_6927 {
+  /*  ブロック要素にして背景画像を表示*/
+  display: block;
+  background: url(../images/IMG_6931.png) center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.pickup-carousel-cell .item img {
+  /*  width: 25%;*/
+  /*  position: absolute;*/
+  /*  left: 0%;*/
+
+  display: block;
+  width: 270px;
+  height: 360px;
+  background: #ededed;
+  padding: 20px 0;
+
+  /*  vertical-align: middle;*/
+  transition: opacity .3s;
+
+}
+
+.pickup-carousel-cell .item a:hover img {
+  opacity: 0;
+}
+
+.pickup-carousel-cell p {
+  margin-top: 20px;
+  /*  main pの打ち消し*/
+  margin-left: 0;
+  letter-spacing: 5px;
+  font-size: 0.9em;
+}
+
+
+.flickity-button {
+  transition-duration: .3s;
+}
+
+.flickity-button:hover {
+  color: #fff;
+  background: #61bebf;
+
+  /*  transform: scale(1.1);*/
+  /*  transform: scaleZ(1.5);*/
+  /*  background: ;*/
+
+}
+
+
+
+main hr {
+  background-color: #a6c3bf;
+  border: none;
+  height: 1px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+main hr.first {
+  width: 20%;
+}
+
+main hr.second {
+  /*  margin-top: 100px;*/
+  width: 100%;
+}
+
+
+main section .pickup {
+  /*
+  display: flex;
+  justify-content: space-around;
+  margin: 50px;
+*/
+}
+
+main section .pickup div {
+  /*
+  padding: 10px;
+  width: 315px;
+  height: 420px;
+*/
+  /*  border: 1px solid #fafafa;*/
+  /*  background: #fafafa;*/
+}
+
+main section .pickup div:hover {
+  /*  opacity: 0.5;*/
+}
+
+main section .divbutton {
+
+  width: 180px;
+  height: 50px;
+  /*    border: 1px solid gray;*/
+  /*ボタン中央配置*/
+  margin: 0 auto;
+  /*div全体にリンクをつける*/
+  position: relative;
+  background: #61bebf;
+  transition-duration: 0.3s;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+}
+
+main section .divbutton a {
+  text-decoration: none;
+  letter-spacing: 4px;
+  text-align: center;
+  padding-top: 10px;
+  color: #fff;
+  /*  text-*/
+  /*  padding: */
+  /*div全体にリンクをつける*/
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+
+
+
+main section .divbutton:hover {
+  transform: scale(1.1);
+}
+
+main .regist {
+  position: relative;
+}
+
+.index main .regist-section {
+
+  float: left;
+  /*  display: flex;*/
+  /*  align-items: center;*/
+
+  margin-top: 100px;
+  margin-left: 100px;
+
+}
+
+main .regist-section h2 {
+  background-position: left center;
+  letter-spacing: 3px;
+  font-size: 1em;
+}
+
+
+main .regist-section .divbutton {
+  background-position: 0 2px;
+}
+
+main .regist img {
+  float: right;
+  /*  アスペクト比固定*/
+  height: auto;
+  width: 50%;
+}
+
+/* 見出し欧文フォント設定
+---------------------------------------*/
+main .pickup h2,
+main .follow h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2em;
+  font-weight: 400;
+  letter-spacing: 4px;
+}
+
+main .follow div {
+  margin-top: 50px;
+  text-align: center;
+}
+
+main .follow img {
+  height: auto;
+  width: 18%;
+  background: #f2f2f2;
+  margin: 0 10px;
+  transition: opacity .3s;
+}
+
+main .follow img:hover {
+  opacity: 0.5;
+}
+
+
+
+
+/* footer
+---------------------------------------*/
+footer {
+  clear: both;
+  background-color: #eefffc;
+  padding: 20px 30px;
+  color: #000;
+}
+
+footer section {
+  width: 350px;
+  float: left;
+}
+
+footer h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  font-size: 1em;
+  letter-spacing: 5px;
+  line-height: 40px;
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+
+footer .local,
+footor .sns {
+  width: 450px;
+  /*  float: right;*/
+  /*  display: flex;*/
+  margin-top: 10px;
+  /*  display: inline-block;*/
+}
+
+footer .local {
+  text-align: left;
+  float: left;
+}
+
+footer .sns {
+  text-align: right;
+  float: right;
+}
+
+
+footer .local li,
+footer .sns li {
+  display: inline-block;
+}
+
+footer .local li a,
+footer .sns li a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  letter-spacing: 2px;
+  color: #000;
+  font-size: 0.875em;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+footer .sns li .fab {
+  transition-duration: .3s;
+}
+
+footer .sns li .fab:hover {
+  color: #61bebf;
+}
+
+footer .local li a {
+  /*  以下、下線を左から右に引く設定*/
+  display: block;
+  padding: 0 0 5px;
+  text-decoration: none;
+}
+
+/*  下線を左から右に引く設定*/
+footer .local li a::after {
+  border-bottom: 2px solid #000;
+  bottom: 0;
+  content: "";
+  display: block;
+  transition: all .3s ease;
+  width: 0;
+}
+
+/*  下線を左から右に引く設定*/
+footer .local li a:hover::after {
+  width: 100%;
+}
+
+footer .local li .far {
+  transition-duration: .3s;
+}
+
+footer .local li .far:hover {
+  color: #61bebf;
+}
+
+
+footer small {
+  clear: both;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  letter-spacing: 1px;
+  display: block;
+  text-align: center;
+  margin-top: 130px;
+}
+
+main section:last-child {
+  margin-bottom: 0;
+}
+
+
+
+
+
+section.nodata {
+  height: 120px;
+}
+
+
+
+.carousel {
+  background: rgba(255, 255, 255, 0);
+  /*  background: #FAFAFA;*/
+  margin-bottom: 40px;
+}
+
+.carousel-cell {
+  width: 390px;
+  height: 520px;
+  background: #ededed;
+  /*  padding: 20px 0;*/
+  /*
+  width: 50%;
+  height: 200px;
+*/
+  margin-right: 30px;
+  /*  background: #8C8;*/
+  /*  border-radius: 5px;*/
+  /*  counter-increment: carousel-cell;*/
+}
+
+/* cell number */
+.carousel-cell:before {
+  display: block;
+
+  /*  text-align: center;*/
+  /*  content: counter(carousel-cell);*/
+  /*  line-height: 200px;*/
+  /*  font-size: 80px;*/
+  color: black;
+}
+
+.carousel-main .carousel-cell img {
+  display: block;
+  width: 390px;
+  height: 520px;
+
+}
+
+.carousel-nav {
+  /*  rotateでナビを回転、translateで表示位置を調整*/
+  transform: rotate(90deg) translate(-300px, 300px);
+  /*  transform: rotate(90deg);*/
+  /*  transform-origin: left;*/
+
+}
+
+.carousel-nav .carousel-cell {
+  height: 81px;
+  width: 61px;
+  box-sizing: border-box;
+  /*  ナビゲーションセルの向きを回転*/
+  transform: rotate(-90deg);
+}
+
+.carousel-nav .carousel-cell:before {
+  /*  font-size: 50px;*/
+  /*  line-height: 80px;*/
+}
+
+.carousel-nav .carousel-cell img {
+  display: block;
+  height: 80px;
+  width: 60px;
+}
+
+
+
+.carousel-nav .carousel-cell.is-nav-selected {
+  /*  background: #ED2;*/
+  border: 0.5px solid #61bebf;
+
+}

@@ -1,0 +1,493 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap');
+/*@import url('https://fonts.googleapis.com/css?family=Lexend+Tera&display=swap');*/
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400&display=swap');
+
+
+/*  スマホ対応で表示されてしまう横スクロールバー非表示 iOS対応*/
+html {
+  overflow: auto;
+}
+
+
+body {
+  font-family: "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, sans-serif;
+  line-height: 1.5em;
+  background-color: #fff;
+  /*  スマホ対応で表示されてしまう横スクロールバー非表示 デスクトップのみの対応*/
+  overflow-x: hidden;
+}
+
+header,
+h2,
+h3,
+th,
+dt,
+p,
+a {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+
+/* 画面遷移時、fadein/out
+---------------------------------------*/
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  /* 背景カラー */
+  z-index: 9999;
+  /* 一番手前に */
+  pointer-events: none;
+  /* 他の要素にアクセス可能にするためにポインターイベントは無効に */
+  opacity: 0;
+  /* 初期値 : 透過状態 */
+  transition: opacity .8s ease;
+}
+
+body.fadeout::after {
+  opacity: 1;
+}
+
+/* div.wrapper
+---------------------------------------*/
+.wrapper {
+  /*  width: 1280px;*/
+  width: auto;
+  background-color: #262626;
+  margin: 0 auto;
+}
+
+/* header
+---------------------------------------*/
+header {
+  padding: 40px 0;
+  display: flex;
+  align-items: center;
+  /*  justify-content: flex-start;*/
+  justify-content: space-around;
+  width: 100%;
+  font-size: 0.9em;
+  background: #fff;
+  color: #000;
+}
+
+header p {
+  width: 10%;
+  height: auto;
+  text-align: center;
+  /*    margin-left: 20%;*/
+}
+
+header img {
+  width: 45%;
+  height: auto;
+}
+
+
+header h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2em;
+  font-weight: bold;
+  letter-spacing: 5px;
+  color: #000;
+  line-height: 1.5;
+}
+
+.lastlogo {
+  filter: opacity(0%);
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    padding: 20px 0;
+  }
+
+  header h1 {
+    font-size: 1.2em;
+  }
+
+  header img {
+    width: 62%;
+  }
+
+}
+
+
+/* div.container
+---------------------------------------*/
+.index .container {
+  margin: 20px 0 30px;
+}
+
+.item .container {
+  margin: 0;
+}
+
+
+/* main
+---------------------------------------*/
+main {
+  /*  width: 630px;*/
+  margin-top: 30px;
+  width: auto;
+  /*  display: flex;*/
+  /*  justify-content: center;*/
+  /* 子要素をflexboxにより中央に配置する */
+  /*  align-items: center;
+  */
+  /* 子要素をflexboxにより中央に配置する */
+
+
+}
+
+
+main h2 {
+  /*  font-family: 'Montserrat', sans-serif;*/
+  /*  color: #fff;*/
+  /*
+  font-weight: 500;
+  font-size: 1.25em;
+*/
+  /*  border-left: 14px solid #030;*/
+  margin-top: 70px;
+  /*  line-height: 28px;*/
+  margin-bottom: 40px;
+  text-align: center;
+  /*clear: both;*/
+  /*  letter-spacing: 5px;*/
+}
+
+@media screen and (max-width: 768px) {
+  main h2 {
+    margin-top: 40px;
+  }
+}
+
+
+section.about {
+  margin-bottom: 70px;
+}
+
+main p {
+  margin-bottom: 10px;
+  margin-left: 24px;
+  text-align: center;
+}
+
+main .icon {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+section.about p {
+  color: #fff;
+  letter-spacing: 1px;
+  margin-left: 0;
+  font-size: 1em;
+  line-height: 1.5;
+}
+
+/*タブレット、スマホの時は指定の箇所で改行*/
+.smartphonebr {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .smartphonebr {
+    display: inline;
+  }
+}
+
+/*work*/
+
+.work-carousel {
+  /*  margin-bottom: 30px;*/
+  margin: 0 60px
+    /*  position: relative;*/
+
+}
+
+
+@media screen and (max-width: 768px) {
+  .work-carousel {
+    margin: 0 30px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .work-carousel {
+    margin: 0 10px;
+  }
+}
+
+.work-carousel-cell {
+  /*  padding: 0 30px;*/
+  margin: 0 25px;
+  /*  display: block;*/
+  display: flex;
+  flex-direction: column;
+  /* 子要素をflexboxにより縦方向に揃える */
+  justify-content: center;
+  /* 子要素をflexboxにより中央に配置する */
+  align-items: center;
+  /* 子要素をflexboxにより中央に配置する */
+  width: 100%;
+  /*  1セルを画面いっぱいに表示*/
+}
+
+@media screen and (max-width: 768px) {
+  .work-carousel-cell {
+    /*    height: auto;*/
+  }
+}
+
+.work-carousel-cell .item {
+  height: 400px;
+  /*  width: 700px;*/
+  /*  width: 100%;*/
+  /*  item内の要素を中央配置*/
+  display: flex;
+  /*  以下はレスポンシブ対応で効いてくる*/
+  flex-direction: column;
+  /* 子要素をflexboxにより縦方向に揃える */
+  justify-content: center;
+  /* 子要素をflexboxにより中央に配置する */
+  align-items: center;
+  /* 子要素をflexboxにより中央に配置する */
+
+}
+
+/*hover設定*/
+/*img要素を包むa要素の背景画像に、マウスオーバー時の画像を指定して、img要素のopacityを徐々に変化させる*/
+/*.work-carousel-cell .item a #IMG*/
+.work-carousel-cell .item a {
+  /*  ブロック要素にして背景画像を表示*/
+  display: block;
+  /*
+  background: url(../images/IMG_6840.png) center;
+  background-size: cover;
+  background-repeat: no-repeat;
+*/
+
+}
+
+.work-carousel-cell .item img {
+  /*  width: 25%;*/
+  /*  position: absolute;*/
+  /*  left: 0%;*/
+
+  display: block;
+  /*
+  width: 250px;
+  height: 250px;
+*/
+  /*  background: #ededed;*/
+  /*  padding: 20px 0;*/
+
+  /*  vertical-align: middle;*/
+  transition: opacity .3s;
+
+
+}
+
+/*height:auto;はレスポンシブ対応*/
+.work-carousel-cell .item #sharecircle img {
+  /*  max-width: 660px;*/
+  /*  max-height: 380px;*/
+  width: 660px;
+  height: auto;
+}
+
+.work-carousel-cell .item #nekophp img {
+  width: 230px;
+  /*  height: 380px;*/
+  height: auto;
+
+}
+
+.work-carousel-cell .item #veg img {
+  width: 500px;
+  /*  height: 380px;*/
+  height: auto;
+}
+
+.work-carousel-cell .item #pizza img {
+  width: 230px;
+  /*  height: 380px;*/
+  height: auto;
+
+}
+
+.work-carousel-cell .item #gynotal img {
+  width: 480px;
+  /*  height: 380px;*/
+  height: auto;
+}
+
+
+.work-carousel-cell .item a:hover img {
+  opacity: 0.5;
+}
+
+/*レスポンシブ対応*/
+@media screen and (max-width: 768px) {
+  .work-carousel-cell .item img {
+    /*    max-height: 100%;*/
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.work-carousel-cell p {
+  margin-top: 20px;
+  /*  main pの打ち消し*/
+  margin-left: 10px;
+  letter-spacing: 5px;
+  font-size: 0.9em;
+  color: #fff;
+  text-align: left;
+  line-height: 1.5;
+}
+
+@media screen and (max-width: 768px) {
+  .work-carousel-cell p {
+    letter-spacing: 1px;
+    font-size: 0.8em;
+  }
+}
+
+
+.flickity-prev-next-button.previous,
+.flickity-prev-next-button.next {
+  color: #fff;
+  background: rgba(38, 38, 38, 0.5);
+  transition-duration: .3s;
+}
+
+
+@media screen and (max-width: 768px) {
+  .flickity-prev-next-button {
+    top: 65%;
+  }
+}
+
+main hr {
+  background-color: #a6c3bf;
+  border: none;
+  height: 1px;
+  margin-top: 0;
+  margin-bottom: 0;
+  width: 20%;
+}
+
+
+/* 見出し欧文フォント設定
+---------------------------------------*/
+/*main .work h2 {*/
+h2 {
+  /*main .follow h2 {*/
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2em;
+  font-weight: 400;
+  letter-spacing: 5px;
+  color: #fff;
+}
+
+
+/* footer
+---------------------------------------*/
+footer {
+  margin-top: 50px;
+  /*  clear: both;*/
+  background-color: #262626;
+  padding: 20px 30px;
+  color: #fff;
+}
+
+footer section.local {
+  width: auto;
+  display: flex;
+  /*  width: 350px;*/
+  /*  float: left;*/
+  flex-direction: column;
+  /* 子要素をflexboxにより縦方向に揃える */
+  justify-content: center;
+  /* 子要素をflexboxにより中央に配置する */
+  align-items: center;
+  /* 子要素をflexboxにより中央に配置する */
+}
+
+footer nav.local {
+  /*footor nav.sns {*/
+  width: 450px;
+  text-align: center;
+  margin-top: 50px;
+
+  /*  float: right;*/
+  /*  display: flex;*/
+  /*  margin-top: 10px;*/
+  /*  display: inline-block;*/
+}
+
+
+/*
+footer nav.sns {
+  text-align: right;
+  float: right;
+}
+*/
+
+
+footer nav.local li {
+  /*footer nav.sns li {*/
+  display: inline-block;
+  margin-left: 20px;
+}
+
+footer nav.local li a {
+  /*footer nav.sns li a {*/
+
+  /*
+  font-family: 'Montserrat',
+  sans-serif;
+  font-weight: 200;
+  letter-spacing: 2px;*/
+  color: #fff;
+  /*  font-size: 0.875em;*/
+  text-decoration: none;
+  /*  margin-left: 20px;*/
+}
+
+footer nav.local li:first-child {
+  margin-left: 0;
+}
+
+
+footer nav.local li .far,
+footer nav.local li .fab {
+  transition-duration: .1s;
+}
+
+footer nav.local li .far:hover,
+footer nav.local li .fab:hover {
+  transform: scale(1.1);
+}
+
+
+footer small {
+  /*  clear: both;*/
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 200;
+  letter-spacing: 1px;
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}

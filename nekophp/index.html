@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@Black_Ray_114" />
+  <meta property="og:url" content="https://gattonero-ray.com/nekophp/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="ねことあそぶ" />
+  <meta property="og:description" content="選択肢に合わせて、ネコの機嫌が変化します。機嫌が良いと、ケージが貯まります。5つ貯まると...?" />
+  <meta property="og:site_name" content="ねことあそぶ" />
+  <meta property="og:image" content="https://gattonero-ray.com/nekophp/image/DSCN2189.jpg" />
+  <meta charset="UTF-8">
+  <title>ねことあそぶ</title>
+  <!--    <meta name="viewport"  content="width=750">-->
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="main">
+      <h1>ねこはこちらを見ている...</h1>
+      <br>
+      <img src="image/DSCN2189.jpg" alt="neko_kago" width="480" height="360">
+      <br>
+      <p>どうする？</p>
+      <!--      <p>どうしよう？右からえらんでね！</p>-->
+      <!--      <p>※ねこは気まぐれなのでその時のきげんによって<br>反応がちがうよ！</p>-->
+    </div>
+
+    <div class="form">
+      <!--    aタグでpostする-->
+      <div>
+        <form name="form_name1" method="POST" action="neko_next.php">
+          <input type="hidden" name="play" value=1>
+          <input type="hidden" name="count" value=0>
+          <!--          <input type="hidden" name="firsttime" value=1>-->
+          <a href="javascript:form_name1.submit()"><img src="image/238039.png" width="100" height="100" alt=""></a>
+        </form>
+        <p>おもちゃをふる</p>
+      </div>
+      <div>
+        <form name="form_name2" method="POST" action="neko_next.php">
+          <input type="hidden" name="play" value=2>
+          <input type="hidden" name="count" value=0>
+          <!--          <input type="hidden" name="firsttime" value=1>-->
+          <a href="javascript:form_name2.submit()"><img src="image/1571426.png" width="100" height="100" alt=""></a>
+        </form>
+        <p>えさをあげる</p>
+      </div>
+      <div>
+        <form name="form_name3" method="POST" action="neko_next.php">
+          <input type="hidden" name="play" value=3>
+          <input type="hidden" name="count" value=0>
+          <!--          <input type="hidden" name="firsttime" value=1>-->
+          <a href="javascript:form_name3.submit()"><img src="image/tukamu_free.png" width="100" height="100" alt=""></a>
+        </form>
+        <p>なでる</p>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

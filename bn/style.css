@@ -1,0 +1,119 @@
+@charset "UTF-8";
+
+/*バナーサンプル用　CSS*/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, sans-serif;
+  background-color: #262626;
+}
+
+.wrapper {
+  width: 1100px;
+  margin: 0 auto;
+  background-color: #262626;
+}
+
+h1 {
+  font-size: 34px;
+  line-height: 1.4;
+  color: #9b9b9b;
+  border-bottom: 1px dotted #666;
+  margin: 20px 0 40px 50px;
+}
+
+.content {
+  width: 1100px;
+  margin: 50px 0 0 40px;
+  clear: both;
+}
+
+h2 {
+  font-size: 24px;
+  color: #333;
+  border-bottom: 1px solid #fc3;
+  margin-bottom: 40px;
+  margin-left: 40px;
+  color: #9b9b9b;
+}
+
+.concept {
+  width: 728px;
+  float: left;
+  margin-left: 40px;
+  margin-bottom: 30px;
+
+}
+
+.Lboard {
+  margin-bottom: 30px;
+}
+
+h3 {
+  font-size: 22px;
+  border-left: 10px solid #fc3;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+h4 {
+  font-size: 20px;
+  line-height: 30px;
+  color: #333;
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+.comment {
+  width: 728px;
+  height: 300px;
+  overflow-y: auto;
+  border: 2px dotted #fc3;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+h5 {
+  font-size: 18px;
+  color: #de4e4e;
+  border-bottom: 1px solid #de4e4e;
+  margin-bottom: 10px;
+}
+
+.comment p {
+  font-size: 1em;
+  line-height: 1.5;
+  text-align: justify;
+  margin-bottom: 1em;
+  color: #9b9b9b;
+}
+
+.MRboard {
+  width: 300px;
+  float: right;
+  margin-bottom: 50px;
+}
+
+img {
+  margin-bottom: 10px;
+}
+
+footer {
+  clear: both;
+  text-align: center;
+  line-height: 100px;
+}
+
+footer a {
+  font-size: 14px;
+}
+
+footer a:hover {
+  color: #f00;
+  text-decoration: none;
+}
