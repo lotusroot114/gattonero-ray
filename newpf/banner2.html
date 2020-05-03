@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Gattonero このサイトはRayのポートフォリオサイトです。</title>
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <!--  <link rel="stylesheet" type="text/css" media="all" href="css/reset.css">-->
+  <link rel="stylesheet" type="text/css" media="all" href="css/style.css">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <!--      <h1><a class="sLogo" href="index.html">Reiko's Portfolio</a></h1>-->
+      <h1><a href="index.html"><img class="logo" src="images/logo.gif" alt="ポートフォリオサイトロゴ"></a></h1>
+      <nav class="global">
+        <ul>
+          <li><a class="gNaviLink" href="about.html">About</a></li>
+          <li><a class="gNaviLink" href="works.html">Works</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <main>
+        <section class="default">
+          <h2 class="title__sub"><span class="title__sub--color">自主制作</span></h2>
+          <h2 class="title">あんこう鍋セット</h2>
+          <div class="detail">
+            <div class="picture">
+              <p><img src="images/anko_300_250.jpg" alt="年末用あんこう鍋セットのバナー 1枚目"></p>
+            </div>
+            <div class="picture">
+              <p><img class="lb" src="images/anko_728_90.jpg" alt="年末用あんこう鍋セットのバナー 2枚目"></p>
+            </div>
+          </div>
+          <div class="explanation">
+            <dl>
+              <dt>カテゴリー</dt>
+              <dd>バナー</dd>
+            </dl>
+            <hr>
+            <dl>
+              <dt>目的</dt>
+              <dd>架空のあんこう鍋セットをPRする。</dd>
+              <dt>指定内容</dt>
+              <dd>ECサイト内での掲載を想定。指定のロゴ、画像あり。競合商品が多いため「茨城県産本あんこう」「秘伝の焼き味噌」を差別化ポイントとする。</dd>
+            </dl>
+            <hr>
+            <dl>
+              <dt>ターゲット</dt>
+              <dd>年末消費、または贈答用の鍋セットが欲しい一般家庭</dd>
+              <dt>コンセプト</dt>
+              <dd>特別感</dd>
+            </dl>
+            <hr>
+            <dl>
+              <dt>サイズ</dt>
+              <dd>300×250、728×90（単位：px）</dd>
+              <dt>担当範囲</dt>
+              <dd>デザイン</dd>
+              <dt>使用ツール</dt>
+              <dd>Photoshop</dd>
+              <dt>制作時間</dt>
+              <dd>2枚合わせて4時間</dd>
+            </dl>
+            <hr>
+            <dl>
+              <dt>制作のポイント</dt>
+              <dd>あんこう鍋が際立つよう背景を黒にし、温度感と動きを演出するため煙の装飾を施しました。他社製品との差別化ポイントである「茨城県産本あんこう」「秘伝の焼き味噌」を強弱をつけることで印象に残るようにしました。</dd>
+            </dl>
+          </div>
+          <div class="nav-links">
+            <div class="nav-left"><a href="banner1.html"></a></div>
+            <div class="nav-page">
+              <a href="works.html">一覧へ戻る</a>
+            </div>
+            <div class="nav-right"><a href="banner3.html"></a></div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <!--    container-->
+    <footer>
+      <div class="scrollTop"><a href="#"></a></div>
+      <small>Copyright &copy; Reiko</small>
+    </footer>
+
+  </div>
+  <!--  wrapper-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!--scrollTopボタンの表示・非表示-->
+  <script>
+    $(function() {
+      var topBtn = $('div.scrollTop');
+      topBtn.hide();
+      //スクロールが100に達したらボタン表示
+      $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+          topBtn.fadeIn();
+        } else {
+          topBtn.fadeOut();
+        }
+      });
+      //スクロールしてトップ
+      topBtn.click(function() {
+        $('body,html').animate({
+          scrollTop: 0
+        }, 500);
+        return false;
+      });
+    });
+
+  </script>
+
+
+</body>
+
+</html>

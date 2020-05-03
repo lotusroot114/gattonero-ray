@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Gattonero このサイトはRayのポートフォリオサイトです。</title>
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <!--  <link rel="stylesheet" type="text/css" media="all" href="css/reset.css">-->
+  <link rel="stylesheet" type="text/css" media="all" href="css/style.css">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <!--      <h1><a class="sLogo" href="index.html">Reiko's Portfolio</a></h1>-->
+      <h1><a href="index.html"><img class="logo" src="images/logo.gif" alt="ポートフォリオサイトロゴ"></a></h1>
+      <nav class="global">
+        <ul>
+          <li><a class="gNaviLink" href="about.html">About</a></li>
+          <li><a class="gNaviLink" href="works.html">Works</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <main>
+        <section class="default">
+          <h2 class="title__sub"><span class="title__sub--color">訓練校課題</span></h2>
+          <h2 class="title">旧ポートフォリオサイト</h2>
+          <div class="detail">
+            <div class="picture">
+              <p><img class="mock noneborder" src="images/oldpf_mockup.jpg" alt="旧ポートフォリオサイトのモックアップ"></p>
+            </div>
+          </div>
+          <div class="detail">
+            <div class="external"><a href="https://gattonero-ray.com/pfsite/" target="_blank">サイトを開く（別窓で開きます）</a></div>
+          </div>
+          <div class="explanation">
+            <dl>
+              <dt>カテゴリー</dt>
+              <dd>ウェブサイト（レスポンシブ）</dd>
+            </dl>
+            <hr>
+            <dl>
+              <dt>ターゲット</dt>
+              <dd>企業の人事ご担当者様</dd>
+              <dt>コンセプト</dt>
+              <dd>制作物と自分のスキルを紹介する</dd>
+            </dl>
+            <hr>
+            <dl>
+              <dt>担当範囲</dt>
+              <dd>デザイン、コーディング</dd>
+              <dt>使用ツール/言語</dt>
+              <dd>Brackets、Photoshop/HTML、CSS、jQuery</dd>
+              <dt>制作時間</dt>
+              <dd>40時間</dd>
+            </dl>
+            <hr>
+            <dl>
+              <dt>制作のポイント</dt>
+              <dd>訓練校修了直後に制作しました。ファーストビューに作品群のスライダー、下部に自己紹介の1ページ構成にしました。作品が際立つように黒・白でまとめました。PC・スマホ用ファビコンも設定しています。このサイトを元に<a class="border" href="newpf.html">ポートフォリオサイトをリニューアルしました。</a></dd>
+            </dl>
+          </div>
+          <div class="nav-links">
+            <div class="nav-left"><a href="newpf.html"></a></div>
+            <div class="nav-page">
+              <a href="works.html">一覧へ戻る</a>
+            </div>
+            <div class="nav-right"><a href="cafe.html"></a></div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <!--    container-->
+    <footer>
+      <div class="scrollTop"><a href="#"></a></div>
+      <small>Copyright &copy; Reiko</small>
+    </footer>
+
+  </div>
+  <!--  wrapper-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!--scrollTopボタンの表示・非表示-->
+  <script>
+    $(function() {
+      var topBtn = $('div.scrollTop');
+      topBtn.hide();
+      //スクロールが100に達したらボタン表示
+      $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+          topBtn.fadeIn();
+        } else {
+          topBtn.fadeOut();
+        }
+      });
+      //スクロールしてトップ
+      topBtn.click(function() {
+        $('body,html').animate({
+          scrollTop: 0
+        }, 500);
+        return false;
+      });
+    });
+
+  </script>
+
+
+</body>
+
+</html>

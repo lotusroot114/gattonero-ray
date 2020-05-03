@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Gattonero このサイトはRayのポートフォリオサイトです。</title>
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <!--  <link rel="stylesheet" type="text/css" media="all" href="css/reset.css">-->
+  <link rel="stylesheet" type="text/css" media="all" href="css/style.css">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <!--      <h1><a class="sLogo" href="index.html">Reiko's Portfolio</a></h1>-->
+      <h1><a href="index.html"><img class="logo" src="images/logo.gif" alt="ポートフォリオサイトロゴ"></a></h1>
+      <nav class="global">
+        <ul>
+          <li><a class="gNaviLink" href="about.html">About</a></li>
+          <li><a class="gNaviLink" href="works.html">Works</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <main>
+        <section class="default">
+          <h2 class="title__sub"><span class="title__sub--color">訓練校課題</span></h2>
+          <h2 class="title">Pizza Max!</h2>
+          <div class="detail">
+            <div class="picture">
+              <p><img class="spfv noneborder" src="images/pizza_spfv_mockup.png" alt="ピザ屋のサイト スマホ用ファーストビュー モックアップ画像"></p>
+            </div>
+          </div>
+          <div class="explanation">
+            <dl>
+              <dt>カテゴリー</dt>
+              <dd>デザイン&nbsp;-&nbsp;スマホサイトのファーストビュー</dd>
+            </dl>
+            <hr>
+            <dl>
+              <dt>課題内容</dt>
+              <dd>架空のピザ屋「Pizza Max!」のスマホ用サイトファーストビューを制作する</dd>
+            </dl>
+            <hr>
+            <dl>
+              <dt>ターゲット</dt>
+              <dd>ピザを注文したいスマホユーザー</dd>
+              <dt>コンセプト</dt>
+              <dd>直感的な操作</dd>
+            </dl>
+            <hr>
+            <dl>
+              <dt>サイズ</dt>
+              <dd>1242×2208（iPhone 8/7/6 Plus 用）（単位：px）</dd>
+              <dt>担当範囲</dt>
+              <dd>デザイン</dd>
+              <dt>使用ツール</dt>
+              <dd>Photoshop、Illustrator</dd>
+              <dt>制作時間</dt>
+              <dd>10時間</dd>
+            </dl>
+            <hr>
+            <dl>
+              <dt>制作のポイント</dt>
+              <dd>構成は上から「ヘッダ」「注文ボタン（商品リストに遷移）」「おすすめ」「クーポン」とし、極力文字数を少なくし直感的に操作できるように設計しました。ピザの色彩が鮮やかなので背景を暗くすることで際立たせ、注文ボタンは背景を白にすることで画面の中で強調させています。</dd>
+            </dl>
+          </div>
+          <div class="detail">
+            <h3 class="processTitle">素材加工</h3>
+            <div class="process">
+              <p class="process_picture">
+                <img class="noneborder" src="images/pizza_pict.jpg" alt="ピクトグラム素材加工の画像">
+              </p>
+              <div class="process_explan">
+                <p>ボタンに使用したピクトグラムはフリー素材をIllustratorで加工しました。※素材の利用規約は確認済です。</p>
+              </div>
+            </div>
+          </div>
+          <div class="nav-links">
+            <div class="nav-left"><a href="lp1.html"></a></div>
+            <div class="nav-page">
+              <a href="works.html">一覧へ戻る</a>
+            </div>
+            <div class="nav-right"><a href="logo1.html"></a></div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <!--    container-->
+    <footer>
+      <div class="scrollTop"><a href="#"></a></div>
+      <small>Copyright &copy; Reiko</small>
+    </footer>
+
+  </div>
+  <!--  wrapper-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!--scrollTopボタンの表示・非表示-->
+  <script>
+    $(function() {
+      var topBtn = $('div.scrollTop');
+      topBtn.hide();
+      //スクロールが100に達したらボタン表示
+      $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+          topBtn.fadeIn();
+        } else {
+          topBtn.fadeOut();
+        }
+      });
+      //スクロールしてトップ
+      topBtn.click(function() {
+        $('body,html').animate({
+          scrollTop: 0
+        }, 500);
+        return false;
+      });
+    });
+
+  </script>
+
+
+</body>
+
+</html>

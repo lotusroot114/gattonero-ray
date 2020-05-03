@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Gattonero このサイトはRayのポートフォリオサイトです。</title>
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <!--  <link rel="stylesheet" type="text/css" media="all" href="css/reset.css">-->
+  <link rel="stylesheet" type="text/css" media="all" href="css/style.css">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <!--      <h1><a class="sLogo" href="index.html">Reiko's Portfolio</a></h1>-->
+      <h1><a href="index.html"><img class="logo" src="images/logo.gif" alt="ポートフォリオサイトロゴ"></a></h1>
+      <nav class="global">
+        <ul>
+          <li><a class="gNaviLink" href="about.html">About</a></li>
+          <li><a class="gNaviLink" href="works.html">Works</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <div class="fv">
+        <div class="fv__image">
+          <p class="slideInRight item"><span class="a">エンジニア</span>？<br class="fvbr"><span class="b">デザイナー</span>？&nbsp;<br>両方とも、<br class="fvbr">わたしです！</p>
+          <p class="slideInRightNext item">このサイトはReikoのポートフォリオサイトです。</p>
+        </div>
+      </div>
+      <main>
+        <section class="default">
+          <h2>Works</h2>
+          <div class="works_index more">
+            <div>
+              <a href="lp1.html"><img src="images/gynotal.jpg" alt="産科ジェルランディングページのスクリーンショット"></a>
+              <a href="sc.html"><img src="images/sharecircle.jpg" alt="C2Cドレスレンタルサービスサイトのスクリーンショット"></a>
+              <a href="game1.html"><img src="images/nekogame.jpg" alt="ネコのブラウザゲームのスクリーンショット"></a>
+            </div>
+            <div>
+              <a href="firstview1.html"><img src="images/pizza.jpg" alt="ピザ屋のサイトファーストビューのスクリーンショット"></a>
+              <a href="banner1.html"><img src="images/mr_2_1.jpg" alt="野菜宅配サービスのバナー"></a>
+              <a href="banner2.html"><img src="images/anko_300_250.jpg" alt="年末用あんこう鍋セットのバナー"></a>
+            </div>
+            <div>
+              <a href="banner3.html"><img src="images/chocolate_white.jpg" alt="冬期限定チョコレートのバナー"></a>
+              <a href="banner4.html"><img src="images/coconala.jpg" alt="ココナラでのバナー作成募集用バナー"></a>
+              <a href="banner5.html"><img src="images/hotspring.jpg" alt="温泉旅館公式サイト内設置用のバナー"></a>
+            </div>
+          </div>
+          <a href="works.html" class="button"></a>
+        </section>
+        <section class="default">
+          <h2>About</h2>
+          <div class="about more">
+            <p><img src="images/ai_illust.jpg" alt="プロフィール画像"></p>
+            <div class="profile">
+              <p>初めまして、Reikoと申します。<br>前職はSEとしてSI（システムインテグレーター）業界で7年間<br>
+                主に業務システムの開発・運用保守に従事しておりましたが、<br>
+                元々美術が好きでクリエイティブ業界への転職を志し、<br>
+                Webデザインの職業訓練校を修了後、学習継続中です。
+              </p>
+            </div>
+          </div>
+          <a href="about.html" class="button"></a>
+        </section>
+      </main>
+    </div>
+    <!--    container-->
+    <footer>
+      <div class="scrollTop"><a href="#"></a></div>
+      <small>Copyright &copy; Reiko</small>
+    </footer>
+
+  </div>
+  <!--  wrapper-->
+
+  <!--  jQuery読み込み-->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!--scrollTopボタンの表示・非表示-->
+  <script>
+    $(function() {
+      var topBtn = $('div.scrollTop');
+      topBtn.hide();
+      //スクロールが100に達したらボタン表示
+      $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+          topBtn.fadeIn();
+        } else {
+          topBtn.fadeOut();
+        }
+      });
+      //スクロールしてトップ
+      topBtn.click(function() {
+        $('body,html').animate({
+          scrollTop: 0
+        }, 500);
+        return false;
+      });
+    });
+
+  </script>
+
+</body>
+
+</html>

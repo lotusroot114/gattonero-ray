@@ -1,0 +1,1535 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap");
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+nav,
+pre,
+form,
+fieldset,
+figure,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+fieldset,
+img {
+  border: 0; }
+
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+  font-style: normal;
+  font-weight: normal; }
+
+ol,
+ul {
+  list-style: none; }
+
+caption,
+th {
+  text-align: left; }
+
+/*clearfix-------------------------------*/
+.clearfix {
+  zoom: 1; }
+
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both; }
+
+/*  スマホ対応で表示されてしまう横スクロールバー非表示 iOS対応*/
+html {
+  overflow: auto; }
+  html body {
+    font-family: "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, sans-serif;
+    /*  スマホ対応で表示されてしまう横スクロールバー非表示 デスクトップのみの対応*/
+    overflow-x: hidden;
+    /* div.wrapper
+---------------------------------------*/ }
+    html body div.wrapper {
+      width: auto;
+      margin: 0 auto;
+      font-family: 'Noto Sans JP', sans-serif;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      /* 子要素は縦方向に揃える */
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      /* header
+---------------------------------------*/ }
+      html body div.wrapper span.title__sub--color {
+        color: #fff; }
+      html body div.wrapper span.business {
+        color: #DD5357; }
+      html body div.wrapper a {
+        font-size: 13px;
+        -webkit-transition: all .1s;
+        transition: all .1s;
+        text-decoration: none;
+        color: #262626; }
+        @media (min-width: 768px) {
+          html body div.wrapper a {
+            font-size: 16px; } }
+        @media (min-width: 961px) {
+          html body div.wrapper a {
+            font-size: 16px; } }
+        html body div.wrapper a:hover {
+          opacity: 0.7; }
+        html body div.wrapper a.border {
+          text-decoration: underline; }
+      html body div.wrapper p {
+        font-size: 13px; }
+        @media (min-width: 768px) {
+          html body div.wrapper p {
+            font-size: 16px; } }
+        @media (min-width: 961px) {
+          html body div.wrapper p {
+            font-size: 16px; } }
+      html body div.wrapper dt {
+        font-size: 13px;
+        font-weight: 600; }
+        @media (min-width: 768px) {
+          html body div.wrapper dt {
+            font-size: 16px; } }
+        @media (min-width: 961px) {
+          html body div.wrapper dt {
+            font-size: 16px; } }
+      html body div.wrapper dl {
+        font-size: 13px; }
+        @media (min-width: 768px) {
+          html body div.wrapper dl {
+            font-size: 16px; } }
+        @media (min-width: 961px) {
+          html body div.wrapper dl {
+            font-size: 16px; } }
+      html body div.wrapper h1 img.logo {
+        width: 150px;
+        height: auto;
+        margin-left: 16px;
+        padding-bottom: 0px; }
+        @media (min-width: 768px) {
+          html body div.wrapper h1 img.logo {
+            width: 200px;
+            margin-left: 30px; } }
+        @media (min-width: 961px) {
+          html body div.wrapper h1 img.logo {
+            width: 200px;
+            margin-left: 30px; } }
+      html body div.wrapper h2 {
+        letter-spacing: 0.15em;
+        font-size: 2em;
+        font-weight: 200;
+        margin-bottom: 50px; }
+        @media (min-width: 768px) {
+          html body div.wrapper h2 {
+            letter-spacing: 0.2em;
+            font-size: 2.75em;
+            margin-bottom: 50px; } }
+        @media (min-width: 961px) {
+          html body div.wrapper h2 {
+            letter-spacing: 0.2em;
+            font-size: 3em;
+            margin-bottom: 50px; } }
+        html body div.wrapper h2.title {
+          text-align: center;
+          letter-spacing: 0.15em;
+          font-size: 1.3em;
+          font-weight: 500;
+          margin-bottom: 40px; }
+          @media (min-width: 768px) {
+            html body div.wrapper h2.title {
+              letter-spacing: 0.2em;
+              font-size: 1.8em; } }
+          @media (min-width: 961px) {
+            html body div.wrapper h2.title {
+              letter-spacing: 0.2em;
+              font-size: 2em; } }
+          html body div.wrapper h2.title__sub {
+            font-weight: 500;
+            margin-bottom: 10px;
+            font-size: 0.8em; }
+            @media (min-width: 768px) {
+              html body div.wrapper h2.title__sub {
+                font-size: 1em; } }
+            @media (min-width: 961px) {
+              html body div.wrapper h2.title__sub {
+                font-size: 1.1em; } }
+      html body div.wrapper h3.reduction__name {
+        letter-spacing: 0.1em;
+        font-size: 1.2em;
+        font-weight: 300;
+        margin-left: 8px;
+        margin-bottom: 2px; }
+        @media (min-width: 768px) {
+          html body div.wrapper h3.reduction__name {
+            letter-spacing: 0.07em;
+            font-size: 1.2em;
+            margin-left: 10px; } }
+        @media (min-width: 961px) {
+          html body div.wrapper h3.reduction__name {
+            letter-spacing: 0.1em;
+            font-size: 1.7em;
+            margin-left: 12px; } }
+      html body div.wrapper h3.processTitle {
+        text-align: center;
+        letter-spacing: 0.15em;
+        font-size: 1.2em;
+        font-weight: 500;
+        margin-bottom: 40px; }
+        @media (min-width: 768px) {
+          html body div.wrapper h3.processTitle {
+            letter-spacing: 0.2em;
+            font-size: 1.6em; } }
+        @media (min-width: 961px) {
+          html body div.wrapper h3.processTitle {
+            letter-spacing: 0.2em;
+            font-size: 1.8em; } }
+      html body div.wrapper header {
+        width: 100%;
+        padding-top: 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        /* 子要素は縦方向に揃える */
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-align: baseline;
+            -ms-flex-align: baseline;
+                align-items: baseline; }
+        @media (min-width: 768px) {
+          html body div.wrapper header {
+            width: 100%;
+            padding-top: 8px; } }
+        @media (min-width: 961px) {
+          html body div.wrapper header {
+            width: 960px;
+            padding-top: 8px; } }
+        html body div.wrapper header nav.global {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          /* 子要素は縦方向に揃える */
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column;
+          margin-right: 8px; }
+          @media (min-width: 768px) {
+            html body div.wrapper header nav.global {
+              -webkit-box-orient: horizontal;
+              -webkit-box-direction: normal;
+                  -ms-flex-direction: row;
+                      flex-direction: row;
+              -webkit-box-align: baseline;
+                  -ms-flex-align: baseline;
+                      align-items: baseline; } }
+          @media (min-width: 961px) {
+            html body div.wrapper header nav.global {
+              -webkit-box-orient: horizontal;
+              -webkit-box-direction: normal;
+                  -ms-flex-direction: row;
+                      flex-direction: row;
+              -webkit-box-align: baseline;
+                  -ms-flex-align: baseline;
+                      align-items: baseline; } }
+          html body div.wrapper header nav.global ul {
+            font-size: 0;
+            padding-right: 8px; }
+            @media (min-width: 768px) {
+              html body div.wrapper header nav.global ul {
+                padding-right: 20px; } }
+            @media (min-width: 961px) {
+              html body div.wrapper header nav.global ul {
+                padding-right: 20px; } }
+            html body div.wrapper header nav.global ul li {
+              display: inline-block;
+              padding-left: 10px;
+              font-weight: 400; }
+              @media (min-width: 768px) {
+                html body div.wrapper header nav.global ul li {
+                  padding-left: 20px; } }
+              @media (min-width: 961px) {
+                html body div.wrapper header nav.global ul li {
+                  padding-left: 20px; } }
+              html body div.wrapper header nav.global ul li a.gNaviLink {
+                text-decoration: none;
+                font-size: 14px;
+                letter-spacing: 0.08em; }
+                @media (min-width: 768px) {
+                  html body div.wrapper header nav.global ul li a.gNaviLink {
+                    font-size: 16px; } }
+                @media (min-width: 961px) {
+                  html body div.wrapper header nav.global ul li a.gNaviLink {
+                    font-size: 16px; } }
+      html body div.wrapper div.container {
+        width: 100%; }
+        html body div.wrapper div.container div.fv {
+          width: 100%;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          /* 子要素は縦方向に揃える */
+          -webkit-box-orient: vertical;
+          -webkit-box-direction: normal;
+              -ms-flex-direction: column;
+                  flex-direction: column;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f2f6f8+0,d8e1e7+50,b5c6d0+51,e0eff9+100;Grey+Gloss+%232 */
+          background: #f2f6f8;
+          /* Old browsers */
+          /* FF3.6-15 */
+          /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(135deg, #f2f6f8 0%, #d8e1e7 50%, #b5c6d0 51%, #e0eff9 100%);
+          /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f6f8', endColorstr='#e0eff9', GradientType=1);
+          /* IE6-9 fallback on horizontal gradient */ }
+          html body div.wrapper div.container div.fv div.fv__image {
+            width: 100%;
+            height: 80vh;
+            overflow: hidden;
+            position: relative;
+            background-image: url(../images/fv.png);
+            background-repeat: no-repeat;
+            background-position: 60% 14%;
+            background-size: 95vw auto; }
+            @media (min-width: 375px) {
+              html body div.wrapper div.container div.fv div.fv__image {
+                background-size: 95vw auto; } }
+            @media (min-width: 425px) {
+              html body div.wrapper div.container div.fv div.fv__image {
+                background-size: 90vw auto; } }
+            @media (min-width: 768px) {
+              html body div.wrapper div.container div.fv div.fv__image {
+                width: 720px;
+                background-position: right bottom;
+                background-size: 450px auto;
+                height: 360px; } }
+            @media (min-width: 961px) {
+              html body div.wrapper div.container div.fv div.fv__image {
+                width: 960px;
+                background-position: right bottom;
+                background-size: 550px auto;
+                height: 420px; } }
+            html body div.wrapper div.container div.fv div.fv__image p {
+              padding: 6px 6px 6px 16px;
+              position: absolute;
+              color: #000;
+              font-weight: 600; }
+              html body div.wrapper div.container div.fv div.fv__image p.slideInRight {
+                top: 55%;
+                left: 65px;
+                font-size: 1.5em;
+                -webkit-animation-name: slideInRight;
+                        animation-name: slideInRight;
+                -webkit-animation-duration: 1s;
+                        animation-duration: 1s;
+                -webkit-animation-timing-function: ease;
+                        animation-timing-function: ease;
+                font-weight: 600; }
+                @media (min-width: 375px) {
+                  html body div.wrapper div.container div.fv div.fv__image p.slideInRight {
+                    top: 63%;
+                    left: 8px;
+                    font-size: 1.7em; } }
+                @media (min-width: 425px) {
+                  html body div.wrapper div.container div.fv div.fv__image p.slideInRight {
+                    top: 67%;
+                    left: 16px;
+                    font-size: 1.7em; } }
+                @media (min-width: 768px) {
+                  html body div.wrapper div.container div.fv div.fv__image p.slideInRight {
+                    top: 16%;
+                    left: 60px;
+                    font-size: 1.8em; } }
+                @media (min-width: 961px) {
+                  html body div.wrapper div.container div.fv div.fv__image p.slideInRight {
+                    top: 16%;
+                    left: 8%;
+                    font-size: 2.5em; } }
+                html body div.wrapper div.container div.fv div.fv__image p.slideInRight span.a {
+                  background: -webkit-gradient(linear, left top, left bottom, color-stop(90%, transparent), color-stop(0%, #53b3dd));
+                  background: linear-gradient(transparent 90%, #53b3dd 0%); }
+                html body div.wrapper div.container div.fv div.fv__image p.slideInRight span.b {
+                  background: -webkit-gradient(linear, left top, left bottom, color-stop(90%, transparent), color-stop(0%, #DD5357));
+                  background: linear-gradient(transparent 90%, #DD5357 0%); }
+              html body div.wrapper div.container div.fv div.fv__image p.slideInRightNext {
+                top: 89%;
+                left: 8px;
+                font-size: 0.75em;
+                -webkit-animation-name: slideInRightNext;
+                        animation-name: slideInRightNext;
+                -webkit-animation-duration: 1s;
+                        animation-duration: 1s;
+                -webkit-animation-timing-function: ease-out;
+                        animation-timing-function: ease-out;
+                font-weight: 500; }
+                @media (min-width: 375px) {
+                  html body div.wrapper div.container div.fv div.fv__image p.slideInRightNext {
+                    top: 85%;
+                    left: 8px;
+                    font-size: 0.75em; } }
+                @media (min-width: 425px) {
+                  html body div.wrapper div.container div.fv div.fv__image p.slideInRightNext {
+                    top: 90%;
+                    left: 16px;
+                    font-size: 0.8em; } }
+                @media (min-width: 768px) {
+                  html body div.wrapper div.container div.fv div.fv__image p.slideInRightNext {
+                    top: 77%;
+                    left: 60px;
+                    font-size: 0.88em; } }
+                @media (min-width: 961px) {
+                  html body div.wrapper div.container div.fv div.fv__image p.slideInRightNext {
+                    top: 85%;
+                    left: 8%;
+                    font-size: 0.95em; } }
+              html body div.wrapper div.container div.fv div.fv__image p.item:nth-child(1) {
+                -webkit-animation: example 1s ease 0.6s 1 forwards;
+                        animation: example 1s ease 0.6s 1 forwards;
+                opacity: 0; }
+              html body div.wrapper div.container div.fv div.fv__image p.item:nth-child(2) {
+                -webkit-animation: example 1s ease 1.2s 1 forwards;
+                        animation: example 1s ease 1.2s 1 forwards;
+                opacity: 0; }
+              html body div.wrapper div.container div.fv div.fv__image p.item:nth-child(3) {
+                -webkit-animation: example 1s ease 1.8s 1 forwards;
+                        animation: example 1s ease 1.8s 1 forwards;
+                opacity: 0; }
+              html body div.wrapper div.container div.fv div.fv__image p.item:nth-child(4) {
+                -webkit-animation: example 1s ease 2.4s 1 forwards;
+                        animation: example 1s ease 2.4s 1 forwards;
+                opacity: 0; }
+              html body div.wrapper div.container div.fv div.fv__image p.item:nth-child(5) {
+                -webkit-animation: example 1s ease 3s 1 forwards;
+                        animation: example 1s ease 3s 1 forwards;
+                opacity: 0; }
+              html body div.wrapper div.container div.fv div.fv__image p.item:nth-child(6) {
+                -webkit-animation: example 1s ease 3.6s 1 forwards;
+                        animation: example 1s ease 3.6s 1 forwards;
+                opacity: 0; }
+
+@-webkit-keyframes example {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0, 50px);
+            transform: translate(0, 50px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0); } }
+
+@keyframes example {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(0, 50px);
+            transform: translate(0, 50px); }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(0, 0);
+            transform: translate(0, 0); } }
+            @media (min-width: 768px) {
+              @-webkit-keyframes example {
+                0% {
+                  opacity: 0;
+                  -webkit-transform: translate(150px, 0);
+                          transform: translate(150px, 0); }
+                100% {
+                  opacity: 1;
+                  -webkit-transform: translate(0, 0);
+                          transform: translate(0, 0); } }
+              @keyframes example {
+                0% {
+                  opacity: 0;
+                  -webkit-transform: translate(150px, 0);
+                          transform: translate(150px, 0); }
+                100% {
+                  opacity: 1;
+                  -webkit-transform: translate(0, 0);
+                          transform: translate(0, 0); } } }
+            @media (min-width: 961px) {
+              @-webkit-keyframes example {
+                0% {
+                  opacity: 0;
+                  -webkit-transform: translate(150px, 0);
+                          transform: translate(150px, 0); }
+                100% {
+                  opacity: 1;
+                  -webkit-transform: translate(0, 0);
+                          transform: translate(0, 0); } }
+              @keyframes example {
+                0% {
+                  opacity: 0;
+                  -webkit-transform: translate(150px, 0);
+                          transform: translate(150px, 0); }
+                100% {
+                  opacity: 1;
+                  -webkit-transform: translate(0, 0);
+                          transform: translate(0, 0); } } }
+            html body div.wrapper div.container div.fv div.fv__image br.fvbr {
+              display: inline; }
+              @media (min-width: 375px) {
+                html body div.wrapper div.container div.fv div.fv__image br.fvbr {
+                  display: none; } }
+              @media (min-width: 425px) {
+                html body div.wrapper div.container div.fv div.fv__image br.fvbr {
+                  display: none; } }
+              @media (min-width: 768px) {
+                html body div.wrapper div.container div.fv div.fv__image br.fvbr {
+                  display: inline; } }
+              @media (min-width: 961px) {
+                html body div.wrapper div.container div.fv div.fv__image br.fvbr {
+                  display: inline; } }
+        html body div.wrapper div.container main {
+          width: 90%;
+          margin: 30px auto 100px; }
+          @media (min-width: 768px) {
+            html body div.wrapper div.container main {
+              margin: 50px auto 100px; } }
+          @media (min-width: 961px) {
+            html body div.wrapper div.container main {
+              margin: 100px auto; } }
+          html body div.wrapper div.container main section.default {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            /* 子要素は縦方向に揃える */
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+                -ms-flex-direction: column;
+                    flex-direction: column;
+            -webkit-box-align: center;
+                -ms-flex-align: center;
+                    align-items: center;
+            margin-bottom: 100px; }
+            html body div.wrapper div.container main section.default div.reduction {
+              width: 100%;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-align: start;
+                  -ms-flex-align: start;
+                      align-items: flex-start;
+              margin-bottom: 40px;
+              border-left: 8px solid #677072;
+              background-image: linear-gradient(135deg, #99a5a8 0%, #e3eaed 63%, #f2f5f6 100%); }
+              @media (min-width: 768px) {
+                html body div.wrapper div.container main section.default div.reduction {
+                  margin-bottom: 40px;
+                  -webkit-box-align: start;
+                      -ms-flex-align: start;
+                          align-items: flex-start; } }
+              @media (min-width: 961px) {
+                html body div.wrapper div.container main section.default div.reduction {
+                  margin-bottom: 40px;
+                  -webkit-box-align: start;
+                      -ms-flex-align: start;
+                          align-items: flex-start; } }
+            html body div.wrapper div.container main section.default div.works_index {
+              width: 100%; }
+              @media (min-width: 768px) {
+                html body div.wrapper div.container main section.default div.works_index {
+                  max-width: 960px; } }
+              @media (min-width: 961px) {
+                html body div.wrapper div.container main section.default div.works_index {
+                  width: 960px; } }
+              html body div.wrapper div.container main section.default div.works_index div {
+                padding-bottom: 0;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
+                /* 子要素は縦方向に揃える */
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                        flex-direction: column; }
+                @media (min-width: 768px) {
+                  html body div.wrapper div.container main section.default div.works_index div {
+                    padding-bottom: 40px;
+                    -webkit-box-orient: horizontal;
+                    -webkit-box-direction: normal;
+                        -ms-flex-direction: row;
+                            flex-direction: row;
+                    /*水平方向は左右両端のスペースを含めて等間隔に配置*/
+                    -ms-flex-pack: distribute;
+                        justify-content: space-around;
+                    /*垂直方向は左右両端のスペースを含めて等間隔に配置*/
+                    -ms-flex-line-pack: distribute;
+                        align-content: space-around; } }
+                @media (min-width: 961px) {
+                  html body div.wrapper div.container main section.default div.works_index div {
+                    padding-bottom: 40px;
+                    -webkit-box-orient: horizontal;
+                    -webkit-box-direction: normal;
+                        -ms-flex-direction: row;
+                            flex-direction: row;
+                    /*水平方向は左右両端のスペースを含めて等間隔に配置*/
+                    -ms-flex-pack: distribute;
+                        justify-content: space-around;
+                    /*垂直方向は左右両端のスペースを含めて等間隔に配置*/
+                    -ms-flex-line-pack: distribute;
+                        align-content: space-around; } }
+                html body div.wrapper div.container main section.default div.works_index div img {
+                  border: 1px solid #e3e3e3;
+                  width: 80vw;
+                  margin-bottom: 40px;
+                  height: auto; }
+                  @media (min-width: 768px) {
+                    html body div.wrapper div.container main section.default div.works_index div img {
+                      width: 28vw;
+                      margin-bottom: 0;
+                      margin: 0 5px; } }
+                  @media (min-width: 961px) {
+                    html body div.wrapper div.container main section.default div.works_index div img {
+                      width: 240px;
+                      margin-bottom: 0; } }
+            html body div.wrapper div.container main section.default div.works {
+              width: 100%; }
+              @media (min-width: 768px) {
+                html body div.wrapper div.container main section.default div.works {
+                  width: 90vw; } }
+              @media (min-width: 961px) {
+                html body div.wrapper div.container main section.default div.works {
+                  width: 960px; } }
+              html body div.wrapper div.container main section.default div.works__list {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                margin-bottom: 60px;
+                -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
+                -webkit-box-pack: start;
+                    -ms-flex-pack: start;
+                        justify-content: flex-start;
+                -ms-flex-line-pack: distribute;
+                    align-content: space-around;
+                -webkit-box-orient: horizontal;
+                -webkit-box-direction: normal;
+                    -ms-flex-direction: row;
+                        flex-direction: row; }
+                @media (min-width: 768px) {
+                  html body div.wrapper div.container main section.default div.works__list {
+                    -ms-flex-wrap: wrap;
+                        flex-wrap: wrap;
+                    margin-bottom: 60px;
+                    -webkit-box-pack: start;
+                        -ms-flex-pack: start;
+                            justify-content: flex-start;
+                    -ms-flex-line-pack: distribute;
+                        align-content: space-around;
+                    -webkit-box-orient: horizontal;
+                    -webkit-box-direction: normal;
+                        -ms-flex-direction: row;
+                            flex-direction: row; } }
+                @media (min-width: 961px) {
+                  html body div.wrapper div.container main section.default div.works__list {
+                    -ms-flex-wrap: wrap;
+                        flex-wrap: wrap;
+                    margin-bottom: 60px;
+                    -webkit-box-pack: start;
+                        -ms-flex-pack: start;
+                            justify-content: flex-start;
+                    -ms-flex-line-pack: distribute;
+                        align-content: space-around;
+                    -webkit-box-orient: horizontal;
+                    -webkit-box-direction: normal;
+                        -ms-flex-direction: row;
+                            flex-direction: row; } }
+                html body div.wrapper div.container main section.default div.works__list__work {
+                  display: -webkit-box;
+                  display: -ms-flexbox;
+                  display: flex;
+                  -webkit-box-orient: vertical;
+                  -webkit-box-direction: normal;
+                      -ms-flex-direction: column;
+                          flex-direction: column;
+                  -webkit-box-align: center;
+                      -ms-flex-align: center;
+                          align-items: center;
+                  margin-left: 12px;
+                  width: 41vw;
+                  margin-bottom: 40px; }
+                  @media (min-width: 768px) {
+                    html body div.wrapper div.container main section.default div.works__list__work {
+                      padding: 0;
+                      margin-bottom: 60px;
+                      margin-left: 15px;
+                      width: 28vw;
+                      -webkit-box-align: baseline;
+                          -ms-flex-align: baseline;
+                              align-items: baseline;
+                      -ms-flex-item-align: start;
+                          align-self: flex-start; } }
+                  @media (min-width: 961px) {
+                    html body div.wrapper div.container main section.default div.works__list__work {
+                      padding: 0;
+                      margin-bottom: 60px;
+                      margin-left: 15px;
+                      width: 300px;
+                      -webkit-box-align: baseline;
+                          -ms-flex-align: baseline;
+                              align-items: baseline;
+                      -ms-flex-item-align: start;
+                          align-self: flex-start; } }
+                  html body div.wrapper div.container main section.default div.works__list__work img {
+                    border: 1px solid #e3e3e3;
+                    width: 41vw;
+                    height: auto;
+                    margin-bottom: 5px; }
+                    @media (min-width: 768px) {
+                      html body div.wrapper div.container main section.default div.works__list__work img {
+                        width: 28vw;
+                        margin-bottom: 10px; } }
+                    @media (min-width: 961px) {
+                      html body div.wrapper div.container main section.default div.works__list__work img {
+                        width: 300px;
+                        margin-bottom: 10px; } }
+                    html body div.wrapper div.container main section.default div.works__list__work img.noneborder {
+                      border: none; }
+                  html body div.wrapper div.container main section.default div.works__list__work__title {
+                    width: 41vw;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                        -ms-flex-direction: column;
+                            flex-direction: column; }
+                    @media (min-width: 768px) {
+                      html body div.wrapper div.container main section.default div.works__list__work__title {
+                        width: 28vw; } }
+                    @media (min-width: 961px) {
+                      html body div.wrapper div.container main section.default div.works__list__work__title {
+                        width: 300px; } }
+              html body div.wrapper div.container main section.default div.works div.chocolate {
+                margin-bottom: 0; }
+                html body div.wrapper div.container main section.default div.works div.chocolate div {
+                  padding-bottom: 0; }
+              html body div.wrapper div.container main section.default div.works div.chocolate__p {
+                margin-bottom: 40px; }
+            html body div.wrapper div.container main section.default div.about {
+              width: 100%;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-align: center;
+                  -ms-flex-align: center;
+                      align-items: center;
+              /* 子要素は縦方向に揃える */
+              -webkit-box-orient: vertical;
+              -webkit-box-direction: reverse;
+                  -ms-flex-direction: column-reverse;
+                      flex-direction: column-reverse; }
+              @media (min-width: 768px) {
+                html body div.wrapper div.container main section.default div.about {
+                  width: 767px;
+                  -webkit-box-orient: horizontal;
+                  -webkit-box-direction: normal;
+                      -ms-flex-direction: row;
+                          flex-direction: row;
+                  -webkit-box-pack: center;
+                      -ms-flex-pack: center;
+                          justify-content: center; } }
+              @media (min-width: 961px) {
+                html body div.wrapper div.container main section.default div.about {
+                  width: 767px;
+                  -webkit-box-orient: horizontal;
+                  -webkit-box-direction: normal;
+                      -ms-flex-direction: row;
+                          flex-direction: row;
+                  -webkit-box-pack: center;
+                      -ms-flex-pack: center;
+                          justify-content: center; } }
+              html body div.wrapper div.container main section.default div.about img {
+                background-color: #dcf5ec;
+                width: 30vw;
+                height: auto;
+                margin-left: 0; }
+                @media (min-width: 768px) {
+                  html body div.wrapper div.container main section.default div.about img {
+                    margin-left: 60px;
+                    width: 150px; } }
+                @media (min-width: 961px) {
+                  html body div.wrapper div.container main section.default div.about img {
+                    margin-left: 60px;
+                    width: 150px; } }
+              html body div.wrapper div.container main section.default div.about br {
+                display: none; }
+                @media (min-width: 768px) {
+                  html body div.wrapper div.container main section.default div.about br {
+                    display: inline; } }
+                @media (min-width: 961px) {
+                  html body div.wrapper div.container main section.default div.about br {
+                    display: inline; } }
+              html body div.wrapper div.container main section.default div.about div.profile {
+                width: 85%;
+                margin-left: 0;
+                margin-right: 0;
+                margin-bottom: 10px; }
+                @media (min-width: 768px) {
+                  html body div.wrapper div.container main section.default div.about div.profile {
+                    margin-left: 20px;
+                    width: 100%;
+                    margin-bottom: 0; } }
+                @media (min-width: 961px) {
+                  html body div.wrapper div.container main section.default div.about div.profile {
+                    margin-left: 20px;
+                    width: 100%;
+                    margin-bottom: 0; } }
+                html body div.wrapper div.container main section.default div.about div.profile p {
+                  margin-bottom: 10px; }
+                  @media (min-width: 768px) {
+                    html body div.wrapper div.container main section.default div.about div.profile p {
+                      margin-bottom: 0; } }
+                  @media (min-width: 961px) {
+                    html body div.wrapper div.container main section.default div.about div.profile p {
+                      margin-bottom: 0; } }
+                html body div.wrapper div.container main section.default div.about div.profile dl dt {
+                  float: left;
+                  text-align: left; }
+                html body div.wrapper div.container main section.default div.about div.profile dl dd {
+                  margin-left: 0;
+                  margin-bottom: 5px; }
+                  @media (min-width: 768px) {
+                    html body div.wrapper div.container main section.default div.about div.profile dl dd {
+                      margin-left: 110px; } }
+                  @media (min-width: 961px) {
+                    html body div.wrapper div.container main section.default div.about div.profile dl dd {
+                      margin-left: 110px; } }
+            html body div.wrapper div.container main section.default div.skill {
+              width: 100%;
+              margin-bottom: 0; }
+              @media (min-width: 768px) {
+                html body div.wrapper div.container main section.default div.skill {
+                  width: 767px;
+                  margin-bottom: 30px; } }
+              @media (min-width: 961px) {
+                html body div.wrapper div.container main section.default div.skill {
+                  width: 960px;
+                  margin-bottom: 30px; } }
+              html body div.wrapper div.container main section.default div.skill div {
+                margin-bottom: 0;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -ms-flex-pack: distribute;
+                    justify-content: space-around;
+                /* 子要素は縦方向に揃える */
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                        flex-direction: column; }
+                @media (min-width: 768px) {
+                  html body div.wrapper div.container main section.default div.skill div {
+                    margin-bottom: 60px;
+                    -ms-flex-pack: distribute;
+                        justify-content: space-around;
+                    -webkit-box-orient: horizontal;
+                    -webkit-box-direction: normal;
+                        -ms-flex-direction: row;
+                            flex-direction: row; } }
+                @media (min-width: 961px) {
+                  html body div.wrapper div.container main section.default div.skill div {
+                    margin-bottom: 60px;
+                    -ms-flex-pack: distribute;
+                        justify-content: space-around;
+                    -webkit-box-orient: horizontal;
+                    -webkit-box-direction: normal;
+                        -ms-flex-direction: row;
+                            flex-direction: row; } }
+                html body div.wrapper div.container main section.default div.skill div div {
+                  margin: 20px 30px 20px 30px;
+                  -webkit-box-flex: 1;
+                      -ms-flex: 1;
+                          flex: 1;
+                  -webkit-box-align: center;
+                      -ms-flex-align: center;
+                          align-items: center; }
+                  @media (min-width: 768px) {
+                    html body div.wrapper div.container main section.default div.skill div div {
+                      margin: 0 22px 0 20px; } }
+                  @media (min-width: 961px) {
+                    html body div.wrapper div.container main section.default div.skill div div {
+                      margin: 0 30px 0 20px; } }
+                  html body div.wrapper div.container main section.default div.skill div div p {
+                    padding-left: 0; }
+                    @media (min-width: 768px) {
+                      html body div.wrapper div.container main section.default div.skill div div p {
+                        padding-left: 18px; } }
+                    @media (min-width: 961px) {
+                      html body div.wrapper div.container main section.default div.skill div div p {
+                        padding-left: 20px; } }
+                  html body div.wrapper div.container main section.default div.skill div div img {
+                    width: 60px;
+                    height: auto;
+                    opacity: 0.9; }
+            html body div.wrapper div.container main section.default div.sns {
+              margin-bottom: 100px;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-orient: vertical;
+              -webkit-box-direction: normal;
+                  -ms-flex-direction: column;
+                      flex-direction: column; }
+              html body div.wrapper div.container main section.default div.sns p {
+                margin-bottom: 40px;
+                text-align: center; }
+                html body div.wrapper div.container main section.default div.sns p.mailto {
+                  margin-bottom: 20px; }
+                html body div.wrapper div.container main section.default div.sns p br {
+                  display: inline; }
+                  @media (min-width: 768px) {
+                    html body div.wrapper div.container main section.default div.sns p br {
+                      display: none; } }
+                  @media (min-width: 961px) {
+                    html body div.wrapper div.container main section.default div.sns p br {
+                      display: none; } }
+              html body div.wrapper div.container main section.default div.sns nav ul {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                        justify-content: center; }
+                html body div.wrapper div.container main section.default div.sns nav ul li {
+                  margin: 0 10px;
+                  opacity: 0.8; }
+                  html body div.wrapper div.container main section.default div.sns nav ul li a {
+                    color: #262626; }
+            html body div.wrapper div.container main section.default div.detail {
+              margin-bottom: 10px;
+              width: 90%; }
+              @media (min-width: 768px) {
+                html body div.wrapper div.container main section.default div.detail {
+                  width: 700px; } }
+              @media (min-width: 961px) {
+                html body div.wrapper div.container main section.default div.detail {
+                  width: 767px; } }
+              html body div.wrapper div.container main section.default div.detail div {
+                margin-bottom: 0;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                /*水平方向は左右両端のスペースを含めて等間隔に配置*/
+                /*垂直方向は左右両端のスペースを含めて等間隔に配置*/
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                    -ms-flex-direction: column;
+                        flex-direction: column;
+                -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                        justify-content: center; }
+                @media (min-width: 768px) {
+                  html body div.wrapper div.container main section.default div.detail div {
+                    margin-bottom: 30px;
+                    -ms-flex-pack: distribute;
+                        justify-content: space-around;
+                    -ms-flex-line-pack: distribute;
+                        align-content: space-around;
+                    -webkit-box-orient: horizontal;
+                    -webkit-box-direction: normal;
+                        -ms-flex-direction: row;
+                            flex-direction: row; } }
+                @media (min-width: 961px) {
+                  html body div.wrapper div.container main section.default div.detail div {
+                    margin-bottom: 30px;
+                    -ms-flex-pack: distribute;
+                        justify-content: space-around;
+                    -ms-flex-line-pack: distribute;
+                        align-content: space-around;
+                    -webkit-box-orient: horizontal;
+                    -webkit-box-direction: normal;
+                        -ms-flex-direction: row;
+                            flex-direction: row; } }
+                html body div.wrapper div.container main section.default div.detail div img {
+                  border: 1px solid #e3e3e3;
+                  width: 60vw;
+                  height: auto; }
+                  @media (min-width: 768px) {
+                    html body div.wrapper div.container main section.default div.detail div img {
+                      width: 32vw; } }
+                  @media (min-width: 961px) {
+                    html body div.wrapper div.container main section.default div.detail div img {
+                      width: 100%; } }
+                  html body div.wrapper div.container main section.default div.detail div img.noneborder {
+                    border: none; }
+              html body div.wrapper div.container main section.default div.detail div.picture img.spfv {
+                width: 60vw; }
+                @media (min-width: 768px) {
+                  html body div.wrapper div.container main section.default div.detail div.picture img.spfv {
+                    width: 40vw; } }
+                @media (min-width: 961px) {
+                  html body div.wrapper div.container main section.default div.detail div.picture img.spfv {
+                    width: 380px; } }
+              html body div.wrapper div.container main section.default div.detail div.picture img.illust {
+                width: 60vw; }
+                @media (min-width: 768px) {
+                  html body div.wrapper div.container main section.default div.detail div.picture img.illust {
+                    width: 35vw; } }
+                @media (min-width: 961px) {
+                  html body div.wrapper div.container main section.default div.detail div.picture img.illust {
+                    width: 360px; } }
+              html body div.wrapper div.container main section.default div.detail div.picture img.lb {
+                width: 85vw; }
+                @media (min-width: 768px) {
+                  html body div.wrapper div.container main section.default div.detail div.picture img.lb {
+                    width: 75vw; } }
+                @media (min-width: 961px) {
+                  html body div.wrapper div.container main section.default div.detail div.picture img.lb {
+                    width: 100%; } }
+              html body div.wrapper div.container main section.default div.detail div.picture img.lr {
+                width: 60vw; }
+                @media (min-width: 768px) {
+                  html body div.wrapper div.container main section.default div.detail div.picture img.lr {
+                    width: 50vw; } }
+                @media (min-width: 961px) {
+                  html body div.wrapper div.container main section.default div.detail div.picture img.lr {
+                    width: 100%; } }
+              html body div.wrapper div.container main section.default div.detail div.picture img.mock {
+                width: 80vw; }
+                @media (min-width: 768px) {
+                  html body div.wrapper div.container main section.default div.detail div.picture img.mock {
+                    width: 80vw; } }
+                @media (min-width: 961px) {
+                  html body div.wrapper div.container main section.default div.detail div.picture img.mock {
+                    width: 100%; } }
+              html body div.wrapper div.container main section.default div.detail div.picture p {
+                margin-bottom: 30px; }
+                @media (min-width: 768px) {
+                  html body div.wrapper div.container main section.default div.detail div.picture p {
+                    margin-bottom: 0; } }
+                @media (min-width: 961px) {
+                  html body div.wrapper div.container main section.default div.detail div.picture p {
+                    margin-bottom: 0; } }
+              html body div.wrapper div.container main section.default div.detail div.external {
+                -webkit-transition: all .1s;
+                transition: all .1s;
+                background-color: #afafaf;
+                width: 100%;
+                height: 40px;
+                text-align: center;
+                margin-bottom: 60px;
+                position: relative; }
+                html body div.wrapper div.container main section.default div.detail div.external:hover {
+                  opacity: 0.7; }
+                @media (min-width: 768px) {
+                  html body div.wrapper div.container main section.default div.detail div.external {
+                    height: 50px; } }
+                @media (min-width: 961px) {
+                  html body div.wrapper div.container main section.default div.detail div.external {
+                    height: 50px; } }
+                html body div.wrapper div.container main section.default div.detail div.external a {
+                  color: #fff;
+                  text-decoration: none;
+                  letter-spacing: 1px;
+                  display: block;
+                  position: absolute;
+                  top: 25%;
+                  left: 0;
+                  width: 100%;
+                  height: 100%; }
+              html body div.wrapper div.container main section.default div.detail div.process {
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
+                width: 100%;
+                margin-bottom: 20px; }
+                html body div.wrapper div.container main section.default div.detail div.process p.process_picture {
+                  margin-left: 0;
+                  margin-bottom: 10px; }
+                  @media (min-width: 768px) {
+                    html body div.wrapper div.container main section.default div.detail div.process p.process_picture {
+                      margin-left: 30px; } }
+                  @media (min-width: 961px) {
+                    html body div.wrapper div.container main section.default div.detail div.process p.process_picture {
+                      margin-left: 40px; } }
+                  html body div.wrapper div.container main section.default div.detail div.process p.process_picture img {
+                    height: auto; }
+                    html body div.wrapper div.container main section.default div.detail div.process p.process_picture img.chocolate, html body div.wrapper div.container main section.default div.detail div.process p.process_picture img.coconala, html body div.wrapper div.container main section.default div.detail div.process p.process_picture img.hotspring, html body div.wrapper div.container main section.default div.detail div.process p.process_picture img.siteLogo {
+                      width: 60vw; }
+                      @media (min-width: 768px) {
+                        html body div.wrapper div.container main section.default div.detail div.process p.process_picture img.chocolate, html body div.wrapper div.container main section.default div.detail div.process p.process_picture img.coconala, html body div.wrapper div.container main section.default div.detail div.process p.process_picture img.hotspring, html body div.wrapper div.container main section.default div.detail div.process p.process_picture img.siteLogo {
+                          width: 36vw; } }
+                      @media (min-width: 961px) {
+                        html body div.wrapper div.container main section.default div.detail div.process p.process_picture img.chocolate, html body div.wrapper div.container main section.default div.detail div.process p.process_picture img.coconala, html body div.wrapper div.container main section.default div.detail div.process p.process_picture img.hotspring, html body div.wrapper div.container main section.default div.detail div.process p.process_picture img.siteLogo {
+                          width: 25vw; } }
+                    html body div.wrapper div.container main section.default div.detail div.process p.process_picture img.amusementpark {
+                      width: 70vw; }
+                      @media (min-width: 768px) {
+                        html body div.wrapper div.container main section.default div.detail div.process p.process_picture img.amusementpark {
+                          width: 500px; } }
+                      @media (min-width: 961px) {
+                        html body div.wrapper div.container main section.default div.detail div.process p.process_picture img.amusementpark {
+                          width: 600px; } }
+                    html body div.wrapper div.container main section.default div.detail div.process p.process_picture img.newpf {
+                      width: 60vw; }
+                html body div.wrapper div.container main section.default div.detail div.process p.nomgnleft {
+                  margin-left: 0; }
+                html body div.wrapper div.container main section.default div.detail div.process p.nomgnbottom {
+                  margin-bottom: 0; }
+                html body div.wrapper div.container main section.default div.detail div.process_explan {
+                  display: -webkit-box;
+                  display: -ms-flexbox;
+                  display: flex;
+                  -webkit-box-align: start;
+                      -ms-flex-align: start;
+                          align-items: flex-start;
+                  width: 80vw;
+                  margin-left: 0; }
+                  @media (min-width: 768px) {
+                    html body div.wrapper div.container main section.default div.detail div.process_explan {
+                      width: 100%;
+                      margin-left: 30px;
+                      -webkit-box-pack: start;
+                          -ms-flex-pack: start;
+                              justify-content: flex-start; } }
+                  @media (min-width: 961px) {
+                    html body div.wrapper div.container main section.default div.detail div.process_explan {
+                      width: 100%;
+                      margin-left: 30px;
+                      -webkit-box-pack: start;
+                          -ms-flex-pack: start;
+                              justify-content: flex-start; } }
+                  html body div.wrapper div.container main section.default div.detail div.process_explan p br {
+                    display: none; }
+                    @media (min-width: 768px) {
+                      html body div.wrapper div.container main section.default div.detail div.process_explan p br {
+                        display: inline; } }
+                    @media (min-width: 961px) {
+                      html body div.wrapper div.container main section.default div.detail div.process_explan p br {
+                        display: inline; } }
+              html body div.wrapper div.container main section.default div.detail div.arrow {
+                margin: 50px auto 60px;
+                width: 0;
+                height: 0;
+                opacity: 0.3;
+                border-left: 30px solid transparent;
+                border-right: 30px solid transparent;
+                border-top: 30px solid #5d5d5d; }
+            html body div.wrapper div.container main section.default div.explanation {
+              margin-bottom: 100px;
+              width: 80vw; }
+              @media (min-width: 768px) {
+                html body div.wrapper div.container main section.default div.explanation {
+                  width: 80vw; } }
+              @media (min-width: 961px) {
+                html body div.wrapper div.container main section.default div.explanation {
+                  width: 767px; } }
+              html body div.wrapper div.container main section.default div.explanation dl {
+                margin-left: 0; }
+                @media (min-width: 768px) {
+                  html body div.wrapper div.container main section.default div.explanation dl {
+                    margin-left: 5px; } }
+                @media (min-width: 961px) {
+                  html body div.wrapper div.container main section.default div.explanation dl {
+                    margin-left: 5px; } }
+                html body div.wrapper div.container main section.default div.explanation dl dt {
+                  float: none;
+                  text-align: left;
+                  margin-bottom: 2px; }
+                  @media (min-width: 768px) {
+                    html body div.wrapper div.container main section.default div.explanation dl dt {
+                      float: left; } }
+                  @media (min-width: 961px) {
+                    html body div.wrapper div.container main section.default div.explanation dl dt {
+                      float: left; } }
+                html body div.wrapper div.container main section.default div.explanation dl dd {
+                  margin-left: 0;
+                  margin-bottom: 4px; }
+                  @media (min-width: 768px) {
+                    html body div.wrapper div.container main section.default div.explanation dl dd {
+                      margin-left: 140px; } }
+                  @media (min-width: 961px) {
+                    html body div.wrapper div.container main section.default div.explanation dl dd {
+                      margin-left: 140px; } }
+              html body div.wrapper div.container main section.default div.explanation hr {
+                opacity: 0.4;
+                margin: 15px 0; }
+            html body div.wrapper div.container main section.default a.button {
+              background-color: #cbcbcb;
+              text-decoration: none;
+              height: 50px;
+              width: 90%;
+              margin-bottom: 0;
+              position: relative; }
+              @media (min-width: 768px) {
+                html body div.wrapper div.container main section.default a.button {
+                  width: 130px;
+                  margin-bottom: 100px; } }
+              @media (min-width: 961px) {
+                html body div.wrapper div.container main section.default a.button {
+                  width: 130px;
+                  margin-bottom: 100px; } }
+            html body div.wrapper div.container main section.default a.button::before {
+              content: 'MORE';
+              letter-spacing: 2px;
+              font-size: 15px;
+              position: absolute;
+              top: 14px;
+              bottom: 0;
+              right: 0;
+              left: 0;
+              margin: auto;
+              text-align: center;
+              color: #262626; }
+            html body div.wrapper div.container main section.default a.button::after {
+              content: '';
+              width: 8px;
+              height: 8px;
+              border: 0px;
+              border-top: solid 2px #5d5d5d;
+              border-right: solid 2px #5d5d5d;
+              -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              right: 0;
+              left: 230px;
+              margin: auto;
+              text-align: center; }
+              @media (min-width: 768px) {
+                html body div.wrapper div.container main section.default a.button::after {
+                  left: 85px; } }
+              @media (min-width: 961px) {
+                html body div.wrapper div.container main section.default a.button::after {
+                  left: 85px; } }
+            html body div.wrapper div.container main section.default div.more {
+              margin-bottom: 60px; }
+            html body div.wrapper div.container main section.default div.nav-links {
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -ms-flex-pack: distribute;
+                  justify-content: space-around;
+              width: 100vw;
+              margin-top: 30px; }
+              @media (min-width: 768px) {
+                html body div.wrapper div.container main section.default div.nav-links {
+                  -ms-flex-pack: distribute;
+                      justify-content: space-around;
+                  width: 768px;
+                  margin-top: 50px; } }
+              @media (min-width: 961px) {
+                html body div.wrapper div.container main section.default div.nav-links {
+                  -ms-flex-pack: distribute;
+                      justify-content: space-around;
+                  width: 960px;
+                  margin-top: 50px; } }
+              html body div.wrapper div.container main section.default div.nav-links div.nav-page a {
+                color: #262626;
+                text-decoration: none; }
+              html body div.wrapper div.container main section.default div.nav-links div.nav-right {
+                opacity: 0.4; }
+                html body div.wrapper div.container main section.default div.nav-links div.nav-right a {
+                  position: relative;
+                  display: block;
+                  width: 20px;
+                  height: 20px;
+                  text-decoration: none; }
+                html body div.wrapper div.container main section.default div.nav-links div.nav-right a::before {
+                  content: '';
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 30px;
+                  background-color: #5d5d5d;
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  right: 0;
+                  left: -12px;
+                  margin: auto;
+                  text-align: center; }
+                  @media (min-width: 768px) {
+                    html body div.wrapper div.container main section.default div.nav-links div.nav-right a::before {
+                      width: 60px;
+                      height: 60px;
+                      left: -15px; } }
+                  @media (min-width: 961px) {
+                    html body div.wrapper div.container main section.default div.nav-links div.nav-right a::before {
+                      width: 60px;
+                      height: 60px;
+                      left: -15px; } }
+                html body div.wrapper div.container main section.default div.nav-links div.nav-right a::after {
+                  content: '';
+                  width: 10px;
+                  height: 10px;
+                  border: 0px;
+                  border-top: solid 2px #fff;
+                  border-right: solid 2px #fff;
+                  -webkit-transform: rotate(45deg);
+                  transform: rotate(45deg);
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  right: 0;
+                  left: -8px;
+                  margin: auto;
+                  text-align: center; }
+                  @media (min-width: 768px) {
+                    html body div.wrapper div.container main section.default div.nav-links div.nav-right a::after {
+                      width: 15px;
+                      height: 15px;
+                      left: 0; } }
+                  @media (min-width: 961px) {
+                    html body div.wrapper div.container main section.default div.nav-links div.nav-right a::after {
+                      width: 15px;
+                      height: 15px;
+                      left: 0; } }
+              html body div.wrapper div.container main section.default div.nav-links div.nav-left {
+                opacity: 0.4; }
+                html body div.wrapper div.container main section.default div.nav-links div.nav-left a {
+                  position: relative;
+                  display: block;
+                  width: 20px;
+                  height: 20px;
+                  text-decoration: none; }
+                html body div.wrapper div.container main section.default div.nav-links div.nav-left a::before {
+                  content: '';
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 30px;
+                  background-color: #5d5d5d;
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  right: 0;
+                  left: -7px;
+                  margin: auto;
+                  text-align: center; }
+                  @media (min-width: 768px) {
+                    html body div.wrapper div.container main section.default div.nav-links div.nav-left a::before {
+                      width: 60px;
+                      height: 60px;
+                      left: -22px; } }
+                  @media (min-width: 961px) {
+                    html body div.wrapper div.container main section.default div.nav-links div.nav-left a::before {
+                      width: 60px;
+                      height: 60px;
+                      left: -22px; } }
+                html body div.wrapper div.container main section.default div.nav-links div.nav-left a::after {
+                  content: '';
+                  width: 10px;
+                  height: 10px;
+                  border: 0px;
+                  border-top: solid 2px #fff;
+                  border-right: solid 2px #fff;
+                  -webkit-transform: rotate(225deg);
+                  transform: rotate(225deg);
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  right: 0;
+                  left: 9px;
+                  margin: auto;
+                  text-align: center; }
+                  @media (min-width: 768px) {
+                    html body div.wrapper div.container main section.default div.nav-links div.nav-left a::after {
+                      width: 15px;
+                      height: 15px;
+                      left: 0; } }
+                  @media (min-width: 961px) {
+                    html body div.wrapper div.container main section.default div.nav-links div.nav-left a::after {
+                      width: 15px;
+                      height: 15px;
+                      left: 0; } }
+          html body div.wrapper div.container main section.about div.shortbio {
+            width: 88%;
+            margin-top: 0;
+            margin-bottom: 60px;
+            padding: 0; }
+            @media (min-width: 768px) {
+              html body div.wrapper div.container main section.about div.shortbio {
+                width: 660px;
+                margin-top: 50px;
+                margin-bottom: 0; } }
+            @media (min-width: 961px) {
+              html body div.wrapper div.container main section.about div.shortbio {
+                width: 660px;
+                margin-top: 50px;
+                margin-bottom: 0; } }
+            html body div.wrapper div.container main section.about div.shortbio hr {
+              opacity: 0.4;
+              margin: 10px 0; }
+            html body div.wrapper div.container main section.about div.shortbio dl {
+              margin-left: 0; }
+              @media (min-width: 768px) {
+                html body div.wrapper div.container main section.about div.shortbio dl {
+                  margin-left: 5px; } }
+              @media (min-width: 961px) {
+                html body div.wrapper div.container main section.about div.shortbio dl {
+                  margin-left: 5px; } }
+              html body div.wrapper div.container main section.about div.shortbio dl dt {
+                float: none;
+                text-align: left;
+                font-weight: 600;
+                margin-bottom: 2px; }
+                @media (min-width: 768px) {
+                  html body div.wrapper div.container main section.about div.shortbio dl dt {
+                    float: left;
+                    margin-bottom: 0; } }
+                @media (min-width: 961px) {
+                  html body div.wrapper div.container main section.about div.shortbio dl dt {
+                    float: left;
+                    margin-bottom: 0; } }
+              html body div.wrapper div.container main section.about div.shortbio dl dd {
+                margin-left: 0;
+                margin-bottom: 5px; }
+                @media (min-width: 768px) {
+                  html body div.wrapper div.container main section.about div.shortbio dl dd {
+                    margin-left: 150px; } }
+                @media (min-width: 961px) {
+                  html body div.wrapper div.container main section.about div.shortbio dl dd {
+                    margin-left: 150px; } }
+            html body div.wrapper div.container main section.about div.shortbio p {
+              margin-left: 0;
+              margin-bottom: 20px; }
+              @media (min-width: 768px) {
+                html body div.wrapper div.container main section.about div.shortbio p {
+                  margin-left: 5px;
+                  margin-bottom: 20px; } }
+              @media (min-width: 961px) {
+                html body div.wrapper div.container main section.about div.shortbio p {
+                  margin-left: 5px;
+                  margin-bottom: 20px; } }
+              html body div.wrapper div.container main section.about div.shortbio p br {
+                display: none; }
+                @media (min-width: 768px) {
+                  html body div.wrapper div.container main section.about div.shortbio p br {
+                    display: inline; } }
+                @media (min-width: 961px) {
+                  html body div.wrapper div.container main section.about div.shortbio p br {
+                    display: inline; } }
+              html body div.wrapper div.container main section.about div.shortbio p a.noneborder {
+                text-decoration: underline; }
+      html body div.wrapper footer {
+        color: #262626;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        /* 子要素をflexboxにより縦方向に揃える */
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        /* 子要素をflexboxにより中央に配置する */
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        /* 子要素をflexboxにより中央に配置する */
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        padding-bottom: 30px; }
+        html body div.wrapper footer div.scrollTop {
+          background-color: #fff;
+          width: 50px;
+          height: 50px;
+          opacity: 0.6;
+          position: fixed;
+          right: 15px;
+          bottom: 15px;
+          border: 1px solid #5d5d5d;
+          border-radius: 8px; }
+          @media (min-width: 768px) {
+            html body div.wrapper footer div.scrollTop {
+              width: 70px;
+              height: 70px;
+              right: 60px;
+              bottom: 60px; } }
+          @media (min-width: 961px) {
+            html body div.wrapper footer div.scrollTop {
+              width: 70px;
+              height: 70px;
+              right: 60px;
+              bottom: 60px; } }
+          html body div.wrapper footer div.scrollTop a {
+            position: relative;
+            display: block;
+            width: 50px;
+            height: 50px;
+            text-decoration: none; }
+            @media (min-width: 768px) {
+              html body div.wrapper footer div.scrollTop a {
+                width: 70px;
+                height: 70px; } }
+            @media (min-width: 961px) {
+              html body div.wrapper footer div.scrollTop a {
+                width: 70px;
+                height: 70px; } }
+          html body div.wrapper footer div.scrollTop a::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            border: 0px;
+            border-top: solid 5px #5d5d5d;
+            border-right: solid 5px #5d5d5d;
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            position: absolute;
+            top: 5px;
+            bottom: 0;
+            right: 1px;
+            left: 0;
+            margin: auto;
+            text-align: center; }
+        html body div.wrapper footer small {
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 200;
+          letter-spacing: 1px;
+          text-align: center; }

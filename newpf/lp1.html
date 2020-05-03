@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Gattonero このサイトはRayのポートフォリオサイトです。</title>
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <!--  <link rel="stylesheet" type="text/css" media="all" href="css/reset.css">-->
+  <link rel="stylesheet" type="text/css" media="all" href="css/style.css">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <!--      <h1><a class="sLogo" href="index.html">Reiko's Portfolio</a></h1>-->
+      <h1><a href="index.html"><img class="logo" src="images/logo.gif" alt="ポートフォリオサイトロゴ"></a></h1>
+      <nav class="global">
+        <ul>
+          <li><a class="gNaviLink" href="about.html">About</a></li>
+          <li><a class="gNaviLink" href="works.html">Works</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <main>
+        <section class="default">
+          <h2 class="title__sub"><span class="business">実務</span></h2>
+          <h2 class="title"><ruby>Gynotal<rt>ギノタル</rt></ruby></h2>
+          <div class="detail">
+            <div class="picture">
+              <p><img class="mock noneborder" src="images/lp_mock.jpg" alt="産科ジェルのランディングページモックアップ画像"></p>
+            </div>
+          </div>
+          <!--          <div class="detail">-->
+          <div class="explanation">
+            <dl>
+              <dt>カテゴリー</dt>
+              <dd>デザイン&nbsp;-&nbsp;ランディングページ</dd>
+            </dl>
+            <hr>
+            <dl>
+              <dt>依頼内容</dt>
+              <dd>海外の産科用医薬品を日本に輸入販売するため紹介ページを制作する<br>※案件都合によりWebページ制作は2021年の予定</dd>
+            </dl>
+            <hr>
+            <dl>
+              <dt>ターゲット</dt>
+              <dd>産婦人科の医療関係者、妊婦</dd>
+              <dt>コンセプト</dt>
+              <dd>清潔感</dd>
+            </dl>
+            <hr>
+            <dl>
+              <dt>サイズ</dt>
+              <dd>（単位：px）</dd>
+              <dt>担当範囲</dt>
+              <dd>デザイン</dd>
+              <dt>使用ツール</dt>
+              <dd>Adobe XD</dd>
+              <dt>制作時間</dt>
+              <dd>xx時間</dd>
+            </dl>
+            <hr>
+            <dl>
+              <dt>制作のポイント</dt>
+              <dd>産科の医療従事者が患者である妊婦に対して出産の過程で使用する製品なので、ファーストビューに製品情報へスクロールするボタンを設置するなど、医療従事者が必要な情報の掲載箇所へすぐに遷移できる構成にしています。患者の閲覧も想定して、ページ前半は医療従事者でなくても分かりやすいように製品の使用イメージを図解し、後半は医療従事者向けに必要な製品情報を列挙しました。デザインに関してはジェル状の医薬品なので水や清潔感を連想する素材を、カラーは製品のパッケージを参考に設定しました。製品イメージは一部仮の画像を使用しています。</dd>
+            </dl>
+          </div>
+          <!--          </div>-->
+          <div class="detail">
+            <h3 class="processTitle">スクリーンショット</h3>
+            <div class="picture">
+              <p><img class="mock" src="images/gynotal_lp.jpg" alt="産科ジェルのLP"></p>
+            </div>
+          </div>
+          <div class="nav-links">
+            <div class="nav-left"><a href="oldpf.html"></a></div>
+            <div class="nav-page">
+              <a href="works.html">一覧へ戻る</a>
+            </div>
+            <div class="nav-right"><a href="firstview1.html"></a></div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <!--    container-->
+    <footer>
+      <div class="scrollTop"><a href="#"></a></div>
+      <small>Copyright &copy; Reiko</small>
+    </footer>
+
+  </div>
+  <!--  wrapper-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!--scrollTopボタンの表示・非表示-->
+  <script>
+    $(function() {
+      var topBtn = $('div.scrollTop');
+      topBtn.hide();
+      //スクロールが100に達したらボタン表示
+      $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+          topBtn.fadeIn();
+        } else {
+          topBtn.fadeOut();
+        }
+      });
+      //スクロールしてトップ
+      topBtn.click(function() {
+        $('body,html').animate({
+          scrollTop: 0
+        }, 500);
+        return false;
+      });
+    });
+
+  </script>
+
+
+</body>
+
+</html>

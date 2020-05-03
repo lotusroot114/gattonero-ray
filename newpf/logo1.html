@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+
+  <title>Gattonero このサイトはRayのポートフォリオサイトです。</title>
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <link rel="icon" href="favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon-180x180.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <!--  <link rel="stylesheet" type="text/css" media="all" href="css/reset.css">-->
+  <link rel="stylesheet" type="text/css" media="all" href="css/style.css">
+  <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="wrapper">
+    <header>
+      <!--      <h1><a class="sLogo" href="index.html">Reiko's Portfolio</a></h1>-->
+      <h1><a href="index.html"><img class="logo" src="images/logo.gif" alt="ポートフォリオサイトロゴ"></a></h1>
+      <nav class="global">
+        <ul>
+          <li><a class="gNaviLink" href="about.html">About</a></li>
+          <li><a class="gNaviLink" href="works.html">Works</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div class="container">
+      <main>
+        <section class="default">
+          <h2 class="title__sub"><span class="title__sub--color">訓練校課題</span></h2>
+          <h2 class="title">株式会社<ruby>ADJAS<rt>アドジャス</rt></ruby></h2>
+          <div class="detail">
+            <div class="picture">
+              <p><img class="mock noneborder" src="images/adjas_logo.jpg" alt="環境コンサルタント企業のロゴ・名刺画像"></p>
+            </div>
+          </div>
+          <div class="explanation">
+            <dl>
+              <dt>カテゴリー</dt>
+              <dd>デザイン&nbsp;-&nbsp;コーポレートロゴ・名刺</dd>
+            </dl>
+            <hr>
+            <dl>
+              <dt>課題内容</dt>
+              <dd>環境コンサルタント企業の認知度向上のためコーポレートロゴ、名刺デザインを作成する</dd>
+            </dl>
+            <hr>
+            <dl>
+              <dt>ターゲット</dt>
+              <dd>環境保全に関心のある一般人、既存社員</dd>
+              <dt>コンセプト</dt>
+              <dd>蛍</dd>
+            </dl>
+            <hr>
+            <dl>
+              <dt>担当範囲</dt>
+              <dd>デザイン</dd>
+              <dt>使用ツール</dt>
+              <dd>Illustrator</dd>
+              <dt>制作時間</dt>
+              <dd>6時間</dd>
+            </dl>
+            <hr>
+            <dl>
+              <dt>制作のポイント</dt>
+              <dd>顧客が環境コンサルタント企業の設定であるため水色・緑をテーマカラーとし、環境保全と社員のスピリットの象徴として「蛍」の黄色い光をアクセントにしました。ロゴタイプは右に傾け前進するイメージを持たせ、安定感のある太字とスマートな細字の2タイプ制作しました。</dd>
+            </dl>
+          </div>
+          <div class="nav-links">
+            <div class="nav-left"><a href="firstview1.html"></a></div>
+            <div class="nav-page">
+              <a href="works.html">一覧へ戻る</a>
+            </div>
+            <div class="nav-right"><a href="game1.html"></a></div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <!--    container-->
+    <footer>
+      <div class="scrollTop"><a href="#"></a></div>
+      <small>Copyright &copy; Reiko</small>
+    </footer>
+
+  </div>
+  <!--  wrapper-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+  <!--scrollTopボタンの表示・非表示-->
+  <script>
+    $(function() {
+      var topBtn = $('div.scrollTop');
+      topBtn.hide();
+      //スクロールが100に達したらボタン表示
+      $(window).scroll(function() {
+        if ($(this).scrollTop() > 200) {
+          topBtn.fadeIn();
+        } else {
+          topBtn.fadeOut();
+        }
+      });
+      //スクロールしてトップ
+      topBtn.click(function() {
+        $('body,html').animate({
+          scrollTop: 0
+        }, 500);
+        return false;
+      });
+    });
+
+  </script>
+
+
+</body>
+
+</html>
