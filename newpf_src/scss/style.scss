@@ -1,0 +1,2707 @@
+@charset "utf-8";
+
+//scss files import
+@import "reset";
+
+//web font
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+
+$backgroundColor: #ffffff;
+$backgroundColorBody:#f0f0f0;
+$fontColor: #262626;
+$borderColor: #e3e3e3;
+
+$school: #21b77d;
+$selfstudy: #53b3dd;
+$business: #DD5357;
+
+$pc: 961px; // PC
+$tab: 768px; // タブレット
+$spl: 425px; // スマホLサイズ
+$spm: 375px; // スマホmサイズ
+
+@mixin pc {
+  @media (min-width: ($pc)) {
+    @content;
+  }
+}
+
+@mixin tab {
+  @media (min-width: ($tab)) {
+    @content;
+  }
+}
+
+@mixin spl {
+  @media (min-width: ($spl)) {
+    @content;
+  }
+}
+
+@mixin spm {
+  @media (min-width: ($spm)) {
+    @content;
+  }
+}
+
+//フォントサイズ統一
+@mixin fSize {
+  font-size: 13px;
+
+  @include tab {
+    font-size: 16px;
+  }
+
+  ;
+
+  @include pc {
+    font-size: 16px;
+  }
+
+  ;
+
+}
+
+//hover時のfade
+@mixin hFade {
+  transition: all .1s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+}
+
+
+
+
+
+
+//fvアニメーション設定
+@mixin animationValue($name, $duration, $function, $delay, $count, $state) {
+  animation: $name $duration+s $function $delay+s $count $state;
+}
+
+@mixin keyframes($name) {
+
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+
+
+/*  スマホ対応で表示されてしまう横スクロールバー非表示 iOS対応*/
+html {
+  overflow: auto;
+
+
+  body {
+    font-family: "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, sans-serif;
+
+    /*  スマホ対応で表示されてしまう横スクロールバー非表示 デスクトップのみの対応*/
+    overflow-x: hidden;
+
+    /* div.wrapper
+---------------------------------------*/
+    div.wrapper {
+      //テスト用
+      //      background-color: #ffdfdf;
+
+
+      //コンテンツ全体の幅を指定
+      //    width: 1080px;
+      width: auto;
+      //コンテンツ全体の余白を指定
+      margin: 0 auto;
+      font-family: 'Noto Sans JP', sans-serif;
+      //    font-weight: 200;
+      //      background-color: $backgroundColor;
+      display: flex;
+      /* 子要素は縦方向に揃える */
+      flex-direction: column;
+      align-items: center;
+
+
+
+      //文字色
+      span {
+
+        &.title__sub--color {
+          //          opacity: 0.4;
+          color: #fff;
+        }
+
+        &.business {
+          color: $business;
+        }
+      }
+
+      a {
+        @include fSize;
+        @include hFade;
+        text-decoration: none;
+        color: $fontColor;
+
+        &.border {
+          text-decoration: underline;
+        }
+
+      }
+
+      p {
+        @include fSize;
+
+      }
+
+      dt {
+        @include fSize;
+        font-weight: 600;
+      }
+
+      dl {
+        @include fSize;
+
+
+      }
+
+
+
+
+      h1 {
+
+        //                        テスト用
+        //          background-color: #f7f707;
+        //        a.sLogo {
+        //          font-size: 0.55em;
+        //          //        height: 28px;
+        //          font-weight: 500;
+        //          //          margin-bottom: 40px;
+        //          margin-left: 16px;
+        //
+        //          //includeの前はスマホ向け
+        //          @include tab {
+        //            //                        テスト用
+        //            //          background-color: blue;
+        //            font-size: 0.7em;
+        //            //            height: 36px;
+        //            margin-left: 30px;
+        //          }
+        //
+        //          ;
+        //
+        //          @include pc {
+        //            font-size: 0.7em;
+        //            //            height: 36px;
+        //            margin-left: 30px;
+        //          }
+        //
+        //          ;
+        //
+        //          letter-spacing: 0.05em;
+        //          color: $fontColor;
+        //        }
+
+        img.logo {
+          //                        テスト用
+          //          background-color: blue;
+
+          width: 150px;
+          height: auto;
+          margin-left: 16px;
+
+          padding-bottom: 0px;
+
+          @include tab {
+            width: 200px;
+            margin-left: 30px;
+          }
+
+          ;
+
+          @include pc {
+            width: 200px;
+
+            margin-left: 30px;
+          }
+
+          ;
+
+
+        }
+
+      }
+
+
+      h2 {
+
+        //                        テスト用
+        //        background-color: blue;
+
+        letter-spacing: 0.15em;
+        font-size: 2em;
+        font-weight: 200;
+        margin-bottom: 50px;
+
+        @include tab {
+          letter-spacing: 0.2em;
+          font-size: 2.75em;
+          margin-bottom: 50px;
+        }
+
+        ;
+
+        @include pc {
+          letter-spacing: 0.2em;
+          font-size: 3em;
+          margin-bottom: 50px;
+        }
+
+        ;
+
+        &.title {
+
+          text-align: center;
+          letter-spacing: 0.15em;
+          font-size: 1.3em;
+          font-weight: 500;
+          margin-bottom: 40px;
+
+          @include tab {
+            letter-spacing: 0.2em;
+            font-size: 1.8em;
+          }
+
+          ;
+
+          @include pc {
+            letter-spacing: 0.2em;
+            font-size: 2em;
+          }
+
+          ;
+
+          &__sub {
+            font-weight: 500;
+            margin-bottom: 10px;
+            font-size: 0.8em;
+
+            @include tab {
+              font-size: 1em;
+            }
+
+            ;
+
+            @include pc {
+              font-size: 1.1em;
+            }
+
+          }
+
+        }
+
+
+
+      }
+
+
+      h3 {
+        //                        テスト用
+        //        background-color: blue;
+
+
+
+        &.reduction__name {
+          letter-spacing: 0.1em;
+          font-size: 1.2em;
+          font-weight: 300;
+          margin-left: 8px;
+          margin-bottom: 2px;
+
+          @include tab {
+            letter-spacing: 0.07em;
+            font-size: 1.2em;
+            margin-left: 10px;
+          }
+
+          ;
+
+          @include pc {
+            letter-spacing: 0.1em;
+            font-size: 1.7em;
+            margin-left: 12px;
+          }
+
+          ;
+        }
+
+        &.processTitle {
+          text-align: center;
+          letter-spacing: 0.15em;
+          font-size: 1.2em;
+          font-weight: 500;
+          margin-bottom: 40px;
+
+          @include tab {
+            letter-spacing: 0.2em;
+            font-size: 1.6em;
+          }
+
+          ;
+
+          @include pc {
+            letter-spacing: 0.2em;
+            font-size: 1.8em;
+          }
+
+          ;
+
+
+
+        }
+
+
+
+
+      }
+
+
+
+
+      /* header
+---------------------------------------*/
+      header {
+        width: 100%;
+        padding-top: 0;
+        display: flex;
+        //navを右端に寄せるため
+        justify-content: space-between;
+        /* 子要素は縦方向に揃える */
+        flex-direction: row;
+        align-items: baseline;
+
+        //      テスト用
+        //        background-color: beige;
+
+
+        //includeの前はスマホ向け
+        @include tab {
+          width: 100%;
+          padding-top: 8px;
+        }
+
+        ;
+
+        @include pc {
+          width: 960px;
+          padding-top: 8px;
+        }
+
+        ;
+
+
+        nav.global {
+          //      テスト用
+          //          background-color: #ffff1c;
+
+          display: flex;
+
+          align-items: center;
+          /* 子要素は縦方向に揃える */
+          flex-direction: column;
+
+          margin-right: 8px;
+
+          @include tab {
+            flex-direction: row;
+            //nav要素の縦方向はベースラインに揃える
+            align-items: baseline;
+          }
+
+          ;
+
+          @include pc {
+            flex-direction: row;
+            //nav要素の縦方向はベースラインに揃える
+            align-items: baseline;
+          }
+
+          ;
+
+          ul {
+            //      テスト用
+            //          background-color: #ffff1c;
+            //余白をなくす
+            font-size: 0;
+            padding-right: 8px;
+
+            //          width: 100%;
+
+            @include tab {
+              padding-right: 20px;
+            }
+
+            ;
+
+            @include pc {
+              padding-right: 20px;
+
+            }
+
+            ;
+
+
+            li {
+              //横並び float:left指定だと要素が浮いて上に寄ってしまうので使用しない
+              display: inline-block;
+              //アイコンの位置調整
+              padding-left: 10px;
+              font-weight: 400;
+
+
+              @include tab {
+                padding-left: 20px;
+              }
+
+              ;
+
+              @include pc {
+                padding-left: 20px;
+              }
+
+              ;
+
+              a {
+
+                &.gNaviLink {
+                  //      テスト用
+                  //              background-color: #9cafff;
+
+                  text-decoration: none;
+                  font-size: 14px;
+                  letter-spacing: 0.08em;
+
+
+                  @include tab {
+                    //            font-size: 1.1em;
+                    font-size: 16px;
+                  }
+
+                  ;
+
+                  @include pc {
+                    font-size: 16px;
+                  }
+
+                  ;
+
+                }
+
+              }
+
+
+            }
+
+            //li終わり
+
+          }
+
+          //ul終わり
+        }
+
+      }
+
+      //*--------------------//header終わり
+
+
+      div.container {
+
+        //      テスト用
+        //        background-color: #c97fff;
+        width: 100%;
+
+
+
+        //fvの背景設定
+        div.fv {
+
+          width: 100%;
+
+          display: flex;
+          /* 子要素は縦方向に揃える */
+          flex-direction: column;
+          //子要素は中央揃え
+          align-items: center;
+
+
+
+          /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f2f6f8+0,d8e1e7+50,b5c6d0+51,e0eff9+100;Grey+Gloss+%232 */
+          background: #f2f6f8;
+          /* Old browsers */
+          background: -moz-linear-gradient(-45deg, #f2f6f8 0%, #d8e1e7 50%, #b5c6d0 51%, #e0eff9 100%);
+          /* FF3.6-15 */
+          background: -webkit-linear-gradient(-45deg, #f2f6f8 0%, #d8e1e7 50%, #b5c6d0 51%, #e0eff9 100%);
+          /* Chrome10-25,Safari5.1-6 */
+          background: linear-gradient(135deg, #f2f6f8 0%, #d8e1e7 50%, #b5c6d0 51%, #e0eff9 100%);
+          /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+          filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2f6f8', endColorstr='#e0eff9', GradientType=1);
+          /* IE6-9 fallback on horizontal gradient */
+
+
+          div.fv__image {
+
+            //      テスト用
+            //            background-color: aquamarine;
+
+            width: 100%;
+            height: 80vh;
+            //横スクロールバー非表示
+            overflow: hidden;
+            position: relative;
+
+            //        height: 300px;
+            //        background-image: linear-gradient(109.6deg, rgba(253, 199, 141, 1) 11.3%, rgba(249, 143, 253, 1) 100.2%);
+            background-image: url(../images/fv.png);
+            background-repeat: no-repeat;
+            background-position: 60% 14%;
+            background-size: 95vw auto;
+
+
+            @include spm {
+              //              height: 80vh;
+              background-size: 95vw auto;
+
+            }
+
+            @include spl {
+              //              height: 80vh;
+              //              height: 80vh;
+              background-size: 90vw auto;
+
+            }
+
+
+
+            @include tab {
+              width: 720px;
+              background-position: right bottom;
+              //              background-size: 65vw auto;
+              background-size: 450px auto;
+              //              height: 70vh;
+              height: 360px;
+            }
+
+            ;
+
+            @include pc {
+              width: 960px;
+              background-position: right bottom;
+              //              background-size: 45vw auto;
+              background-size: 550px auto;
+              //              height: 60vh;
+              height: 420px;
+            }
+
+            ;
+
+            p {
+              padding: 6px 6px 6px 16px;
+              position: absolute;
+              color: #000;
+              font-weight: 600;
+              //                        background-color: rgba(255, 255, 255, 0.9);
+
+              &.slideInRight {
+                top: 55%;
+                left: 65px;
+                font-size: 1.5em;
+                //                font-size: 1.6em;
+                animation-name: slideInRight;
+                animation-duration: 1s;
+                animation-timing-function: ease;
+                font-weight: 600;
+
+                @include spm {
+                  top: 63%;
+                  left: 8px;
+                  font-size: 1.7em;
+
+                }
+
+                @include spl {
+                  top: 67%;
+                  left: 16px;
+                  font-size: 1.7em;
+
+                }
+
+                @include tab {
+                  top: 16%;
+                  left: 60px;
+                  font-size: 1.8em;
+                }
+
+                ;
+
+                @include pc {
+                  top: 16%;
+                  //                left: 100px;
+                  left: 8%;
+                  font-size: 2.5em;
+                }
+
+                ;
+
+
+                span {
+
+                  &.a {
+                    background: linear-gradient(transparent 90%, $selfstudy 0%);
+                  }
+
+                  &.b {
+                    background: linear-gradient(transparent 90%, $business 0%);
+                  }
+                }
+
+
+              }
+
+              &.slideInRightNext {
+
+                //              top: 15%;
+                top: 89%;
+                left: 8px;
+                font-size: 0.75em;
+                animation-name: slideInRightNext;
+                animation-duration: 1s;
+                animation-timing-function: ease-out;
+                font-weight: 500;
+
+
+                @include spm {
+                  top: 85%;
+                  left: 8px;
+                  font-size: 0.75em;
+
+                }
+
+                @include spl {
+                  top: 90%;
+                  left: 16px;
+                  font-size: 0.8em;
+
+                }
+
+
+                @include tab {
+                  top: 77%;
+                  left: 60px;
+                  font-size: 0.88em;
+                }
+
+                ;
+
+                @include pc {
+                  top: 85%;
+                  //                left: 100px;
+                  left: 8%;
+                  font-size: 0.95em;
+                }
+
+                ;
+              }
+
+              @for $cnt from 1 through 6 {
+
+                // nth-child の中の数字を #{$cnt} として現在の繰り返しているカウント数にする
+                &.item:nth-child(#{$cnt}) {
+                  // @include で animation プロパティを定義した mixin を呼び出す
+                  // 現在のカウント数（$cnt）に少数値をかけた値を $delay 
+                  // に指定することで時間差をつけることができる
+                  @include animationValue(example, 1.0, ease, $cnt * 0.6, 1, forwards);
+                  opacity: 0;
+                }
+              }
+            }
+
+            // ↓through の後の数字を子要素の数字にすることで
+            // ↓{}（ブレース）内の処理をその回数分繰り返します。
+
+
+            @include keyframes(example) {
+              0% {
+                opacity: 0;
+                transform: translate(0, 50px);
+              }
+
+              100% {
+                opacity: 1;
+                transform: translate(0, 0);
+              }
+            }
+
+            @include tab {
+              @include keyframes(example) {
+                0% {
+                  opacity: 0;
+                  transform: translate(150px, 0);
+                }
+
+                100% {
+                  opacity: 1;
+                  transform: translate(0, 0);
+                }
+              }
+            }
+
+            ;
+
+            @include pc {
+              @include keyframes(example) {
+                0% {
+                  opacity: 0;
+                  transform: translate(150px, 0);
+                }
+
+                100% {
+                  opacity: 1;
+                  transform: translate(0, 0);
+                }
+              }
+            }
+
+            ;
+
+            br.fvbr {
+              display: inline;
+
+
+              @include spm {
+                display: none;
+
+              }
+
+              @include spl {
+                display: none;
+
+              }
+
+
+              @include tab {
+                //                display: none;
+                display: inline;
+              }
+
+              ;
+
+              @include pc {
+                display: inline;
+              }
+
+              ;
+            }
+
+          }
+
+        }
+
+        //*--------------------//div.fv終わり
+
+
+
+        main {
+
+          //      テスト用
+          //          background-color: blue;
+          width: 90%;
+
+          //コンテンツ中央配置のため左右はauto指定
+          margin: 30px auto 100px;
+
+          @include tab {
+            margin: 50px auto 100px;
+          }
+
+          ;
+
+          @include pc {
+            margin: 100px auto;
+          }
+
+          ;
+
+          //section.defaultの設定
+          section.default {
+            //      テスト用
+            //            background-color: #ffff1c;
+
+            display: flex;
+            /* 子要素は縦方向に揃える */
+            flex-direction: column;
+            //子要素は中央揃え
+            align-items: center;
+            margin-bottom: 100px;
+
+
+            //分類の装飾
+            div.reduction {
+
+              //      テスト用
+              //              background-color: #87edff;
+
+              width: 100%;
+              display: flex;
+              align-items: flex-start;
+
+              margin-bottom: 40px;
+
+              border-left: 8px solid #677072;
+              //              border-left: 8px solid #afafaf;
+              //              border-bottom: 1px solid #afafaf;
+
+              //              background-image: linear-gradient(135deg, #c8d7dc 0%, #e3eaed 63%, #f2f5f6 100%);
+              background-image: linear-gradient(135deg, #99a5a8 0%, #e3eaed 63%, #f2f5f6 100%);
+
+              @include tab {
+                //                width: 90vw;
+                margin-bottom: 40px;
+                align-items: flex-start;
+              }
+
+              ;
+
+              @include pc {
+                margin-bottom: 40px;
+                align-items: flex-start;
+              }
+
+              ;
+
+
+            }
+
+            //*--------------------//div.reduction終わり
+
+
+            //index.htmlで使用するworks
+            div.works_index {
+
+              //      テスト用
+              //              background-color: aquamarine;
+
+
+
+              width: 100%;
+
+              @include tab {
+                max-width: 960px;
+              }
+
+              ;
+
+              @include pc {
+                width: 960px;
+              }
+
+              ;
+
+
+
+              div {
+                //      テスト用
+                //              background-color: aquamarine;
+                padding-bottom: 0;
+                display: flex;
+                align-items: center;
+                /* 子要素は縦方向に揃える */
+                flex-direction: column;
+
+                @include tab {
+                  padding-bottom: 40px;
+                  //                display: flex;
+                  flex-direction: row;
+                  /*水平方向は左右両端のスペースを含めて等間隔に配置*/
+                  justify-content: space-around;
+                  /*垂直方向は左右両端のスペースを含めて等間隔に配置*/
+                  align-content: space-around;
+                }
+
+                ;
+
+                @include pc {
+                  padding-bottom: 40px;
+                  //                display: flex;
+                  flex-direction: row;
+                  /*水平方向は左右両端のスペースを含めて等間隔に配置*/
+                  justify-content: space-around;
+                  /*垂直方向は左右両端のスペースを含めて等間隔に配置*/
+                  align-content: space-around;
+
+                }
+
+                ;
+
+                //サムネイル
+                img {
+                  border: 1px solid $borderColor;
+                  width: 80vw;
+                  margin-bottom: 40px;
+                  height: auto;
+                  //      テスト用
+                  //                background-color: beige;
+                  //画像を中央の位置でトリミングする
+                  //                object-fit: cover;
+
+                  @include tab {
+                    //                  max-width: 300px * (4/5);
+                    width: 28vw;
+                    margin-bottom: 0;
+                    margin: 0 5px;
+                  }
+
+                  ;
+
+                  @include pc {
+                    width: 300px * (4/5);
+                    margin-bottom: 0;
+                  }
+
+                  ;
+
+                }
+
+
+              }
+            }
+
+            //*--------------------//div.works_index終わり
+
+
+            //works.htmlで使用
+            div.works {
+
+              //      テスト用
+              //              background-color: aquamarine;
+
+              width: 100%;
+              //              width: 50vw;
+
+              @include tab {
+                //              width: 850px;
+                //                width: 720px;
+                width: 90vw;
+              }
+
+              ;
+
+              @include pc {
+                width: 960px;
+              }
+
+              ;
+
+              //div.works__list 
+              &__list {
+                //      テスト用
+                //                background-color: #ffc9f9;
+
+                display: flex;
+                //                flex-direction: column;
+                //                align-items: center;
+
+                margin-bottom: 60px;
+                flex-wrap: wrap;
+                justify-content: flex-start;
+                align-content: space-around;
+                flex-direction: row;
+
+
+
+                @include tab {
+                  flex-wrap: wrap;
+                  margin-bottom: 60px;
+                  //                  justify-content: space-around;
+                  justify-content: flex-start;
+                  align-content: space-around;
+                  flex-direction: row;
+                }
+
+                ;
+
+                @include pc {
+                  flex-wrap: wrap;
+                  margin-bottom: 60px;
+                  //                  justify-content: space-around;
+                  justify-content: flex-start;
+                  align-content: space-around;
+                  flex-direction: row;
+
+                }
+
+                ;
+
+
+                &__work {
+
+                  //      テスト用
+                  //                  background-color: beige;
+
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  //divboxを上端に揃える
+                  //                align-self: flex-start;
+                  margin-left: 12px;
+                  //段落の文章の収まりを参考に設定
+                  //                  width: 300px;
+                  width: 41vw;
+                  margin-bottom: 40px;
+
+
+
+                  @include tab {
+                    //              width: 850px;
+                    //                    padding: 0 5px;
+                    padding: 0;
+                    margin-bottom: 60px;
+                    //                    margin-bottom: 0;
+                    margin-left: 15px;
+                    //段落の文章の収まりを参考に設定
+                    width: 28vw;
+                    //divboxの要素を中央揃えにする
+                    //                    align-items: center;
+                    //divboxの要素を左端揃えにする
+                    align-items: baseline;
+                    //divboxを上端に揃える
+                    align-self: flex-start;
+                  }
+
+                  ;
+
+                  @include pc {
+                    padding: 0;
+                    //                    margin-bottom: 0;
+                    margin-bottom: 60px;
+                    margin-left: 15px;
+                    //段落の文章の収まりを参考に設定
+                    width: 300px;
+                    //divboxの要素を左端揃えにする
+                    align-items: baseline;
+                    //divboxを上端に揃える
+                    align-self: flex-start;
+                  }
+
+                  ;
+
+                  //worksページサムネイル画像
+                  img {
+                    border: 1px solid $borderColor;
+
+                    //                    width: 60vw;
+                    width: 41vw;
+                    height: auto;
+                    //段落との間を空ける
+                    margin-bottom: 5px;
+
+                    //      テスト用
+                    //                    background-color: #94d6ff;
+
+                    @include tab {
+                      //              width: 767px;
+                      //                    width: 250px;
+                      width: 28vw;
+                      //段落との間を空ける
+                      margin-bottom: 10px;
+                    }
+
+                    ;
+
+                    @include pc {
+                      width: 300px;
+                      //段落との間を空ける
+                      margin-bottom: 10px;
+                    }
+
+                    ;
+
+                    &.noneborder {
+                      border: none;
+                    }
+
+                  }
+
+                  &__title {
+                    //テスト用
+                    //                    background-color: #c3a4f5;
+
+                    width: 41vw;
+                    //                    width: 60vw;
+
+
+                    display: flex;
+                    flex-direction: column;
+
+                    //                    align-items: baseline;
+                    @include tab {
+                      width: 28vw;
+                    }
+
+                    ;
+
+                    @include pc {
+                      width: 300px;
+                    }
+
+                    ;
+
+                  }
+
+                }
+
+              }
+
+              div.chocolate {
+                margin-bottom: 0;
+
+                //              padding-top: -10px;
+                div {
+                  padding-bottom: 0;
+                }
+              }
+
+              div.chocolate__p {
+                margin-bottom: 40px;
+              }
+            }
+
+            //*--------------------//div.works終わり
+
+
+
+            //index.html、about.htmlで使用
+            div.about {
+              //      テスト用
+              //            background-color: aquamarine;
+
+              width: 100%;
+              display: flex;
+              align-items: center;
+              /* 子要素は縦方向に揃える */
+              //            flex-direction: column;
+              flex-direction: column-reverse;
+              //            justify-content: space-between;
+
+
+              @include tab {
+                width: 767px;
+                flex-direction: row;
+                justify-content: center;
+              }
+
+              ;
+
+              @include pc {
+                width: 767px;
+                flex-direction: row;
+                justify-content: center;
+              }
+
+              ;
+
+              //プロフィール画像
+              img {
+                //      テスト用
+                background-color: #dcf5ec;
+                //              width: 300px * (2/3);
+                width: 30vw;
+                //              height: 300px * (1/2);
+                height: auto;
+                margin-left: 0;
+
+
+                @include tab {
+                  margin-left: 60px;
+                  width: 300px * (1/2);
+                }
+
+                ;
+
+                @include pc {
+                  margin-left: 60px;
+                  width: 300px * (1/2);
+                }
+
+                ;
+
+              }
+
+              br {
+
+                display: none;
+
+                @include tab {
+                  display: inline;
+                }
+
+                ;
+
+                @include pc {
+                  display: inline;
+                }
+
+                ;
+              }
+
+              div.profile {
+
+                //      テスト用
+                //              background-color: #dcf5ec;
+
+                width: 85%;
+                margin-left: 0;
+                margin-right: 0;
+                margin-bottom: 10px;
+                //横方向
+
+                //              padding: 0 30px;
+
+                @include tab {
+                  margin-left: 20px;
+                  //                margin-right: 20px;
+                  width: 100%;
+                  margin-bottom: 0;
+                }
+
+                ;
+
+                @include pc {
+                  margin-left: 20px;
+                  //                margin-right: 20px;
+                  width: 100%;
+                  margin-bottom: 0;
+                }
+
+                ;
+
+
+                p {
+
+                  margin-bottom: 10px;
+
+                  @include tab {
+                    margin-bottom: 0;
+                  }
+
+                  ;
+
+                  @include pc {
+                    margin-bottom: 0;
+
+                  }
+
+                  ;
+
+                }
+
+
+                dl {
+
+                  dt {
+                    float: left;
+                    text-align: left;
+                  }
+
+                  dd {
+                    //                              margin-left: 100px;
+                    margin-left: 0;
+                    margin-bottom: 5px;
+
+
+                    @include tab {
+                      margin-left: 110px;
+
+                    }
+
+                    ;
+
+                    @include pc {
+                      margin-left: 110px;
+
+                    }
+
+                    ;
+
+
+
+                  }
+                }
+
+
+
+              }
+
+
+            }
+
+            //*--------------------//div.about終わり
+
+
+
+
+            //about.htmlで使用
+            div.skill {
+              //      テスト用
+              //            background-color: blueviolet;
+              width: 100%;
+              //            margin: 0 30px;
+              margin-bottom: 0;
+              //横方向
+              //            padding: 0 30px;
+
+
+              @include tab {
+                width: 767px;
+                margin-bottom: 30px;
+
+              }
+
+              ;
+
+              @include pc {
+                width: 960px;
+                margin-bottom: 30px;
+
+
+              }
+
+              ;
+
+
+              div {
+                //      テスト用
+                //              background-color: beige;
+
+                margin-bottom: 0;
+                display: flex;
+                justify-content: space-around;
+                /* 子要素は縦方向に揃える */
+                flex-direction: column;
+
+
+                @include tab {
+                  margin-bottom: 60px;
+                  justify-content: space-around;
+                  flex-direction: row;
+                }
+
+                ;
+
+                @include pc {
+                  //                margin: 0 30px;
+                  margin-bottom: 60px;
+
+                  justify-content: space-around;
+                  flex-direction: row;
+
+                }
+
+                ;
+
+
+                div {
+
+                  //      テスト用
+                  //                background-color: aquamarine;
+                  margin: 20px 30px 20px 30px;
+                  //divの幅を固定する
+                  //flex 1 1 0と同じ
+                  flex: 1;
+                  align-items: center;
+
+
+
+                  @include tab {
+                    margin: 0 22px 0 20px;
+                  }
+
+                  ;
+
+                  @include pc {
+                    margin: 0 30px 0 20px;
+
+                  }
+
+                  ;
+
+
+                  p {
+                    padding-left: 0;
+
+                    @include tab {
+                      padding-left: 18px;
+                    }
+
+                    ;
+
+                    @include pc {
+                      padding-left: 20px;
+
+                    }
+
+                    ;
+
+                  }
+
+                  img {
+                    //      テスト用
+                    //              background-color: beige;
+                    width: 60px;
+                    //                  height: 60px;
+                    height: auto;
+                    opacity: 0.9;
+                  }
+
+
+
+                }
+              }
+
+
+
+            }
+
+            //*--------------------//div.skill終わり
+
+
+
+            //about.htmlで使用
+            div.sns {
+              margin-bottom: 100px;
+
+              display: flex;
+              flex-direction: column;
+
+              p {
+
+                //      テスト用
+                //                background-color: beige;
+
+                margin-bottom: 40px;
+                text-align: center;
+
+                &.mailto {
+                  margin-bottom: 20px;
+                  //                  text-align: center;
+                }
+
+                br {
+                  display: inline;
+
+                  @include tab {
+                    display: none;
+                  }
+
+                  ;
+
+                  @include pc {
+                    display: none;
+                  }
+
+                  ;
+
+                }
+
+
+
+              }
+
+              nav {
+                //                margin-bottom: 20px;
+
+                ul {
+                  display: flex;
+                  justify-content: center;
+
+
+                  li {
+                    //                  margin-left: 10px;
+                    margin: 0 10px;
+                    opacity: 0.8;
+
+                    a {
+                      color: $fontColor;
+                    }
+                  }
+                }
+
+
+              }
+            }
+
+            //*--------------------//div.sns終わり
+
+
+            //各作品解説ページで使用
+            div.detail {
+
+              margin-bottom: 10px;
+
+              //外部リンクボタンサイズのため設定
+              width: 90%;
+
+              //      テスト用
+              //              background-color: #ffd37f;
+
+
+              @include tab {
+                width: 700px;
+
+              }
+
+              ;
+
+              @include pc {
+                width: 767px;
+              }
+
+              ;
+
+
+
+
+              div {
+                //      テスト用
+                //              background-color: aquamarine;
+                margin-bottom: 0;
+                display: flex;
+                /*水平方向は左右両端のスペースを含めて等間隔に配置*/
+                //              justify-content: center;
+                /*垂直方向は左右両端のスペースを含めて等間隔に配置*/
+                //              align-content: space-around;
+                align-items: center;
+                flex-direction: column;
+                justify-content: center;
+
+
+                @include tab {
+                  margin-bottom: 30px;
+                  justify-content: space-around;
+                  align-content: space-around;
+                  flex-direction: row;
+                }
+
+                ;
+
+                @include pc {
+                  margin-bottom: 30px;
+                  justify-content: space-around;
+                  align-content: space-around;
+                  flex-direction: row;
+
+                }
+
+                ;
+
+
+                img {
+                  border: 1px solid $borderColor;
+                  width: 60vw;
+                  height: auto;
+
+
+                  @include tab {
+                    width: 32vw;
+                    //                  height: 30vw;
+                  }
+
+                  ;
+
+                  @include pc {
+                    width: 100%;
+                  }
+
+                  ;
+
+                  //モックアップ画像用
+                  &.noneborder {
+                    border: none;
+
+                  }
+
+
+                }
+
+
+
+
+
+              }
+
+              div.picture {
+                //      テスト用
+                //              background-color: #ffd37f;
+
+                img.spfv {
+                  width: 60vw;
+
+
+                  @include tab {
+                    width: 40vw;
+                    //                  height: 30vw;
+                  }
+
+                  ;
+
+                  @include pc {
+                    width: 380px;
+                  }
+
+                  ;
+
+                }
+
+                img.illust {
+                  width: 60vw;
+
+                  @include tab {
+                    width: 35vw;
+                    //                  height: 30vw;
+                  }
+
+                  ;
+
+                  @include pc {
+                    width: 360px;
+                  }
+
+                  ;
+
+
+                }
+
+                img.lb {
+
+                  width: 85vw;
+
+                  @include tab {
+                    width: 75vw;
+                    //                  height: 30vw;
+                  }
+
+                  ;
+
+                  @include pc {
+                    width: 100%;
+                  }
+
+                  ;
+
+                }
+
+                img.lr {
+                  width: 60vw;
+
+
+                  @include tab {
+                    width: 50vw;
+                    //                  height: 30vw;
+                  }
+
+                  ;
+
+                  @include pc {
+                    width: 100%;
+                  }
+
+                  ;
+
+
+                }
+
+                img.mock {
+
+                  width: 80vw;
+
+
+                  @include tab {
+                    width: 80vw;
+                    //                  height: 30vw;
+                  }
+
+                  ;
+
+                  @include pc {
+                    width: 100%;
+                  }
+
+                  ;
+
+                }
+
+                p {
+                  margin-bottom: 30px;
+
+                  @include tab {
+                    margin-bottom: 0;
+                  }
+
+                  ;
+
+                  @include pc {
+                    margin-bottom: 0;
+                  }
+
+                  ;
+                }
+
+              }
+
+              //*--------------------//div.picture終わり
+
+              div.external {
+
+                @include hFade;
+
+                background-color: #afafaf;
+
+                width: 100%;
+                height: 40px;
+                //                height: 50px;
+                //aタグの文字を中央揃え
+                text-align: center;
+                //              align-items: center;
+                //              vertical-align: middle;
+                margin-bottom: 60px;
+                //div全体をaタグにする
+                position: relative;
+
+                @include tab {
+                  height: 50px;
+                }
+
+                ;
+
+                @include pc {
+                  height: 50px;
+                }
+
+                ;
+
+                a {
+                  color: #fff;
+                  //                color: $fontColor;
+                  text-decoration: none;
+                  letter-spacing: 1px;
+                  display: block;
+                  //div全体をaタグにする
+                  position: absolute;
+                  //文字を縦移動
+                  top: 25%;
+                  left: 0;
+                  width: 100%;
+                  height: 100%;
+
+                }
+
+              }
+
+              //*--------------------//div.external終わり
+
+
+
+              //*--------------------//各作品の制作工程で使用
+              div.process {
+
+
+                display: flex;
+                //              justify-content: flex-start;
+                align-items: center;
+                width: 100%;
+
+                margin-bottom: 20px;
+
+
+                //      テスト用
+                //                background-color: aquamarine;
+
+
+
+                p.process_picture {
+
+                  //      テスト用
+                  //                  background-color: blue;
+
+                  margin-left: 0;
+                  margin-bottom: 10px;
+
+                  @include tab {
+                    margin-left: 30px;
+                  }
+
+                  ;
+
+                  @include pc {
+                    margin-left: 40px;
+                  }
+
+                  ;
+
+                  img {
+                    height: auto;
+
+
+                    &.chocolate,
+                    &.coconala,
+                    &.hotspring,
+                    &.siteLogo {
+
+                      width: 60vw;
+
+
+                      @include tab {
+                        //                      width: 32vw;
+                        width: 36vw;
+                        //                  height: 30vw;
+                      }
+
+                      ;
+
+                      @include pc {
+                        //                      width: 100%;
+                        width: 25vw;
+                      }
+
+                      ;
+
+                    }
+
+                    &.amusementpark {
+                      width: 70vw;
+
+
+                      @include tab {
+                        //                      width: 32vw;
+                        width: 500px;
+                        //                  height: 30vw;
+                      }
+
+                      ;
+
+                      @include pc {
+                        //                      width: 100%;
+                        width: 600px;
+                      }
+
+                      ;
+
+                    }
+
+                    &.newpf {
+
+                      width: 60vw;
+
+                    }
+
+                  }
+
+                }
+
+                p.nomgnleft {
+                  margin-left: 0;
+
+                }
+
+                p.nomgnbottom {
+                  margin-bottom: 0;
+
+                }
+
+
+
+                //*--------------------//p.process_picture終わり
+
+
+                //div.process_explan
+                &_explan {
+                  //テスト用
+                  //                background-color: bisque;
+
+                  //説明文を左寄せ
+                  display: flex;
+                  align-items: flex-start;
+                  width: 80vw;
+                  margin-left: 0;
+
+                  @include tab {
+                    width: 100%;
+                    margin-left: 30px;
+                    justify-content: flex-start;
+                  }
+
+                  ;
+
+                  @include pc {
+                    width: 100%;
+                    margin-left: 30px;
+                    justify-content: flex-start;
+                  }
+
+                  ;
+
+                  p {
+
+                    //      テスト用
+                    //                  background-color: aquamarine;
+
+                    br {
+                      display: none;
+
+                      @include tab {
+                        display: inline;
+                      }
+
+                      ;
+
+                      @include pc {
+                        display: inline;
+                      }
+
+                      ;
+
+                    }
+
+                  }
+
+                }
+
+                //*--------------------//div.process_explan終わり
+
+              }
+
+              //*--------------------//div.process終わり
+
+
+              div.arrow {
+                //      テスト用
+                //              background-color: aquamarine;
+                //中央寄せ  上 左右 下
+                margin: 50px auto 60px;
+                //高さなしのbox
+                width: 0;
+                height: 0;
+                opacity: 0.3;
+                //左右の辺を透過
+                border-left: 30px solid transparent;
+                border-right: 30px solid transparent;
+                //上辺を着色
+                border-top: 30px solid #5d5d5d;
+
+              }
+
+              //*--------------------//div.arrow終わり
+
+
+            }
+
+            //*--------------------//div.detail終わり
+
+
+            //各作品解説文
+            div.explanation {
+
+              //      テスト用
+              //            background-color: aquamarine;
+
+              margin-bottom: 100px;
+              width: 80vw;
+
+              @include tab {
+                //                margin: 0 10px;
+                width: 80vw;
+
+              }
+
+              ;
+
+              @include pc {
+                width: 767px;
+              }
+
+              ;
+
+              //記述型リスト設定
+              dl {
+                margin-left: 0;
+
+                @include tab {
+                  //                margin: 0 10px;
+                  margin-left: 5px;
+
+                }
+
+                ;
+
+                @include pc {
+                  margin-left: 5px;
+                }
+
+                ;
+
+                dt {
+                  //スマホ表示では改行する
+                  float: none;
+                  text-align: left;
+                  margin-bottom: 2px;
+
+                  @include tab {
+                    //                margin: 0 10px;
+                    float: left;
+                    //                  text-align: left;
+
+                  }
+
+                  ;
+
+                  @include pc {
+                    float: left;
+                    //                  text-align: left;
+                  }
+
+                  ;
+
+
+                }
+
+                dd {
+                  margin-left: 0;
+                  margin-bottom: 4px;
+
+                  @include tab {
+                    margin-left: 140px;
+                  }
+
+                  ;
+
+                  @include pc {
+                    margin-left: 140px;
+                  }
+
+                  ;
+
+
+                }
+              }
+
+              hr {
+                opacity: 0.4;
+                margin: 15px 0;
+
+              }
+            }
+
+            //*--------------------//div.explanation終わり
+
+            //MORE ボタン設定
+
+            a.button {
+              //              background-color: #afafaf;
+              background-color: #cbcbcb;
+              text-decoration: none;
+              height: 50px;
+              width: 90%;
+              margin-bottom: 0;
+              position: relative;
+
+              @include tab {
+                width: 130px;
+                margin-bottom: 100px;
+              }
+
+              ;
+
+              @include pc {
+                width: 130px;
+                margin-bottom: 100px;
+              }
+
+              ;
+            }
+
+            a.button::before {
+              content: 'MORE';
+              letter-spacing: 2px;
+              font-size: 15px;
+              position: absolute;
+              top: 14px;
+              bottom: 0;
+              right: 0;
+              left: 0;
+              margin: auto;
+              text-align: center;
+              color: $fontColor;
+
+            }
+
+            a.button::after {
+
+              content: '';
+              width: 8px;
+              height: 8px;
+              border: 0px;
+              border-top: solid 2px #5d5d5d;
+              border-right: solid 2px #5d5d5d;
+              -ms-transform: rotate(45deg);
+              -webkit-transform: rotate(45deg);
+              transform: rotate(45deg);
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              right: 0;
+              left: 230px;
+              margin: auto;
+              text-align: center;
+
+
+              @include tab {
+
+                left: 85px;
+
+              }
+
+              ;
+
+              @include pc {
+
+                left: 85px;
+              }
+
+              ;
+
+            }
+
+
+            div.more {
+              margin-bottom: 60px;
+            }
+
+            //*----------------//MOREボタン設定終わり
+
+
+            //*----ページャdiv.nav-links
+            div.nav-links {
+              //      テスト用
+              //              background-color: aquamarine;
+
+              display: flex;
+              justify-content: space-around;
+              //横に目一杯伸ばす
+              width: 100vw;
+
+              margin-top: 30px;
+
+              @include tab {
+                justify-content: space-around;
+                width: 768px;
+                margin-top: 50px;
+              }
+
+              ;
+
+              @include pc {
+                justify-content: space-around;
+                width: 960px;
+                margin-top: 50px;
+              }
+
+              ;
+
+              div.nav-page {
+                a {
+                  color: $fontColor;
+                  text-decoration: none;
+
+                }
+
+
+              }
+
+              div.nav-right {
+                opacity: 0.4;
+
+                a {
+                  position: relative;
+                  display: block;
+                  width: 20px;
+                  height: 20px;
+                  text-decoration: none;
+                }
+
+                a::before {
+                  content: '';
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 30px;
+                  background-color: #5d5d5d;
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  right: 0;
+                  left: -12px;
+                  margin: auto;
+                  text-align: center;
+
+                  @include tab {
+                    width: 60px;
+                    height: 60px;
+                    left: -15px;
+                  }
+
+                  ;
+
+                  @include pc {
+
+                    width: 60px;
+                    height: 60px;
+                    left: -15px;
+                  }
+
+                  ;
+
+                }
+
+                a::after {
+                  content: '';
+                  width: 10px;
+                  height: 10px;
+                  border: 0px;
+                  border-top: solid 2px #fff;
+                  border-right: solid 2px #fff;
+                  -ms-transform: rotate(45deg);
+                  -webkit-transform: rotate(45deg);
+                  transform: rotate(45deg);
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  right: 0;
+                  left: -8px;
+                  margin: auto;
+                  text-align: center;
+
+
+                  @include tab {
+                    width: 15px;
+                    height: 15px;
+                    left: 0;
+                  }
+
+                  ;
+
+                  @include pc {
+                    width: 15px;
+                    height: 15px;
+                    left: 0;
+                  }
+
+                  ;
+
+
+                }
+
+              }
+
+              div.nav-left {
+                opacity: 0.4;
+
+                a {
+                  position: relative;
+                  display: block;
+                  width: 20px;
+                  height: 20px;
+                  text-decoration: none;
+                }
+
+                a::before {
+                  content: '';
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 30px;
+                  background-color: #5d5d5d;
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  right: 0;
+                  left: -7px;
+                  margin: auto;
+                  text-align: center;
+
+                  @include tab {
+                    width: 60px;
+                    height: 60px;
+                    left: -22px;
+                  }
+
+                  ;
+
+                  @include pc {
+
+                    width: 60px;
+                    height: 60px;
+                    left: -22px;
+                  }
+
+                  ;
+
+
+                }
+
+                a::after {
+                  content: '';
+                  width: 10px;
+                  height: 10px;
+                  border: 0px;
+                  border-top: solid 2px #fff;
+                  border-right: solid 2px #fff;
+                  -ms-transform: rotate(225deg);
+                  -webkit-transform: rotate(225deg);
+                  transform: rotate(225deg);
+                  position: absolute;
+                  top: 0;
+                  bottom: 0;
+                  right: 0;
+                  left: 9px;
+                  margin: auto;
+                  text-align: center;
+
+                  @include tab {
+                    width: 15px;
+                    height: 15px;
+                    left: 0;
+                  }
+
+                  ;
+
+                  @include pc {
+                    width: 15px;
+                    height: 15px;
+                    left: 0;
+                  }
+
+                  ;
+
+
+                }
+
+              }
+
+            }
+
+            //*--------------------//div.nav-links終わり
+
+
+
+
+          }
+
+          //*--------------------//section.default終わり
+
+
+
+
+
+
+
+
+          //about.htmlの設定
+
+          section.about {
+
+            //      テスト用
+            //          background-color: #87edff;
+
+
+            div.shortbio {
+
+              //      テスト用
+              //              background-color: #87edff;
+
+              width: 88%;
+              //縦方向 上 左右 下
+              //              margin: 0 0 60px;
+              margin-top: 0;
+              margin-bottom: 60px;
+              //横方向
+              padding: 0;
+
+              @include tab {
+                width: 660px;
+                margin-top: 50px;
+                margin-bottom: 0;
+
+              }
+
+              ;
+
+              @include pc {
+                width: 660px;
+                margin-top: 50px;
+                margin-bottom: 0;
+
+              }
+
+              ;
+
+              hr {
+                opacity: 0.4;
+                margin: 10px 0;
+                //                width: 98%;
+                //                align: center;
+              }
+
+
+
+              //記述型リスト設定
+              dl {
+                margin-left: 0;
+
+                @include tab {
+                  margin-left: 5px;
+                }
+
+                ;
+
+                @include pc {
+                  margin-left: 5px;
+                }
+
+                ;
+
+
+                dt {
+                  float: none;
+                  text-align: left;
+                  font-weight: 600;
+                  margin-bottom: 2px;
+
+
+                  @include tab {
+                    //                margin: 0 10px;
+                    float: left;
+                    margin-bottom: 0;
+
+                  }
+
+                  ;
+
+                  @include pc {
+                    float: left;
+                    margin-bottom: 0;
+                  }
+
+                  ;
+
+
+                }
+
+                dd {
+                  margin-left: 0;
+                  margin-bottom: 5px;
+
+                  @include tab {
+
+                    margin-left: 150px;
+
+                  }
+
+                  ;
+
+                  @include pc {
+                    margin-left: 150px;
+                  }
+
+                  ;
+                }
+              }
+
+              p {
+                margin-left: 0;
+                margin-bottom: 20px;
+
+
+                @include tab {
+                  margin-left: 5px;
+                  margin-bottom: 20px;
+
+                }
+
+                ;
+
+                @include pc {
+                  margin-left: 5px;
+                  margin-bottom: 20px;
+                }
+
+                ;
+
+                br {
+
+                  display: none;
+
+                  @include tab {
+                    display: inline;
+                  }
+
+                  ;
+
+                  @include pc {
+                    display: inline;
+                  }
+
+                  ;
+                }
+
+                a.noneborder {
+                  text-decoration: underline;
+
+                }
+
+
+              }
+
+
+            }
+
+          }
+
+
+
+        }
+
+        //*--------------------//main終わり
+
+
+      }
+
+      //*--------------------//div.container終わり
+
+      footer {
+        //      テスト用
+        //    background-color: blueviolet;
+        color: $fontColor;
+        display: flex;
+        /* 子要素をflexboxにより縦方向に揃える */
+        flex-direction: column;
+        /* 子要素をflexboxにより中央に配置する */
+        justify-content: center;
+        /* 子要素をflexboxにより中央に配置する */
+        align-items: center;
+        padding-bottom: 30px;
+
+
+
+        div.scrollTop {
+
+
+          background-color: #fff;
+
+          //        margin-bottom: 50px;
+
+          width: 50px;
+          height: 50px;
+          opacity: 0.6;
+          //右下に固定する際は指定
+          position: fixed;
+          right: 15px;
+          bottom: 15px;
+          border: 1px solid #5d5d5d;
+          border-radius: 8px;
+
+          @include tab {
+            width: 70px;
+            height: 70px;
+            right: 60px;
+            bottom: 60px;
+          }
+
+          ;
+
+          @include pc {
+            width: 70px;
+            height: 70px;
+            right: 60px;
+            bottom: 60px;
+          }
+
+          ;
+
+          //PAGE TOPボタン
+          a {
+            position: relative;
+            display: block;
+            width: 50px;
+            height: 50px;
+            text-decoration: none;
+
+
+
+
+            @include tab {
+              width: 70px;
+              height: 70px;
+            }
+
+            ;
+
+            @include pc {
+              width: 70px;
+              height: 70px;
+            }
+
+            ;
+
+          }
+
+          a::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            border: 0px;
+            border-top: solid 5px #5d5d5d;
+            border-right: solid 5px #5d5d5d;
+            -ms-transform: rotate(-45deg);
+            -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+            position: absolute;
+            top: 5px;
+            bottom: 0;
+            right: 1px;
+            left: 0;
+            margin: auto;
+            text-align: center;
+          }
+
+        }
+
+        small {
+          font-family: 'Montserrat', sans-serif;
+          font-weight: 200;
+          letter-spacing: 1px;
+          text-align: center;
+        }
+      }
+
+      //*--------------------//footer終わり
+
+
+
+    }
+
+    //*--------------------//div.wrapper終わり
+
+
+  }
+
+  //*--------------------//body終わり
+}
+
+//*--------------------//html終わり
