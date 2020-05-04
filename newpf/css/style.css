@@ -94,7 +94,7 @@ html {
       /* header
 ---------------------------------------*/ }
       html body div.wrapper span.title__sub--color {
-        color: #fff; }
+        opacity: 0.4; }
       html body div.wrapper span.business {
         color: #DD5357; }
       html body div.wrapper a {
@@ -195,7 +195,8 @@ html {
         font-size: 1.2em;
         font-weight: 300;
         margin-left: 8px;
-        margin-bottom: 2px; }
+        margin-bottom: 2px;
+        color: #fff; }
         @media (min-width: 768px) {
           html body div.wrapper h3.reduction__name {
             letter-spacing: 0.07em;
@@ -392,10 +393,10 @@ html {
                     top: 16%;
                     left: 8%;
                     font-size: 2.5em; } }
-                html body div.wrapper div.container div.fv div.fv__image p.slideInRight span.a {
+                html body div.wrapper div.container div.fv div.fv__image p.slideInRight span.eng {
                   background: -webkit-gradient(linear, left top, left bottom, color-stop(90%, transparent), color-stop(0%, #53b3dd));
                   background: linear-gradient(transparent 90%, #53b3dd 0%); }
-                html body div.wrapper div.container div.fv div.fv__image p.slideInRight span.b {
+                html body div.wrapper div.container div.fv div.fv__image p.slideInRight span.des {
                   background: -webkit-gradient(linear, left top, left bottom, color-stop(90%, transparent), color-stop(0%, #DD5357));
                   background: linear-gradient(transparent 90%, #DD5357 0%); }
               html body div.wrapper div.container div.fv div.fv__image p.slideInRightNext {
@@ -557,7 +558,7 @@ html {
                       align-items: flex-start;
               margin-bottom: 40px;
               border-left: 8px solid #677072;
-              background-image: linear-gradient(135deg, #99a5a8 0%, #e3eaed 63%, #f2f5f6 100%); }
+              background-image: linear-gradient(135deg, #99a5a8 0%, #e3eaed 93%, #f2f5f6 100%); }
               @media (min-width: 768px) {
                 html body div.wrapper div.container main section.default div.reduction {
                   margin-bottom: 40px;
@@ -763,7 +764,6 @@ html {
               -webkit-box-align: center;
                   -ms-flex-align: center;
                       align-items: center;
-              /* 子要素は縦方向に揃える */
               -webkit-box-orient: vertical;
               -webkit-box-direction: reverse;
                   -ms-flex-direction: column-reverse;
@@ -959,8 +959,6 @@ html {
                 display: -webkit-box;
                 display: -ms-flexbox;
                 display: flex;
-                /*水平方向は左右両端のスペースを含めて等間隔に配置*/
-                /*垂直方向は左右両端のスペースを含めて等間隔に配置*/
                 -webkit-box-align: center;
                     -ms-flex-align: center;
                         align-items: center;

@@ -72,11 +72,6 @@ $spm: 375px; // スマホmサイズ
 
 }
 
-
-
-
-
-
 //fvアニメーション設定
 @mixin animationValue($name, $duration, $function, $delay, $count, $state) {
   animation: $name $duration+s $function $delay+s $count $state;
@@ -88,8 +83,6 @@ $spm: 375px; // スマホmサイズ
     @content;
   }
 }
-
-
 
 /*  スマホ対応で表示されてしまう横スクロールバー非表示 iOS対応*/
 html {
@@ -108,28 +101,21 @@ html {
       //テスト用
       //      background-color: #ffdfdf;
 
-
-      //コンテンツ全体の幅を指定
-      //    width: 1080px;
       width: auto;
       //コンテンツ全体の余白を指定
       margin: 0 auto;
       font-family: 'Noto Sans JP', sans-serif;
-      //    font-weight: 200;
-      //      background-color: $backgroundColor;
       display: flex;
       /* 子要素は縦方向に揃える */
       flex-direction: column;
       align-items: center;
 
-
-
       //文字色
       span {
 
         &.title__sub--color {
-          //          opacity: 0.4;
-          color: #fff;
+          opacity: 0.4;
+          //          color: #fff;
         }
 
         &.business {
@@ -162,16 +148,13 @@ html {
       dl {
         @include fSize;
 
-
       }
-
-
-
 
       h1 {
 
         //                        テスト用
         //          background-color: #f7f707;
+        //文字のロゴの場合
         //        a.sLogo {
         //          font-size: 0.55em;
         //          //        height: 28px;
@@ -300,8 +283,6 @@ html {
 
         }
 
-
-
       }
 
 
@@ -309,14 +290,13 @@ html {
         //                        テスト用
         //        background-color: blue;
 
-
-
         &.reduction__name {
           letter-spacing: 0.1em;
           font-size: 1.2em;
           font-weight: 300;
           margin-left: 8px;
           margin-bottom: 2px;
+          color: #fff;
 
           @include tab {
             letter-spacing: 0.07em;
@@ -356,17 +336,9 @@ html {
 
           ;
 
-
-
         }
 
-
-
-
       }
-
-
-
 
       /* header
 ---------------------------------------*/
@@ -483,7 +455,6 @@ html {
 
 
                   @include tab {
-                    //            font-size: 1.1em;
                     font-size: 16px;
                   }
 
@@ -533,8 +504,6 @@ html {
           //子要素は中央揃え
           align-items: center;
 
-
-
           /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f2f6f8+0,d8e1e7+50,b5c6d0+51,e0eff9+100;Grey+Gloss+%232 */
           background: #f2f6f8;
           /* Old browsers */
@@ -559,8 +528,6 @@ html {
             overflow: hidden;
             position: relative;
 
-            //        height: 300px;
-            //        background-image: linear-gradient(109.6deg, rgba(253, 199, 141, 1) 11.3%, rgba(249, 143, 253, 1) 100.2%);
             background-image: url(../images/fv.png);
             background-repeat: no-repeat;
             background-position: 60% 14%;
@@ -568,14 +535,11 @@ html {
 
 
             @include spm {
-              //              height: 80vh;
               background-size: 95vw auto;
 
             }
 
             @include spl {
-              //              height: 80vh;
-              //              height: 80vh;
               background-size: 90vw auto;
 
             }
@@ -596,9 +560,7 @@ html {
             @include pc {
               width: 960px;
               background-position: right bottom;
-              //              background-size: 45vw auto;
               background-size: 550px auto;
-              //              height: 60vh;
               height: 420px;
             }
 
@@ -609,13 +571,11 @@ html {
               position: absolute;
               color: #000;
               font-weight: 600;
-              //                        background-color: rgba(255, 255, 255, 0.9);
 
               &.slideInRight {
                 top: 55%;
                 left: 65px;
                 font-size: 1.5em;
-                //                font-size: 1.6em;
                 animation-name: slideInRight;
                 animation-duration: 1s;
                 animation-timing-function: ease;
@@ -645,7 +605,6 @@ html {
 
                 @include pc {
                   top: 16%;
-                  //                left: 100px;
                   left: 8%;
                   font-size: 2.5em;
                 }
@@ -655,21 +614,19 @@ html {
 
                 span {
 
-                  &.a {
+                  &.eng {
                     background: linear-gradient(transparent 90%, $selfstudy 0%);
                   }
 
-                  &.b {
+                  &.des {
                     background: linear-gradient(transparent 90%, $business 0%);
                   }
                 }
-
 
               }
 
               &.slideInRightNext {
 
-                //              top: 15%;
                 top: 89%;
                 left: 8px;
                 font-size: 0.75em;
@@ -704,13 +661,15 @@ html {
 
                 @include pc {
                   top: 85%;
-                  //                left: 100px;
                   left: 8%;
                   font-size: 0.95em;
                 }
 
                 ;
               }
+
+              // ↓through の後の数字を子要素の数字にすることで
+              // ↓{}（ブレース）内の処理をその回数分繰り返す
 
               @for $cnt from 1 through 6 {
 
@@ -724,10 +683,6 @@ html {
                 }
               }
             }
-
-            // ↓through の後の数字を子要素の数字にすることで
-            // ↓{}（ブレース）内の処理をその回数分繰り返します。
-
 
             @include keyframes(example) {
               0% {
@@ -857,14 +812,10 @@ html {
               margin-bottom: 40px;
 
               border-left: 8px solid #677072;
-              //              border-left: 8px solid #afafaf;
-              //              border-bottom: 1px solid #afafaf;
-
-              //              background-image: linear-gradient(135deg, #c8d7dc 0%, #e3eaed 63%, #f2f5f6 100%);
-              background-image: linear-gradient(135deg, #99a5a8 0%, #e3eaed 63%, #f2f5f6 100%);
+              //              background-image: linear-gradient(135deg, #99a5a8 0%, #e3eaed 63%, #f2f5f6 100%);
+              background-image: linear-gradient(135deg, #99a5a8 0%, #e3eaed 93%, #f2f5f6 100%);
 
               @include tab {
-                //                width: 90vw;
                 margin-bottom: 40px;
                 align-items: flex-start;
               }
@@ -889,9 +840,6 @@ html {
 
               //      テスト用
               //              background-color: aquamarine;
-
-
-
               width: 100%;
 
               @include tab {
@@ -906,8 +854,6 @@ html {
 
               ;
 
-
-
               div {
                 //      テスト用
                 //              background-color: aquamarine;
@@ -919,7 +865,6 @@ html {
 
                 @include tab {
                   padding-bottom: 40px;
-                  //                display: flex;
                   flex-direction: row;
                   /*水平方向は左右両端のスペースを含めて等間隔に配置*/
                   justify-content: space-around;
@@ -931,7 +876,6 @@ html {
 
                 @include pc {
                   padding-bottom: 40px;
-                  //                display: flex;
                   flex-direction: row;
                   /*水平方向は左右両端のスペースを含めて等間隔に配置*/
                   justify-content: space-around;
@@ -950,11 +894,8 @@ html {
                   height: auto;
                   //      テスト用
                   //                background-color: beige;
-                  //画像を中央の位置でトリミングする
-                  //                object-fit: cover;
 
                   @include tab {
-                    //                  max-width: 300px * (4/5);
                     width: 28vw;
                     margin-bottom: 0;
                     margin: 0 5px;
@@ -977,7 +918,6 @@ html {
 
             //*--------------------//div.works_index終わり
 
-
             //works.htmlで使用
             div.works {
 
@@ -985,11 +925,8 @@ html {
               //              background-color: aquamarine;
 
               width: 100%;
-              //              width: 50vw;
 
               @include tab {
-                //              width: 850px;
-                //                width: 720px;
                 width: 90vw;
               }
 
@@ -1007,8 +944,6 @@ html {
                 //                background-color: #ffc9f9;
 
                 display: flex;
-                //                flex-direction: column;
-                //                align-items: center;
 
                 margin-bottom: 60px;
                 flex-wrap: wrap;
@@ -1021,7 +956,6 @@ html {
                 @include tab {
                   flex-wrap: wrap;
                   margin-bottom: 60px;
-                  //                  justify-content: space-around;
                   justify-content: flex-start;
                   align-content: space-around;
                   flex-direction: row;
@@ -1032,7 +966,6 @@ html {
                 @include pc {
                   flex-wrap: wrap;
                   margin-bottom: 60px;
-                  //                  justify-content: space-around;
                   justify-content: flex-start;
                   align-content: space-around;
                   flex-direction: row;
@@ -1050,27 +983,17 @@ html {
                   display: flex;
                   flex-direction: column;
                   align-items: center;
-                  //divboxを上端に揃える
-                  //                align-self: flex-start;
                   margin-left: 12px;
                   //段落の文章の収まりを参考に設定
-                  //                  width: 300px;
                   width: 41vw;
                   margin-bottom: 40px;
 
-
-
                   @include tab {
-                    //              width: 850px;
-                    //                    padding: 0 5px;
                     padding: 0;
                     margin-bottom: 60px;
-                    //                    margin-bottom: 0;
                     margin-left: 15px;
                     //段落の文章の収まりを参考に設定
                     width: 28vw;
-                    //divboxの要素を中央揃えにする
-                    //                    align-items: center;
                     //divboxの要素を左端揃えにする
                     align-items: baseline;
                     //divboxを上端に揃える
@@ -1081,7 +1004,6 @@ html {
 
                   @include pc {
                     padding: 0;
-                    //                    margin-bottom: 0;
                     margin-bottom: 60px;
                     margin-left: 15px;
                     //段落の文章の収まりを参考に設定
@@ -1108,8 +1030,6 @@ html {
                     //                    background-color: #94d6ff;
 
                     @include tab {
-                      //              width: 767px;
-                      //                    width: 250px;
                       width: 28vw;
                       //段落との間を空ける
                       margin-bottom: 10px;
@@ -1136,13 +1056,9 @@ html {
                     //                    background-color: #c3a4f5;
 
                     width: 41vw;
-                    //                    width: 60vw;
-
-
                     display: flex;
                     flex-direction: column;
 
-                    //                    align-items: baseline;
                     @include tab {
                       width: 28vw;
                     }
@@ -1164,7 +1080,6 @@ html {
               div.chocolate {
                 margin-bottom: 0;
 
-                //              padding-top: -10px;
                 div {
                   padding-bottom: 0;
                 }
@@ -1177,8 +1092,6 @@ html {
 
             //*--------------------//div.works終わり
 
-
-
             //index.html、about.htmlで使用
             div.about {
               //      テスト用
@@ -1187,11 +1100,7 @@ html {
               width: 100%;
               display: flex;
               align-items: center;
-              /* 子要素は縦方向に揃える */
-              //            flex-direction: column;
               flex-direction: column-reverse;
-              //            justify-content: space-between;
-
 
               @include tab {
                 width: 767px;
@@ -1213,9 +1122,7 @@ html {
               img {
                 //      テスト用
                 background-color: #dcf5ec;
-                //              width: 300px * (2/3);
                 width: 30vw;
-                //              height: 300px * (1/2);
                 height: auto;
                 margin-left: 0;
 
@@ -1264,11 +1171,8 @@ html {
                 margin-bottom: 10px;
                 //横方向
 
-                //              padding: 0 30px;
-
                 @include tab {
                   margin-left: 20px;
-                  //                margin-right: 20px;
                   width: 100%;
                   margin-bottom: 0;
                 }
@@ -1277,7 +1181,6 @@ html {
 
                 @include pc {
                   margin-left: 20px;
-                  //                margin-right: 20px;
                   width: 100%;
                   margin-bottom: 0;
                 }
@@ -1313,7 +1216,6 @@ html {
                   }
 
                   dd {
-                    //                              margin-left: 100px;
                     margin-left: 0;
                     margin-bottom: 5px;
 
@@ -1332,33 +1234,19 @@ html {
 
                     ;
 
-
-
                   }
                 }
-
-
-
               }
-
-
             }
 
             //*--------------------//div.about終わり
-
-
-
 
             //about.htmlで使用
             div.skill {
               //      テスト用
               //            background-color: blueviolet;
               width: 100%;
-              //            margin: 0 30px;
               margin-bottom: 0;
-              //横方向
-              //            padding: 0 30px;
-
 
               @include tab {
                 width: 767px;
@@ -1371,7 +1259,6 @@ html {
               @include pc {
                 width: 960px;
                 margin-bottom: 30px;
-
 
               }
 
@@ -1398,7 +1285,6 @@ html {
                 ;
 
                 @include pc {
-                  //                margin: 0 30px;
                   margin-bottom: 60px;
 
                   justify-content: space-around;
@@ -1419,8 +1305,6 @@ html {
                   flex: 1;
                   align-items: center;
 
-
-
                   @include tab {
                     margin: 0 22px 0 20px;
                   }
@@ -1433,7 +1317,6 @@ html {
                   }
 
                   ;
-
 
                   p {
                     padding-left: 0;
@@ -1457,23 +1340,16 @@ html {
                     //      テスト用
                     //              background-color: beige;
                     width: 60px;
-                    //                  height: 60px;
                     height: auto;
                     opacity: 0.9;
                   }
 
-
-
                 }
               }
-
-
 
             }
 
             //*--------------------//div.skill終わり
-
-
 
             //about.htmlで使用
             div.sns {
@@ -1492,7 +1368,6 @@ html {
 
                 &.mailto {
                   margin-bottom: 20px;
-                  //                  text-align: center;
                 }
 
                 br {
@@ -1517,7 +1392,6 @@ html {
               }
 
               nav {
-                //                margin-bottom: 20px;
 
                 ul {
                   display: flex;
@@ -1525,7 +1399,6 @@ html {
 
 
                   li {
-                    //                  margin-left: 10px;
                     margin: 0 10px;
                     opacity: 0.8;
 
@@ -1567,18 +1440,11 @@ html {
 
               ;
 
-
-
-
               div {
                 //      テスト用
                 //              background-color: aquamarine;
                 margin-bottom: 0;
                 display: flex;
-                /*水平方向は左右両端のスペースを含めて等間隔に配置*/
-                //              justify-content: center;
-                /*垂直方向は左右両端のスペースを含めて等間隔に配置*/
-                //              align-content: space-around;
                 align-items: center;
                 flex-direction: column;
                 justify-content: center;
@@ -1603,7 +1469,6 @@ html {
 
                 ;
 
-
                 img {
                   border: 1px solid $borderColor;
                   width: 60vw;
@@ -1612,7 +1477,6 @@ html {
 
                   @include tab {
                     width: 32vw;
-                    //                  height: 30vw;
                   }
 
                   ;
@@ -1629,12 +1493,7 @@ html {
 
                   }
 
-
                 }
-
-
-
-
 
               }
 
@@ -1648,7 +1507,6 @@ html {
 
                   @include tab {
                     width: 40vw;
-                    //                  height: 30vw;
                   }
 
                   ;
@@ -1666,7 +1524,6 @@ html {
 
                   @include tab {
                     width: 35vw;
-                    //                  height: 30vw;
                   }
 
                   ;
@@ -1686,7 +1543,6 @@ html {
 
                   @include tab {
                     width: 75vw;
-                    //                  height: 30vw;
                   }
 
                   ;
@@ -1705,7 +1561,6 @@ html {
 
                   @include tab {
                     width: 50vw;
-                    //                  height: 30vw;
                   }
 
                   ;
@@ -1726,7 +1581,6 @@ html {
 
                   @include tab {
                     width: 80vw;
-                    //                  height: 30vw;
                   }
 
                   ;
@@ -1767,11 +1621,8 @@ html {
 
                 width: 100%;
                 height: 40px;
-                //                height: 50px;
                 //aタグの文字を中央揃え
                 text-align: center;
-                //              align-items: center;
-                //              vertical-align: middle;
                 margin-bottom: 60px;
                 //div全体をaタグにする
                 position: relative;
@@ -1790,7 +1641,6 @@ html {
 
                 a {
                   color: #fff;
-                  //                color: $fontColor;
                   text-decoration: none;
                   letter-spacing: 1px;
                   display: block;
@@ -1809,23 +1659,16 @@ html {
               //*--------------------//div.external終わり
 
 
-
               //*--------------------//各作品の制作工程で使用
               div.process {
-
-
                 display: flex;
-                //              justify-content: flex-start;
                 align-items: center;
                 width: 100%;
-
                 margin-bottom: 20px;
 
 
                 //      テスト用
                 //                background-color: aquamarine;
-
-
 
                 p.process_picture {
 
@@ -1850,7 +1693,6 @@ html {
                   img {
                     height: auto;
 
-
                     &.chocolate,
                     &.coconala,
                     &.hotspring,
@@ -1860,15 +1702,12 @@ html {
 
 
                       @include tab {
-                        //                      width: 32vw;
                         width: 36vw;
-                        //                  height: 30vw;
                       }
 
                       ;
 
                       @include pc {
-                        //                      width: 100%;
                         width: 25vw;
                       }
 
@@ -1881,15 +1720,12 @@ html {
 
 
                       @include tab {
-                        //                      width: 32vw;
                         width: 500px;
-                        //                  height: 30vw;
                       }
 
                       ;
 
                       @include pc {
-                        //                      width: 100%;
                         width: 600px;
                       }
 
@@ -1917,10 +1753,7 @@ html {
 
                 }
 
-
-
                 //*--------------------//p.process_picture終わり
-
 
                 //div.process_explan
                 &_explan {
@@ -1981,7 +1814,6 @@ html {
 
               //*--------------------//div.process終わり
 
-
               div.arrow {
                 //      テスト用
                 //              background-color: aquamarine;
@@ -2017,7 +1849,6 @@ html {
               width: 80vw;
 
               @include tab {
-                //                margin: 0 10px;
                 width: 80vw;
 
               }
@@ -2035,7 +1866,6 @@ html {
                 margin-left: 0;
 
                 @include tab {
-                  //                margin: 0 10px;
                   margin-left: 5px;
 
                 }
@@ -2055,9 +1885,7 @@ html {
                   margin-bottom: 2px;
 
                   @include tab {
-                    //                margin: 0 10px;
                     float: left;
-                    //                  text-align: left;
 
                   }
 
@@ -2065,7 +1893,6 @@ html {
 
                   @include pc {
                     float: left;
-                    //                  text-align: left;
                   }
 
                   ;
@@ -2105,7 +1932,6 @@ html {
             //MORE ボタン設定
 
             a.button {
-              //              background-color: #afafaf;
               background-color: #cbcbcb;
               text-decoration: none;
               height: 50px;
@@ -2180,13 +2006,11 @@ html {
 
             }
 
-
             div.more {
               margin-bottom: 60px;
             }
 
             //*----------------//MOREボタン設定終わり
-
 
             //*----ページャdiv.nav-links
             div.nav-links {
@@ -2222,7 +2046,6 @@ html {
                   text-decoration: none;
 
                 }
-
 
               }
 
@@ -2288,7 +2111,6 @@ html {
                   margin: auto;
                   text-align: center;
 
-
                   @include tab {
                     width: 15px;
                     height: 15px;
@@ -2304,7 +2126,6 @@ html {
                   }
 
                   ;
-
 
                 }
 
@@ -2389,7 +2210,6 @@ html {
 
                   ;
 
-
                 }
 
               }
@@ -2398,19 +2218,9 @@ html {
 
             //*--------------------//div.nav-links終わり
 
-
-
-
           }
 
           //*--------------------//section.default終わり
-
-
-
-
-
-
-
 
           //about.htmlの設定
 
@@ -2426,8 +2236,6 @@ html {
               //              background-color: #87edff;
 
               width: 88%;
-              //縦方向 上 左右 下
-              //              margin: 0 0 60px;
               margin-top: 0;
               margin-bottom: 60px;
               //横方向
@@ -2454,8 +2262,6 @@ html {
               hr {
                 opacity: 0.4;
                 margin: 10px 0;
-                //                width: 98%;
-                //                align: center;
               }
 
 
@@ -2485,7 +2291,6 @@ html {
 
 
                   @include tab {
-                    //                margin: 0 10px;
                     float: left;
                     margin-bottom: 0;
 
@@ -2573,8 +2378,6 @@ html {
 
           }
 
-
-
         }
 
         //*--------------------//main終わり
@@ -2601,10 +2404,7 @@ html {
 
         div.scrollTop {
 
-
           background-color: #fff;
-
-          //        margin-bottom: 50px;
 
           width: 50px;
           height: 50px;
@@ -2692,12 +2492,9 @@ html {
 
       //*--------------------//footer終わり
 
-
-
     }
 
     //*--------------------//div.wrapper終わり
-
 
   }
 
