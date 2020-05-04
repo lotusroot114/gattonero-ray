@@ -4,6 +4,14 @@
 /*@import url('https://fonts.googleapis.com/css?family=Lexend+Tera&display=swap');*/
 @import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400&display=swap');
 
+
+/*設定追加用*/
+/*
+@media (min-width: 768px) {}
+@media (min-width: 961px) {}
+*/
+
+
 body {
   font-family: "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, sans-serif;
   line-height: 1.5em;
@@ -192,12 +200,17 @@ nav.item ul li a {
 /* firstview-carousel
 ---------------------------------------*/
 .firstview-carousel {
-  background: #222;
+  /*  background: #222;*/
+  background: #eefffc;
 }
 
 .firstview-carousel-cell {
+  /*  テスト用*/
+  background: blue;
+
+
   width: 100%;
-  height: 700px;
+  height: auto;
   /*  margin-right: 10px;*/
   /* center images in cells with flexbox */
   display: flex;
@@ -209,7 +222,24 @@ nav.item ul li a {
 }
 
 .firstview-carousel.is-fullscreen .firstview-carousel-cell {
-  height: 100%;
+  /*  height: 100%;*/
+  height: auto;
+  width: 100%;
+}
+
+@media screen (min-width: 768px) {
+  .firstview-carousel-cell {
+    height: auto;
+    width: 100%;
+  }
+
+}
+
+@media screen (min-width: 961px) {
+  .firstview-carousel-cell {
+    height: 500px;
+    width: 100%;
+  }
 }
 
 /*firstview上の文字
@@ -233,12 +263,14 @@ nav.item ul li a {
 }
 
 
-
+/*firstview上の画像サイズ
+---------------------------------------*/
 .firstview-carousel-cell-image {
   display: block;
   /*  アスペクト比固定*/
   height: auto;
-  width: 100%;
+  /*  width: 100%;*/
+  width: 100vw;
 }
 
 
@@ -329,17 +361,39 @@ main {
 ---------------------------------------*/
 
 .parallax {
+
+
   min-height: 400px;
+  /*  width: 100vw;*/
+  /*  min-height: auto;*/
   background-position: center top;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  /*  background-attachment: fixedとbackground-size: coverを同時に使うとiOSで問題が起きる*/
+  background-attachment: scroll;
   background-size: cover;
   margin-top: 60px;
+  background-image: url(../images/small_AdobeStock_299119210.jpg);
+  /*  background-image: url(../images/small_AdobeStock_299119210.jpg);*/
 }
 
+@media only screen (min-width: 768px) {
+  .parallax {
+    background-attachment: scroll;
+  }
+}
+
+@media only screen (min-width: 961px) {
+  .parallax {
+    background-attachment: fixed;
+  }
+}
+
+/*
 .parallax.bg-01 {
   background-image: url(../images/small_AdobeStock_299119210.jpg);
+
 }
+*/
 
 main h2 {
   font-weight: 500;
@@ -356,7 +410,20 @@ main h2 {
 main p {
   margin-bottom: 10px;
   margin-left: 24px;
+  font-size: 0.6em;
   text-align: center;
+}
+
+@media (min-width: 768px) {
+  main p {
+    font-size: 0.8em;
+  }
+}
+
+@media (min-width: 961px) {
+  main p {
+    font-size: 1em;
+  }
 }
 
 .index main section {
