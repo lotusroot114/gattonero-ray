@@ -580,58 +580,36 @@ html {
                 html body div.wrapper div.container main section.default div.works_index {
                   width: 960px; } }
               html body div.wrapper div.container main section.default div.works_index div {
-                padding-bottom: 0;
                 display: -webkit-box;
                 display: -ms-flexbox;
                 display: flex;
-                -webkit-box-align: center;
-                    -ms-flex-align: center;
-                        align-items: center;
-                /* 子要素は縦方向に揃える */
-                -webkit-box-orient: vertical;
+                -ms-flex-wrap: wrap;
+                    flex-wrap: wrap;
+                padding-bottom: 40px;
+                -webkit-box-orient: horizontal;
                 -webkit-box-direction: normal;
-                    -ms-flex-direction: column;
-                        flex-direction: column; }
-                @media (min-width: 768px) {
-                  html body div.wrapper div.container main section.default div.works_index div {
-                    padding-bottom: 40px;
-                    -webkit-box-orient: horizontal;
-                    -webkit-box-direction: normal;
-                        -ms-flex-direction: row;
-                            flex-direction: row;
-                    /*水平方向は左右両端のスペースを含めて等間隔に配置*/
-                    -ms-flex-pack: distribute;
-                        justify-content: space-around;
-                    /*垂直方向は左右両端のスペースを含めて等間隔に配置*/
-                    -ms-flex-line-pack: distribute;
-                        align-content: space-around; } }
-                @media (min-width: 961px) {
-                  html body div.wrapper div.container main section.default div.works_index div {
-                    padding-bottom: 40px;
-                    -webkit-box-orient: horizontal;
-                    -webkit-box-direction: normal;
-                        -ms-flex-direction: row;
-                            flex-direction: row;
-                    /*水平方向は左右両端のスペースを含めて等間隔に配置*/
-                    -ms-flex-pack: distribute;
-                        justify-content: space-around;
-                    /*垂直方向は左右両端のスペースを含めて等間隔に配置*/
-                    -ms-flex-line-pack: distribute;
-                        align-content: space-around; } }
+                    -ms-flex-direction: row;
+                        flex-direction: row;
+                -webkit-box-pack: start;
+                    -ms-flex-pack: start;
+                        justify-content: flex-start;
+                -ms-flex-line-pack: distribute;
+                    align-content: space-around; }
                 html body div.wrapper div.container main section.default div.works_index div img {
                   border: 1px solid #e3e3e3;
-                  width: 80vw;
+                  width: 37vw;
+                  margin-left: 4.5vw;
                   margin-bottom: 40px;
-                  height: auto; }
+                  height: auto;
+                  background-color: beige; }
                   @media (min-width: 768px) {
                     html body div.wrapper div.container main section.default div.works_index div img {
-                      width: 28vw;
-                      margin-bottom: 0;
-                      margin: 0 5px; } }
+                      width: 25vw;
+                      margin-left: 3vw; } }
                   @media (min-width: 961px) {
                     html body div.wrapper div.container main section.default div.works_index div img {
                       width: 240px;
-                      margin-bottom: 0; } }
+                      margin-left: 55px; } }
             html body div.wrapper div.container main section.default div.works {
               width: 100%; }
               @media (min-width: 768px) {
@@ -644,9 +622,9 @@ html {
                 display: -webkit-box;
                 display: -ms-flexbox;
                 display: flex;
-                margin-bottom: 60px;
                 -ms-flex-wrap: wrap;
                     flex-wrap: wrap;
+                margin-bottom: 60px;
                 -webkit-box-pack: start;
                     -ms-flex-pack: start;
                         justify-content: flex-start;
@@ -656,34 +634,6 @@ html {
                 -webkit-box-direction: normal;
                     -ms-flex-direction: row;
                         flex-direction: row; }
-                @media (min-width: 768px) {
-                  html body div.wrapper div.container main section.default div.works__list {
-                    -ms-flex-wrap: wrap;
-                        flex-wrap: wrap;
-                    margin-bottom: 60px;
-                    -webkit-box-pack: start;
-                        -ms-flex-pack: start;
-                            justify-content: flex-start;
-                    -ms-flex-line-pack: distribute;
-                        align-content: space-around;
-                    -webkit-box-orient: horizontal;
-                    -webkit-box-direction: normal;
-                        -ms-flex-direction: row;
-                            flex-direction: row; } }
-                @media (min-width: 961px) {
-                  html body div.wrapper div.container main section.default div.works__list {
-                    -ms-flex-wrap: wrap;
-                        flex-wrap: wrap;
-                    margin-bottom: 60px;
-                    -webkit-box-pack: start;
-                        -ms-flex-pack: start;
-                            justify-content: flex-start;
-                    -ms-flex-line-pack: distribute;
-                        align-content: space-around;
-                    -webkit-box-orient: horizontal;
-                    -webkit-box-direction: normal;
-                        -ms-flex-direction: row;
-                            flex-direction: row; } }
                 html body div.wrapper div.container main section.default div.works__list__work {
                   display: -webkit-box;
                   display: -ms-flexbox;

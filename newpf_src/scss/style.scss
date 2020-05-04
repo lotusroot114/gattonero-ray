@@ -808,11 +808,8 @@ html {
               width: 100%;
               display: flex;
               align-items: flex-start;
-
               margin-bottom: 40px;
-
               border-left: 8px solid #677072;
-              //              background-image: linear-gradient(135deg, #99a5a8 0%, #e3eaed 63%, #f2f5f6 100%);
               background-image: linear-gradient(135deg, #99a5a8 0%, #e3eaed 93%, #f2f5f6 100%);
 
               @include tab {
@@ -839,7 +836,8 @@ html {
             div.works_index {
 
               //      テスト用
-              //              background-color: aquamarine;
+              //              background-color: #7fd8ff;
+
               width: 100%;
 
               @include tab {
@@ -856,56 +854,36 @@ html {
 
               div {
                 //      テスト用
-                //              background-color: aquamarine;
-                padding-bottom: 0;
+                //                background-color: aquamarine;
+
                 display: flex;
-                align-items: center;
-                /* 子要素は縦方向に揃える */
-                flex-direction: column;
 
-                @include tab {
-                  padding-bottom: 40px;
-                  flex-direction: row;
-                  /*水平方向は左右両端のスペースを含めて等間隔に配置*/
-                  justify-content: space-around;
-                  /*垂直方向は左右両端のスペースを含めて等間隔に配置*/
-                  align-content: space-around;
-                }
-
-                ;
-
-                @include pc {
-                  padding-bottom: 40px;
-                  flex-direction: row;
-                  /*水平方向は左右両端のスペースを含めて等間隔に配置*/
-                  justify-content: space-around;
-                  /*垂直方向は左右両端のスペースを含めて等間隔に配置*/
-                  align-content: space-around;
-
-                }
-
-                ;
+                flex-wrap: wrap;
+                padding-bottom: 40px;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-content: space-around;
 
                 //サムネイル
                 img {
                   border: 1px solid $borderColor;
-                  width: 80vw;
+                  width: 37vw;
+                  margin-left: 4.5vw;
                   margin-bottom: 40px;
                   height: auto;
                   //      テスト用
-                  //                background-color: beige;
+                  background-color: beige;
 
                   @include tab {
-                    width: 28vw;
-                    margin-bottom: 0;
-                    margin: 0 5px;
+                    width: 25vw;
+                    margin-left: 3vw;
                   }
 
                   ;
 
                   @include pc {
                     width: 300px * (4/5);
-                    margin-bottom: 0;
+                    margin-left: 55px;
                   }
 
                   ;
@@ -945,34 +923,34 @@ html {
 
                 display: flex;
 
-                margin-bottom: 60px;
+
                 flex-wrap: wrap;
+                margin-bottom: 60px;
                 justify-content: flex-start;
                 align-content: space-around;
                 flex-direction: row;
 
 
 
-                @include tab {
-                  flex-wrap: wrap;
-                  margin-bottom: 60px;
-                  justify-content: flex-start;
-                  align-content: space-around;
-                  flex-direction: row;
-                }
-
-                ;
-
-                @include pc {
-                  flex-wrap: wrap;
-                  margin-bottom: 60px;
-                  justify-content: flex-start;
-                  align-content: space-around;
-                  flex-direction: row;
-
-                }
-
-                ;
+                //                @include tab {
+                //                  flex-wrap: wrap;
+                //                  margin-bottom: 60px;
+                //                  justify-content: flex-start;
+                //                  align-content: space-around;
+                //                  flex-direction: row;
+                //                }
+                //
+                //                ;
+                //                @include pc {
+                //                  flex-wrap: wrap;
+                //                  margin-bottom: 60px;
+                //                  justify-content: flex-start;
+                //                  align-content: space-around;
+                //                  flex-direction: row;
+                //
+                //                }
+                //
+                //                ;
 
 
                 &__work {
