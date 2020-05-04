@@ -1057,7 +1057,7 @@ html {
                         html body div.wrapper div.container main section.default div.detail div.process p.process_picture img.chocolate, html body div.wrapper div.container main section.default div.detail div.process p.process_picture img.coconala, html body div.wrapper div.container main section.default div.detail div.process p.process_picture img.hotspring, html body div.wrapper div.container main section.default div.detail div.process p.process_picture img.siteLogo {
                           width: 25vw; } }
                     html body div.wrapper div.container main section.default div.detail div.process p.process_picture img.amusementpark {
-                      width: 70vw; }
+                      width: 90vw; }
                       @media (min-width: 768px) {
                         html body div.wrapper div.container main section.default div.detail div.process p.process_picture img.amusementpark {
                           width: 500px; } }
@@ -1065,7 +1065,13 @@ html {
                         html body div.wrapper div.container main section.default div.detail div.process p.process_picture img.amusementpark {
                           width: 600px; } }
                     html body div.wrapper div.container main section.default div.detail div.process p.process_picture img.newpf {
-                      width: 60vw; }
+                      width: 80vw; }
+                      @media (min-width: 768px) {
+                        html body div.wrapper div.container main section.default div.detail div.process p.process_picture img.newpf {
+                          width: 60vw; } }
+                      @media (min-width: 961px) {
+                        html body div.wrapper div.container main section.default div.detail div.process p.process_picture img.newpf {
+                          width: 60vw; } }
                 html body div.wrapper div.container main section.default div.detail div.process p.nomgnleft {
                   margin-left: 0; }
                 html body div.wrapper div.container main section.default div.detail div.process p.nomgnbottom {

@@ -1694,7 +1694,7 @@ html {
                     }
 
                     &.amusementpark {
-                      width: 70vw;
+                      width: 90vw;
 
 
                       @include tab {
@@ -1713,7 +1713,21 @@ html {
 
                     &.newpf {
 
-                      width: 60vw;
+                      width: 80vw;
+
+                      @include tab {
+                        width: 60vw;
+
+                      }
+
+                      ;
+
+                      @include pc {
+                        width: 60vw;
+
+                      }
+
+                      ;
 
                     }
 
