@@ -7,6 +7,7 @@
   <!--  <meta name="author" content="">-->
   <meta name="description" content="SHARE CIRCLEは、会員制のファッションシェアリングコミュニティです">
   <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <!--  <link rel="icon" href="favicon.ico">-->
   <!--  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,300,400,500,700,900" rel="stylesheet">-->
   <link rel="stylesheet" href="css/flickity.min.css">
@@ -22,17 +23,32 @@
 <body class="item fadeout">
   <div class="wrapper">
     <header class="item">
-      <!--      h1を画像にするならaltを必ず指定-->
-      <h1>SHARE CIRCLE</h1>
-      <!--            <h1><img src="images/sharecircle_logo.png" alt="SHARECIRCLE"></h1>-->
-      <nav class="global item">
+      <!--      スマホ用メニュー-->
+      <div class="menu_box">
+        <div id="nav-drawer">
+          <input id="nav-input" type="checkbox" class="nav-unshown">
+          <label id="nav-open" for="nav-input"><span></span></label>
+          <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+          <div id="nav-content">
+            <ul>
+              <li><a href="index.html"><span>TOP</span></a></li>
+              <li><a href="index.html"><span>ABOUT US</span></a></li>
+              <li><a href="index.html"><span>HOW IT WORKS</span></a></li>
+              <li><a href="index.html"><span>SHOP</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <!--      h1を画像にするならaltを必ず指定-->
+        <h1>SHARE&nbsp;CIRCLE</h1>
+        <div class="login"><a href="index.html"><span><i class="fas fa-user-circle fa-2x"></i></span></a></div>
+      </div>
+      <!--      タブレット、PC用メニュー-->
+      <nav class="global">
         <ul>
           <li><a href="index.html"><span>TOP</span></a></li>
           <li><a href="index.html"><span>ABOUT US</span></a></li>
           <li><a href="index.html"><span>HOW IT WORKS</span></a></li>
           <li><a href="index.html"><span>SHOP</span></a></li>
-          <!--          <li><a href="index.html"><span>CONTACT</span></a></li>-->
-          <li><a href="index.html"><span><i class="fas fa-user-circle fa-3x"></i></span></a></li>
         </ul>
       </nav>
     </header>
@@ -101,27 +117,24 @@
     </div>
     <!--/container-->
     <footer>
-      <section>
-        <h2>MORE INFO</h2>
-        <nav class="local">
-          <ul>
-            <li><a href="index.html">FAQs</a></li>
-            <li><a href="index.html">Privacy Policy</a></li>
-            <li><a href="index.html">Terms of Service</a></li>
-            <li><a href="index.html"><i class="far fa-envelope fa-2x"></i></a></li>
-            <!--            <li><a href="index.html">About Us</a></li>-->
-          </ul>
-        </nav>
-      </section>
-      <nav class="sns">
+      <h2>MORE&nbsp;INFO</h2>
+      <nav class="local">
         <ul>
-          <li><a href="index.html"><i class="fab fa-instagram fa-3x"></i></a></li>
-          <li><a href="index.html"><i class="fab fa-facebook fa-3x"></i></a></li>
-          <li><a href="index.html"><i class="fab fa-twitter fa-3x"></i></a></li>
-          <li><a href="index.html"><i class="fab fa-pinterest-p fa-3x"></i></a></li>
+          <li><a href="index.html">FAQs</a></li>
+          <li><a href="index.html">Privacy&nbsp;Policy</a></li>
+          <li><a href="index.html">Terms&nbsp;of&nbsp;Service</a></li>
+          <li><a href="index.html">Contact</a></li>
         </ul>
       </nav>
-      <small>Copyright &copy; SHARE CIRCLE All rights reserved.</small>
+      <nav class="sns">
+        <ul>
+          <li><a href="index.html"><i class="fab fa-instagram fa-2x"></i></a></li>
+          <li><a href="index.html"><i class="fab fa-facebook fa-2x"></i></a></li>
+          <li><a href="index.html"><i class="fab fa-twitter fa-2x"></i></a></li>
+          <li><a href="index.html"><i class="fab fa-pinterest-p fa-2x"></i></a></li>
+        </ul>
+      </nav>
+      <small>Copyright &copy; SHARE CIRCLE</small>
     </footer>
   </div>
   <!--/wrapper-->
@@ -163,10 +176,7 @@
       groupCells: true,
       wrapAround: true,
     });
-
   </script>
   <script src="js/custom.js"></script>
 
-</body>
-
-</html>
+</body></html>

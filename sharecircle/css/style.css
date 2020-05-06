@@ -202,6 +202,11 @@ header.item h1 {
 }
 
 
+.item #nav-open span,
+.item #nav-open span:before,
+.item #nav-open span:after {
+  background: #000;
+}
 
 
 /*スクロール時の色変更*/
@@ -366,6 +371,10 @@ nav.global ul li:last-child {
   color: #fff;
 }
 
+.item .menu_box .login a {
+  color: #000;
+}
+
 .menu_box .login a.is-animation {
   color: #000;
 }
@@ -464,7 +473,7 @@ nav.global ul li .fas:hover {
 }
 
 
-nav.item ul li a {
+.item nav.global ul li a {
   color: #000;
 }
 
@@ -749,7 +758,7 @@ main h2 {
   font-size: 1.25em;
   /*  border-left: 14px solid #030;*/
   /*  padding-bottom: 10px;*/
-  line-height: 28px;
+  line-height: 1.5;
   /*  margin-bottom: 15px;*/
   text-align: center;
   /*clear: both;*/
@@ -1278,9 +1287,9 @@ main .regist img {
 main .pickup h2,
 main .follow h2 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.9em;
+  /*  font-size: 1em;*/
   font-weight: 400;
-  letter-spacing: 4px;
+  letter-spacing: 0.2em;
 }
 
 main h2 br {
@@ -1289,10 +1298,12 @@ main h2 br {
 
 @media screen and (min-width: 768px) {
 
+  /*
   main .pickup h2,
   main .follow h2 {
     font-size: 1.2em;
   }
+*/
 
   main h2 br {
     display: none;
@@ -1336,49 +1347,33 @@ footer {
   /*  width: 100%;*/
   width: auto;
 
-
-
-
-}
-
-footer section {
-  /*  width: 350px;*/
-  float: left;
 }
 
 footer h2 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 200;
   font-size: 1em;
-  letter-spacing: 5px;
-  line-height: 40px;
+  letter-spacing: 0.3em;
+  line-height: 2;
   padding-left: 20px;
   margin-bottom: 10px;
 }
 
 footer .local,
 footor .sns {
-  /*  width: 450px;*/
-  /*  float: right;*/
-  /*  display: flex;*/
-  /*  margin-top: 10px;*/
-  /*  display: inline-block;*/
-
-  /*  background-color: brown;*/
+  margin-bottom: 40px;
 }
 
 footer .local {
   /*  text-align: left;*/
   float: left;
-  margin-bottom: 40px;
-
 }
 
 footer .sns {
   /*  text-align: right;*/
   float: right;
-  margin-bottom: 40px;
 }
+
 
 footer .local li,
 footer .sns li {
@@ -1393,15 +1388,6 @@ footer .sns li {
 
 
 @media screen and (min-width: 768px) {
-  footer .local {
-    /*    text-align: left;*/
-    float: left;
-  }
-
-  footer .sns {
-    /*    text-align: right;*/
-    float: right;
-  }
 
   footer .local li,
   footer .sns li {
@@ -1442,10 +1428,15 @@ footer .sns li .fab:hover {
 
 footer .local li a {
   /*  以下、下線を左から右に引く設定*/
+
   display: block;
   padding: 0 0 5px;
   text-decoration: none;
+
+  /*  background-color: aqua;*/
+
 }
+
 
 /*  下線を左から右に引く設定*/
 footer .local li a::after {
@@ -1457,9 +1448,13 @@ footer .local li a::after {
   width: 0;
 }
 
-/*  下線を左から右に引く設定*/
-footer .local li a:hover::after {
-  width: 100%;
+
+@media screen and (min-width: 768px) {
+
+  /*  下線を左から右に引く設定*/
+  footer .local li a:hover::after {
+    width: 100%;
+  }
 }
 
 footer .local li .far {
