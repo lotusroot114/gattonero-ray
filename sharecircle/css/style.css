@@ -5,17 +5,17 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400&display=swap');
 
 
-/*設定追加用*/
-/*
-@media (min-width: 768px) {}
-@media (min-width: 961px) {}
-*/
-
+/*  スマホ対応で表示されてしまう横スクロールバー非表示 iOS対応*/
+html {
+  overflow: auto;
+}
 
 body {
   font-family: "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, sans-serif;
-  line-height: 1.5em;
+  /*  line-height: 1.5em;*/
   background-color: #fff;
+  /*  スマホ対応で表示されてしまう横スクロールバー非表示 デスクトップのみの対応*/
+  overflow-x: hidden;
 }
 
 header,
@@ -65,8 +65,9 @@ body.fadeout::after {
 /* header
 ---------------------------------------*/
 header {
-  padding: 20px;
-  height: 65px;
+  padding: 12px 0 10px;
+  /*  height: 65px;*/
+  height: auto;
   /*スクロールしても固定*/
   position: fixed;
   /*  1番手前に表示*/
@@ -86,12 +87,19 @@ header {
 
 }
 
+@media screen and (min-width:768px) {
+  padding: 20px 0 0;
+}
+
+/*ヘッダー背景のアニメーション*/
 header.is-animation {
   background: #fff;
   /*heightに変更がなくても指定する*/
-  height: 65px;
+  /*  height: 65px;*/
+  height: auto;
 }
 
+/*itemページの設定*/
 header.item {
   background: #fff;
 }
@@ -107,9 +115,24 @@ header h1 img {
 */
 header h1 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.2em;
+  font-size: 0.9em;
   font-weight: 400;
-  letter-spacing: 5px;
+  letter-spacing: 0.4em;
+  margin-top: 3px;
+}
+
+@media screen and (min-width:425px) {
+  header h1 {
+    font-size: 1em;
+  }
+}
+
+@media screen and (min-width:768px) {
+  header h1 {
+    font-size: 1.2em;
+
+
+  }
 }
 
 header h1.is-animation {
@@ -120,14 +143,259 @@ header.item h1 {
   color: #000;
 }
 
+
+.menu_box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+
+
+
+
+/* div.nav-drawer
+---------------------------------------*/
+#nav-drawer {
+  position: relative;
+  padding-left: 15px;
+
+  /*  background-color: aqua;*/
+}
+
+@media screen and (min-width:425px) {
+  #nav-drawer {
+    padding-left: 30px;
+  }
+}
+
+/*チェックボックス等は非表示に*/
+.nav-unshown {
+  display: none;
+
+
+}
+
+/*アイコンのスペース*/
+#nav-open {
+  display: inline-block;
+  width: 30px;
+  height: 22px;
+  vertical-align: middle;
+}
+
+/*ハンバーガーアイコンをCSSだけで表現*/
+#nav-open span,
+#nav-open span:before,
+#nav-open span:after {
+  position: absolute;
+  height: 2px;
+  /*線の太さ*/
+  width: 25px;
+  /*長さ*/
+  border-radius: 3px;
+  background: #fff;
+  display: block;
+  content: '';
+  cursor: pointer;
+}
+
+
+
+
+/*スクロール時の色変更*/
+#nav-open span.is-animation,
+#nav-open span.is-animation:before,
+#nav-open span.is-animation:after {
+  background: #000;
+}
+
+
+
+#nav-open span:before {
+  bottom: -8px;
+}
+
+#nav-open span:after {
+  bottom: -16px;
+}
+
+/*閉じる用の薄黒カバー*/
+#nav-close {
+  display: none;
+  /*はじめは隠しておく*/
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  /*全体に広がるように*/
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: black;
+  opacity: 0;
+  transition: .3s ease-in-out;
+}
+
+/*中身*/
+#nav-content {
+  overflow: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  /*最前面に*/
+  width: 90%;
+  /*右側に隙間を作る（閉じるカバーを表示）*/
+  max-width: 300px;
+  /*最大幅（調整してください）*/
+  height: 100%;
+  background: #fff;
+  /*背景色*/
+  transition: .3s ease-in-out;
+  /*滑らかに表示*/
+  -webkit-transform: translateX(-105%);
+  transform: translateX(-105%);
+  /*左に隠しておく*/
+}
+
+#nav-content ul {}
+
+#nav-content ul li {
+  /*  margin-left: 30px;*/
+
+  transition: all .3s ease;
+  /*  display: inline-block;*/
+  border-bottom: 1px solid #d1d1d1;
+}
+
+#nav-content ul li:hover {
+  background-color: #000;
+}
+
+
+
+/* 最後の要素を右寄せするためにposition指定 */
+/*
+nav.global ul li:last-child {
+  position: absolute;
+  right: 50px;
+  bottom: 2px;
+}
+*/
+
+#nav-content ul li a,
+#nav-content ul li p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  line-height: 2;
+  letter-spacing: 0.2em;
+  text-decoration: none;
+  color: #000;
+  /*hoverの設定*/
+  transition: all .3s ease;
+  /*リンクをliいっぱいに設定*/
+  display: block;
+  width: 100%;
+  padding: 5px 5px 5px 30px;
+
+}
+
+#nav-content ul li p {
+
+  font-size: 1.2em;
+  text-align: center;
+}
+
+
+#nav-content ul li a {
+  font-size: 0.9em;
+}
+
+
+#nav-content ul li a:hover {
+  color: #fff;
+
+
+}
+
+
+
+
+
+
+/*チェックが入ったらもろもろ表示*/
+#nav-input:checked ~ #nav-close {
+  display: block;
+  /*カバーを表示*/
+  opacity: .5;
+}
+
+#nav-input:checked ~ #nav-content {
+  -webkit-transform: translateX(0%);
+  transform: translateX(0%);
+  /*中身を表示（右へスライド）*/
+  box-shadow: 6px 0 25px rgba(0, 0, 0, .15);
+}
+
+
+
+/*ハンバーガーメニューはスマホサイズのみ表示 */
+@media screen and (min-width:768px) {
+  #nav-open {
+    /*    display: none;と異なり、要素が持っている位置や幅、高さなどの構造は維持される*/
+    visibility: hidden;
+
+  }
+}
+
+
+/* .login
+---------------------------------------*/
+.menu_box .login {
+  padding-right: 15px;
+}
+
+@media screen and (min-width:425px) {
+  .menu_box .login {
+    padding-right: 30px;
+  }
+}
+
+.menu_box .login a {
+  color: #fff;
+}
+
+.menu_box .login a.is-animation {
+  color: #000;
+}
+
+.menu_box .login .fas {
+  transition-duration: .3s;
+}
+
+.menu_box .login .fas:hover {
+  color: #61bebf;
+}
+
+
 /* nav.global
 ---------------------------------------*/
 
 nav.global {
   width: 100%;
   margin-top: 20px;
-
+  /*  スマホ・タブレットは非表示*/
+  display: none;
 }
+
+/*PCで表示*/
+@media screen and (min-width:768px) {
+  nav.global {
+    display: block;
+  }
+}
+
 
 nav.global ul {
   /*  flex指定で要素を横並び*/
@@ -135,6 +403,10 @@ nav.global ul {
   justify-content: center;
   /* 最後の要素を右寄せするために親要素にposition指定 */
   position: relative;
+
+
+  /*  background-color: aqua;*/
+
 }
 
 nav.global ul li {
@@ -143,18 +415,20 @@ nav.global ul li {
   letter-spacing: 1px;
 }
 
+/* 最後の要素を右寄せするためにposition指定 */
+/*
 nav.global ul li:last-child {
-  /* 最後の要素を右寄せするためにposition指定 */
   position: absolute;
   right: 50px;
   bottom: 2px;
 }
+*/
 
 nav.global ul li a {
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   font-size: 0.9em;
-  line-height: 30px;
+  line-height: 1.5;
   /*  以下、下線を左から右に引く設定*/
   display: block;
   padding: 0 0 5px;
@@ -190,11 +464,11 @@ nav.global ul li .fas:hover {
 }
 
 
-
-
 nav.item ul li a {
   color: #000;
 }
+
+
 
 
 /* firstview-carousel
@@ -227,14 +501,14 @@ nav.item ul li a {
   width: 100%;
 }
 
-@media screen (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .firstview-carousel-cell {
     height: auto;
   }
 
 }
 
-@media screen (min-width: 961px) {
+@media screen and (min-width: 961px) {
   .firstview-carousel-cell {
     height: 500px;
   }
@@ -242,23 +516,68 @@ nav.item ul li a {
 
 /*firstview上の文字
 ---------------------------------------*/
-.firstview-carousel-cell p {
+.firstview-carousel-cell .first,
+.firstview-carousel-cell .second {
   position: absolute;
-  padding: 30px;
+  /*  padding: 30px;*/
   color: #262626;
-  font-size: 1em;
-  letter-spacing: 5px;
+  font-size: 0.7em;
+  letter-spacing: 0.2em;
+  top: 80%;
+
 }
 
+
 .firstview-carousel-cell .first {
-  top: 80%;
   left: 5%;
 }
 
 .firstview-carousel-cell .second {
-  top: 80%;
   right: 5%;
 }
+
+@media screen and (min-width: 768px) {
+
+  .firstview-carousel-cell .first,
+  .firstview-carousel-cell .second {
+    top: 83%;
+    font-size: 1em;
+    letter-spacing: 0.3em;
+  }
+
+  .firstview-carousel-cell .first {
+    left: 5%;
+  }
+
+  .firstview-carousel-cell .second {
+    right: 5%;
+  }
+
+
+}
+
+
+/*
+@media screen and (min-width: 961px) {
+
+  .firstview-carousel-cell .first,
+  .firstview-carousel-cell .second {
+    top: 85%;
+    font-size: 1em;
+  }
+
+  .firstview-carousel-cell .first {
+    left: 5%;
+  }
+
+  .firstview-carousel-cell .second {
+    right: 5%;
+  }
+
+
+}*/
+
+
 
 
 /*firstview上の画像サイズ
@@ -272,60 +591,7 @@ nav.item ul li a {
 }
 
 
-/* bx-sliderカスタム
----------------------------------------*/
 
-/* border無しに設定*/
-/*セレクタ名から指定することで優先順位を高くする*/
-/*
-div.bx-wrapper {
-  border: 0;
-}
-*/
-
-/*球状のページャを画像内に設置*/
-/*セレクタ名から指定することで優先順位を高くする*/
-/*
-div.bx-wrapper div.bx-pager,
-div.bx-wrapper div.bx-controls-auto {
-  bottom: 30px;
-    right: -700px;
-}
-*/
-
-/*bx-slider 画像サイズの追加設定*/
-/*
-.bx-wrapper img {
-  width: 100%;
-}
-*/
-
-/*bx-slider 画像サイズの追加設定*/
-/*
-.bx-viewport {
-  max-height: 900px;
-}
-*/
-
-
-/*firstview上の文字
----------------------------------------*/
-/*
-.firstview {
-  position: relative;
-}
-
-.firstview p {
-  position: absolute;
-  padding: 30px;
-  color: #262626;
-  background: rgba(255, 255, 255, 0.1);
-  font-size: 1em;
-  top: 80%;
-  left: 5%;
-  letter-spacing: 5px;
-}
-*/
 
 
 /* div.container
@@ -358,25 +624,109 @@ main {
 /* parallax
 ---------------------------------------*/
 
+/*
+div {
+  box-sizing: border-box;
+  color: #FFF;
+  font-size: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 5%;
+}
+*/
+
+.parallax_frontandback {
+  width: 100vw;
+  /*  min-height: 20vh;*/
+  height: auto;
+  margin: 60px 0;
+  /*  min-height: 200px;*/
+
+  /*  background-color: aqua;*/
+}
+
 .parallax {
 
 
+  width: 100vw;
   min-height: 400px;
-  /*  width: 100vw;*/
-  /*  min-height: auto;*/
-  background-position: center top;
+  background-image: url(../images/small_AdobeStock_299119210.jpg);
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
   background-repeat: no-repeat;
-  /*  background-attachment: fixedとbackground-size: coverを同時に使うとiOSで問題が起きる*/
-  background-attachment: scroll;
+
+  /*
+  box-sizing: border-box;
+  color: #FFF;
+  font-size: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+*/
+
+  /*  padding: 5%;*/
+
+
+  /*
+  min-height: 400px;
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   background-size: cover;
   margin-top: 60px;
-  background-image: url(../images/small_AdobeStock_299119210.jpg);
-  /*  background-image: url(../images/small_AdobeStock_299119210.jpg);*/
+  background-image: url(../images/small_AdobeStock_299119210.jpg);*/
 }
 
+
+@media screen and (max-width: 768px) {
+
+
+  .parallax {
+    /*    background-color: blueviolet;*/
+    background-image: none;
+  }
+
+  .parallax::before {
+    /*  .b {*/
+    content: "";
+    display: block;
+    min-width: 100vw;
+    /*    min-width: 100vw;*/
+    /*    height: auto;*/
+    /*    min-height: 100vh;*/
+    /*    min-height: 400px;*/
+    min-height: 400px;
+    background-image: url(../images/small_AdobeStock_299119210.jpg);
+    background-position: center 85%;
+    /*    background-size: 50%;*/
+    background-size: 150%;
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    /*
+  position: scroll;
+  top: 0;
+  left: 0;*/
+    z-index: -1
+      /*    z-index: 0*/
+  }
+
+
+
+
+
+
+}
+
+
+
+/*
 @media only screen (min-width: 768px) {
   .parallax {
-    background-attachment: scroll;
+    background-attachment: fixed;
   }
 }
 
@@ -385,6 +735,7 @@ main {
     background-attachment: fixed;
   }
 }
+*/
 
 /*
 .parallax.bg-01 {
@@ -397,35 +748,45 @@ main h2 {
   font-weight: 500;
   font-size: 1.25em;
   /*  border-left: 14px solid #030;*/
-  padding-bottom: 10px;
+  /*  padding-bottom: 10px;*/
   line-height: 28px;
-  margin-bottom: 15px;
+  /*  margin-bottom: 15px;*/
   text-align: center;
   /*clear: both;*/
   letter-spacing: 1px;
+
 }
 
 main p {
-  margin-bottom: 10px;
-  margin-left: 24px;
-  font-size: 0.6em;
+  /*  margin-bottom: 10px;*/
+  /*  margin-left: 24px;*/
+  font-size: 0.9em;
   text-align: center;
+  line-height: 2.5;
 }
 
-@media (min-width: 768px) {
-  main p {
-    font-size: 0.8em;
-  }
-}
 
-@media (min-width: 961px) {
+@media screen and (min-width: 600px) {
   main p {
     font-size: 1em;
+    text-align: center;
+    line-height: 2.5;
   }
+}
+
+main p br.sp {
+  display: inline;
+}
+
+@media screen and (min-width: 600px) {
+  main p br.sp {
+    display: none;
+  }
+
 }
 
 .index main section {
-  margin: 60px 0 100px
+  margin: 60px 0;
 }
 
 
@@ -439,25 +800,81 @@ main p {
 
 /*firstviewのdots*/
 .flickity-page-dots {
-  bottom: 25px;
+  bottom: 5px;
+}
+
+@media screen and (min-width: 768px) {
+  .flickity-page-dots {
+    bottom: 25px;
+  }
 }
 
 /*pickup*/
 
 .pickup-carousel {
   /*  margin-bottom: 30px;*/
-  margin: 90px;
+  margin: 60px 20px;
   /*  position: relative;*/
+
+
+}
+
+@media screen and (min-width: 768px) {
+
+  .pickup-carousel {
+    margin: 80px 40px;
+  }
+
+}
+
+@media screen and (min-width: 961px) {
+
+  .pickup-carousel {
+    margin: 90px;
+
+  }
 
 }
 
 .pickup-carousel-cell {
-  /*  padding: 0 30px;*/
-  margin: 0 40px;
+  /*  margin: 0 40px;*/
+
+  /*  padding: 0 10px;*/
+  margin: 0 10px;
   display: block;
+  width: 22vw;
+  height: auto;
+  /*  display: flex;*/
+
 }
 
-.pickup-carousel-cell item {}
+@media screen and (min-width: 768px) {
+
+  .pickup-carousel-cell {
+    /*  margin: 0 40px;*/
+    margin: 0 20px;
+    width: 22vw;
+  }
+
+}
+
+@media screen and (min-width: 961px) {
+
+  .pickup-carousel-cell {
+    /*  margin: 0 40px;*/
+    margin: 0 20px;
+    width: 270px;
+  }
+}
+
+
+
+.pickup-carousel-cell item {
+
+  /*テスト用*/
+  /*  background-color: aqua;*/
+
+}
 
 
 /*hover設定*/
@@ -525,27 +942,120 @@ main p {
   /*  left: 0%;*/
 
   display: block;
-  width: 270px;
-  height: 360px;
+  width: 22vw;
+  /*  height: 360px;*/
+  height: auto;
   background: #ededed;
-  padding: 20px 0;
+  /*  padding: 20px 0;*/
 
   /*  vertical-align: middle;*/
   transition: opacity .3s;
 
 }
 
+@media screen and (min-width: 768px) {
+
+  .pickup-carousel-cell .item img {
+    /*  width: 25%;*/
+    /*  position: absolute;*/
+    /*  left: 0%;*/
+
+
+    /*    width: 25vw;*/
+    width: 22vw;
+
+  }
+
+
+}
+
+@media screen and (min-width: 961px) {
+
+  .pickup-carousel-cell .item img {
+    /*  width: 25%;*/
+    /*  position: absolute;*/
+    /*  left: 0%;*/
+
+    width: 270px;
+    /*  height: 360px;*/
+
+    /*  vertical-align: middle;*/
+
+  }
+
+
+
+}
+
+
 .pickup-carousel-cell .item a:hover img {
   opacity: 0;
 }
 
 .pickup-carousel-cell p {
-  margin-top: 20px;
+  /*  margin-top: 15px;*/
   /*  main pの打ち消し*/
   margin-left: 0;
-  letter-spacing: 5px;
-  font-size: 0.9em;
+  /*  main pの打ち消し*/
+  margin-bottom: 3px;
+  /*  letter-spacing: 5px;*/
+  letter-spacing: 0.1em;
+  /*  font-size: 0.4em;*/
+  /*  font-size: 0.7em;*/
+  text-align: left;
+
+  /*  background-color: beige;*/
+
+  /*3点リーダ表示設定 親要素にwidth指定する*/
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
 }
+
+
+.pickup-carousel-cell .itemname {
+  margin-top: 15px;
+  font-size: 0.3em;
+
+}
+
+.pickup-carousel-cell .itemprice {
+  font-size: 0.2em;
+
+}
+
+@media screen and (min-width: 768px) {
+
+  .pickup-carousel-cell .itemname {
+    font-size: 0.5em;
+
+  }
+
+  .pickup-carousel-cell .itemprice {
+    font-size: 0.4em;
+
+  }
+
+
+}
+
+
+@media screen and (min-width: 961px) {
+
+
+  .pickup-carousel-cell .itemname {
+    font-size: 0.8em;
+
+  }
+
+  .pickup-carousel-cell .itemprice {
+    font-size: 0.7em;
+
+  }
+
+}
+
 
 
 .flickity-button {
@@ -564,6 +1074,20 @@ main p {
 
 
 
+
+/*スマホ表示ではボタン非表示*/
+@media screen and (max-width: 767px) {
+
+  .flickity-prev-next-button.previous,
+  .flickity-prev-next-button.next {
+    display: none;
+  }
+
+}
+
+
+
+
 main hr {
   background-color: #a6c3bf;
   border: none;
@@ -576,10 +1100,9 @@ main hr.first {
   width: 20%;
 }
 
-main hr.second {
-  /*  margin-top: 100px;*/
-  width: 100%;
-}
+/*main hr.second {*/
+/*  width: 100%;*/
+/*}*/
 
 
 main section .pickup {
@@ -644,45 +1167,137 @@ main section .divbutton:hover {
 
 main .regist {
   position: relative;
+
+  border-top: 1px ridge #bebebe;
+  border-bottom: 1px ridge #bebebe;
+  /*  floatした要素の親要素（このbox）に高さを認識させる*/
+  overflow: hidden;
+
 }
 
 .index main .regist-section {
 
-  float: left;
+  float: none;
   /*  display: flex;*/
   /*  align-items: center;*/
 
+  /*
   margin-top: 100px;
   margin-left: 100px;
+  
+*/
+  /*
+  margin-top: 12%;
+  margin-left: 10%
+*/
+}
+
+@media screen and (min-width: 768px) {
+
+  .index main .regist-section {
+
+    float: left;
+    margin-top: 12%;
+    margin-left: 10%
+  }
+
 
 }
 
-main .regist-section h2 {
+@media screen and (min-width: 961px) {
+
+  .index main .regist-section {
+
+    float: left;
+    margin-top: 10%;
+    margin-left: 10%
+  }
+
+}
+
+main .regist-section p {
   background-position: left center;
   letter-spacing: 3px;
   font-size: 1em;
+  margin-bottom: 20px;
 }
 
 
 main .regist-section .divbutton {
   background-position: 0 2px;
+  margin-bottom: 60px;
+}
+
+@media screen and (min-width: 768px) {
+  main .regist-section .divbutton {
+    margin-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 961px) {
+  main .regist-section .divbutton {
+    margin-bottom: 0;
+  }
+
+}
+
+/*img調整のため*/
+main .regist p {
+  margin-left: 0;
 }
 
 main .regist img {
-  float: right;
+  float: none;
   /*  アスペクト比固定*/
   height: auto;
-  width: 50%;
+  width: 100vw;
 }
+
+@media screen and (min-width: 768px) {
+
+  main .regist img {
+    float: right;
+    /*  アスペクト比固定*/
+    width: 55%;
+  }
+
+}
+
+@media screen and (min-width: 961px) {
+
+  main .regist img {
+    float: right;
+    /*  アスペクト比固定*/
+    width: 50%;
+  }
+}
+
 
 /* 見出し欧文フォント設定
 ---------------------------------------*/
 main .pickup h2,
 main .follow h2 {
   font-family: 'Montserrat', sans-serif;
-  font-size: 1.2em;
+  font-size: 0.9em;
   font-weight: 400;
   letter-spacing: 4px;
+}
+
+main h2 br {
+  display: inline;
+}
+
+@media screen and (min-width: 768px) {
+
+  main .pickup h2,
+  main .follow h2 {
+    font-size: 1.2em;
+  }
+
+  main h2 br {
+    display: none;
+  }
+
 }
 
 main .follow div {
@@ -692,10 +1307,16 @@ main .follow div {
 
 main .follow img {
   height: auto;
-  width: 18%;
+  width: 26vw;
   background: #f2f2f2;
-  margin: 0 10px;
+  margin: 0 5px;
   transition: opacity .3s;
+}
+
+@media screen and (min-width: 768px) {
+  margin: 0 10px;
+  width: 18%;
+
 }
 
 main .follow img:hover {
@@ -710,12 +1331,18 @@ main .follow img:hover {
 footer {
   clear: both;
   background-color: #eefffc;
-  padding: 20px 30px;
+  padding: 0 10px;
   color: #000;
+  /*  width: 100%;*/
+  width: auto;
+
+
+
+
 }
 
 footer section {
-  width: 350px;
+  /*  width: 350px;*/
   float: left;
 }
 
@@ -731,28 +1358,67 @@ footer h2 {
 
 footer .local,
 footor .sns {
-  width: 450px;
+  /*  width: 450px;*/
   /*  float: right;*/
   /*  display: flex;*/
-  margin-top: 10px;
+  /*  margin-top: 10px;*/
   /*  display: inline-block;*/
+
+  /*  background-color: brown;*/
 }
 
 footer .local {
-  text-align: left;
+  /*  text-align: left;*/
   float: left;
+  margin-bottom: 40px;
+
 }
 
 footer .sns {
-  text-align: right;
+  /*  text-align: right;*/
   float: right;
+  margin-bottom: 40px;
 }
-
 
 footer .local li,
 footer .sns li {
-  display: inline-block;
+  display: inline;
+
+  /*  background-color: brown;*/
+
 }
+
+
+
+
+
+@media screen and (min-width: 768px) {
+  footer .local {
+    /*    text-align: left;*/
+    float: left;
+  }
+
+  footer .sns {
+    /*    text-align: right;*/
+    float: right;
+  }
+
+  footer .local li,
+  footer .sns li {
+    display: inline-block;
+
+    /*  background-color: brown;*/
+
+  }
+
+}
+
+footer .sns li:last-child {
+  margin-right: 20px;
+}
+
+
+
 
 footer .local li a,
 footer .sns li a {
@@ -763,6 +1429,7 @@ footer .sns li a {
   font-size: 0.875em;
   text-decoration: none;
   margin-left: 20px;
+
 }
 
 footer .sns li .fab {

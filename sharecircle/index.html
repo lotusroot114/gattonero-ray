@@ -7,6 +7,7 @@
   <!--  <meta name="author" content="">-->
   <meta name="description" content="SHARE CIRCLEは、会員制のファッションシェアリングコミュニティです">
   <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <!--  <link rel="icon" href="favicon.ico">-->
   <!--  <link href="https://fonts.googleapis.com/css?family=Noto+Sans+JP:100,300,400,500,700,900" rel="stylesheet">-->
   <link rel="stylesheet" href="css/flickity.min.css">
@@ -22,26 +23,43 @@
 <body class="index fadeout">
   <div class="wrapper">
     <header>
-      <!--      h1を画像にするならaltを必ず指定-->
-      <h1>SHARE CIRCLE</h1>
-      <!--            <h1><img src="images/sharecircle_logo.png" alt="SHARECIRCLE"></h1>-->
+      <!--      スマホ用メニュー-->
+      <div class="menu_box">
+        <div id="nav-drawer">
+          <input id="nav-input" type="checkbox" class="nav-unshown">
+          <label id="nav-open" for="nav-input"><span></span></label>
+          <label class="nav-unshown" id="nav-close" for="nav-input"></label>
+          <div id="nav-content">
+            <ul>
+              <li><a href="index.html"><span>TOP</span></a></li>
+              <li><a href="index.html"><span>ABOUT US</span></a></li>
+              <li><a href="index.html"><span>HOW IT WORKS</span></a></li>
+              <li><a href="index.html"><span>SHOP</span></a></li>
+            </ul>
+          </div>
+        </div>
+        <!--      h1を画像にするならaltを必ず指定-->
+        <h1>SHARE&nbsp;CIRCLE</h1>
+        <div class="login"><a href="index.html"><span><i class="fas fa-user-circle fa-2x"></i></span></a></div>
+      </div>
+      <!--      タブレット、PC用メニュー-->
       <nav class="global">
         <ul>
           <li><a href="index.html"><span>TOP</span></a></li>
           <li><a href="index.html"><span>ABOUT US</span></a></li>
           <li><a href="index.html"><span>HOW IT WORKS</span></a></li>
           <li><a href="index.html"><span>SHOP</span></a></li>
-          <!--          <li><a href="index.html"><span>CONTACT</span></a></li>-->
-          <li><a href="index.html"><span><i class="fas fa-user-circle fa-3x"></i></span></a></li>
         </ul>
       </nav>
     </header>
     <div class="firstview">
       <div class="firstview-carousel">
-        <div class="firstview-carousel-cell"><img class="firstview-carousel-cell-image" src="images/small_AdobeStock_60870795.jpg">
+        <div class="firstview-carousel-cell">
+          <p><img class="firstview-carousel-cell-image" src="images/small_AdobeStock_60870795.jpg"></p>
           <p class="first">会員制ファッションレンタルコミュニティ</p>
         </div>
-        <div class="firstview-carousel-cell"><img class="firstview-carousel-cell-image" src="images/small_AdobeStock_174752217.jpg">
+        <div class="firstview-carousel-cell">
+          <p><img class="firstview-carousel-cell-image" src="images/small_AdobeStock_174752217.jpg"></p>
           <p class="second">会員制ファッションレンタルコミュニティ</p>
         </div>
       </div>
@@ -49,18 +67,15 @@
     <div class="container">
       <main>
         <section>
-          <h2>SHARE CIRCLEで できること</h2>
-          <p>特別な機会以外はクローゼットに眠っている洋服はありませんか？</p>
-          <p>SHARE CIRCLEは登録ユーザ同士で</p>
-          <p>洋服を貸し借りできる場を提供し、サポートいたします。</p>
+          <h2>SHARE&nbsp;CIRCLEで&nbsp;できること</h2>
+          <div class="parallax_frontandback">
+            <p>特別な機会以外はクローゼットに<br class="sp">眠っている洋服はありませんか？<br>SHARE CIRCLEは会員同士で<br>ファッションアイテムを貸し借りできる<br class="sp">場を提供し、サポートいたします。</p>
+          </div>
           <div class="parallax"></div>
-        </section>
-        <section>
-          <h2>持続可能な社会のために</h2>
-          <p>社会問題ともなっているアパレル業界の廃棄問題。</p>
-          <p>現在日本では、アパレル業界から廃棄される衣類の量が年間で100万トンに及ぶとされています。</p>
-          <p>ユーザ同士で衣服を共有（SHARE）する輪（CIRCLE）が広がることは</p>
-          <p>ファッションを楽しむと同時に環境保全に繋がると私たちは考えています。</p>
+          <div class="parallax_frontandback">
+            <!--            <p>持続可能な社会のために</p>-->
+            <p>社会問題ともなっている<br class="sp">アパレル業界の廃棄問題。<br>現在日本では、アパレル業界から<br class="sp">廃棄される衣類の量が<br>年間で100万トンに及ぶとされています。<br>ユーザ同士で衣服を共有（SHARE）する<br class="sp">輪（CIRCLE）が広がることで<br>ファッションを楽しむと同時に<br class="sp">環境保全に繋がると私たちは考えています。</p>
+          </div>
         </section>
         <hr class="first">
         <section class="pickup">
@@ -68,52 +83,55 @@
           <div class="pickup-carousel">
             <div class="pickup-carousel-cell">
               <div class="item"><a href="item01.html" id="IMG_6839"><img src="images/IMG_6839.png" alt="dress1"></a></div>
-              <p>ウールワンピース</p>
+              <p class="itemname">ウールワンピース</p>
+              <p class="itemprice">¥2,000</p>
             </div>
             <div class="pickup-carousel-cell">
               <div class="item"><a href="item02.html" id="IMG_6851"><img src="images/IMG_6851.png" alt="dress2"></a></div>
-              <p>メタリックツイードワンピース</p>
+              <p class="itemname">メタリックツイードワンピース</p>
+              <p class="itemprice">¥3,000</p>
             </div>
             <div class="pickup-carousel-cell">
               <div class="item"><a href="item03.html" id="IMG_6854"><img src="images/IMG_6854.png" alt="dress3"></a></div>
-              <p>ニットワンピース</p>
+              <p class="itemname">ニットワンピース</p>
+              <p class="itemprice">¥2,500</p>
             </div>
             <div class="pickup-carousel-cell">
               <div class="item"><a href="item04.html" id="IMG_6885"><img src="images/IMG_6885.png" alt="dress4"></a></div>
-              <p>パフスリーブサテンドレス</p>
+              <p class="itemname">パフスリーブサテンドレス</p>
+              <p class="itemprice">¥3,500</p>
             </div>
             <div class="pickup-carousel-cell">
               <div class="item"><a href="item05.html" id="IMG_6895"><img src="images/IMG_6895.png" alt="dress5"></a></div>
-              <p>ロングコート ホワイト</p>
+              <p class="itemname">ロングコート ホワイト</p>
+              <p class="itemprice">¥4,000</p>
             </div>
             <div class="pickup-carousel-cell">
               <div class="item"><a href="item06.html" id="IMG_6904"><img src="images/IMG_6904.png" alt="dress6"></a></div>
-              <p>ロングコート キャメル</p>
+              <p class="itemname">ロングコート キャメル</p>
+              <p class="itemprice">¥4,000</p>
             </div>
             <div class="pickup-carousel-cell">
               <div class="item"><a href="item07.html" id="IMG_6927"><img src="images/IMG_6928.png" alt="dress7"></a></div>
-              <p>エナメルバッグ</p>
+              <p class="itemname">エナメルバッグ</p>
+              <p class="itemprice">¥3,000</p>
             </div>
           </div>
           <div class="divbutton">
             <a href="index.html">もっと見る</a>
           </div>
         </section>
-        <hr class="second">
         <div class="regist">
+          <p><img src="images/small_AdobeStock_256881905.jpg" alt="womans"></p>
           <section class="regist-section">
-            <h2>コミュニティに参加する</h2>
-            <div class="divbutton">
-              <a href="index.html">会員登録</a>
-            </div>
+            <p>コミュニティに参加する<p>
+                <div class="divbutton">
+                  <a href="index.html">会員登録</a>
+                </div>
           </section>
-          <!--          <div class="regist-image">-->
-          <img src="images/small_AdobeStock_256881905.jpg" alt="womans">
-          <!--          </div>-->
         </div>
-        <hr class="second">
         <section class="follow">
-          <h2>Follow @sharecircle on Instagram</h2>
+          <h2>Follow&nbsp;@sharecircle&nbsp;<br>on&nbsp;<br>Instagram</h2>
           <div>
             <a href="index.html"><img src="images/IMG_6912.png" alt="dress"></a>
             <a href="index.html"><img src="images/IMG_6924.png" alt="bag"></a>
@@ -125,27 +143,29 @@
     </div>
     <!--/container-->
     <footer>
-      <section>
-        <h2>MORE INFO</h2>
-        <nav class="local">
-          <ul>
-            <li><a href="index.html">FAQs</a></li>
-            <li><a href="index.html">Privacy Policy</a></li>
-            <li><a href="index.html">Terms of Service</a></li>
-            <li><a href="index.html"><i class="far fa-envelope fa-2x"></i></a></li>
-            <!--            <li><a href="index.html">About Us</a></li>-->
-          </ul>
-        </nav>
-      </section>
-      <nav class="sns">
+      <!--      <section>-->
+      <h2>MORE&nbsp;INFO</h2>
+      <nav class="local">
         <ul>
-          <li><a href="index.html"><i class="fab fa-instagram fa-3x"></i></a></li>
-          <li><a href="index.html"><i class="fab fa-facebook fa-3x"></i></a></li>
-          <li><a href="index.html"><i class="fab fa-twitter fa-3x"></i></a></li>
-          <li><a href="index.html"><i class="fab fa-pinterest-p fa-3x"></i></a></li>
+          <li><a href="index.html">FAQs</a></li>
+          <li><a href="index.html">Privacy&nbsp;Policy</a></li>
+          <li><a href="index.html">Terms&nbsp;of&nbsp;Service</a></li>
+          <li><a href="index.html">Contact</a></li>
+          <!--          <li><a href="index.html"><i class="far fa-envelope fa-2x"></i></a></li>-->
         </ul>
       </nav>
-      <small>Copyright &copy; SHARE CIRCLE All rights reserved.</small>
+      <!--      </section>-->
+      <nav class="sns">
+        <ul>
+          <li><a href="index.html"><i class="fab fa-instagram fa-2x"></i></a></li>
+          <li><a href="index.html"><i class="fab fa-facebook fa-2x"></i></a></li>
+          <li><a href="index.html"><i class="fab fa-twitter fa-2x"></i></a></li>
+          <li><a href="index.html"><i class="fab fa-pinterest-p fa-2x"></i></a></li>
+        </ul>
+      </nav>
+      <!--      </section>-->
+
+      <small>Copyright &copy; SHARE CIRCLE</small>
     </footer>
   </div>
   <!--/wrapper-->
@@ -189,17 +209,25 @@
         $nav = $('nav.global ul li a'),
         animationClassNav = 'is-animation',
         $h = $('header h1'),
-        animationClassH = 'is-animation';
+        animationClassH = 'is-animation',
+        $navOpen = $('#nav-open span'),
+        animationClassNavOpen = 'is-animation',
+        $login = $('.menu_box .login a'),
+        animationClassLogin = 'is-animation';
       $win.on('load scroll', function() {
         var value = $(this).scrollTop();
         if (value > 100) {
           $header.addClass(animationClass);
           $nav.addClass(animationClassNav);
           $h.addClass(animationClassH);
+          $navOpen.addClass(animationClassNavOpen);
+          $login.addClass(animationClassLogin);
         } else {
           $header.removeClass(animationClass);
           $nav.removeClass(animationClassNav);
           $h.removeClass(animationClassH);
+          $navOpen.removeClass(animationClassNavOpen);
+          $login.removeClass(animationClassLogin);
         }
       });
     });
