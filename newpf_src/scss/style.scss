@@ -1188,6 +1188,8 @@ html {
 
                 dl {
 
+                  position: relative;
+
                   dt {
                     float: left;
                     text-align: left;
@@ -1856,6 +1858,7 @@ html {
               //記述型リスト設定
               dl {
                 margin-left: 0;
+                position: relative;
 
                 @include tab {
                   margin-left: 5px;
@@ -2261,6 +2264,7 @@ html {
               //記述型リスト設定
               dl {
                 margin-left: 0;
+                position: relative;
 
                 @include tab {
                   margin-left: 5px;

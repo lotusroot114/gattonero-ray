@@ -782,18 +782,20 @@ html {
                   @media (min-width: 961px) {
                     html body div.wrapper div.container main section.default div.about div.profile p {
                       margin-bottom: 0; } }
-                html body div.wrapper div.container main section.default div.about div.profile dl dt {
-                  float: left;
-                  text-align: left; }
-                html body div.wrapper div.container main section.default div.about div.profile dl dd {
-                  margin-left: 0;
-                  margin-bottom: 5px; }
-                  @media (min-width: 768px) {
-                    html body div.wrapper div.container main section.default div.about div.profile dl dd {
-                      margin-left: 110px; } }
-                  @media (min-width: 961px) {
-                    html body div.wrapper div.container main section.default div.about div.profile dl dd {
-                      margin-left: 110px; } }
+                html body div.wrapper div.container main section.default div.about div.profile dl {
+                  position: relative; }
+                  html body div.wrapper div.container main section.default div.about div.profile dl dt {
+                    float: left;
+                    text-align: left; }
+                  html body div.wrapper div.container main section.default div.about div.profile dl dd {
+                    margin-left: 0;
+                    margin-bottom: 5px; }
+                    @media (min-width: 768px) {
+                      html body div.wrapper div.container main section.default div.about div.profile dl dd {
+                        margin-left: 110px; } }
+                    @media (min-width: 961px) {
+                      html body div.wrapper div.container main section.default div.about div.profile dl dd {
+                        margin-left: 110px; } }
             html body div.wrapper div.container main section.default div.skill {
               width: 100%;
               margin-bottom: 0; }
@@ -1125,7 +1127,8 @@ html {
                 html body div.wrapper div.container main section.default div.explanation {
                   width: 767px; } }
               html body div.wrapper div.container main section.default div.explanation dl {
-                margin-left: 0; }
+                margin-left: 0;
+                position: relative; }
                 @media (min-width: 768px) {
                   html body div.wrapper div.container main section.default div.explanation dl {
                     margin-left: 5px; } }
@@ -1361,7 +1364,8 @@ html {
               opacity: 0.4;
               margin: 10px 0; }
             html body div.wrapper div.container main section.about div.shortbio dl {
-              margin-left: 0; }
+              margin-left: 0;
+              position: relative; }
               @media (min-width: 768px) {
                 html body div.wrapper div.container main section.about div.shortbio dl {
                   margin-left: 5px; } }
