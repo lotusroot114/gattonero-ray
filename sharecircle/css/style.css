@@ -1361,17 +1361,22 @@ footer h2 {
 
 footer .local,
 footor .sns {
-  margin-bottom: 40px;
+  margin-bottom: 50px;
+  float: none;
 }
 
-footer .local {
-  /*  text-align: left;*/
-  float: left;
-}
 
-footer .sns {
-  /*  text-align: right;*/
-  float: right;
+@media screen and (min-width: 426px) {
+  footer .local {
+    /*  text-align: left;*/
+    float: left;
+  }
+
+  footer .sns {
+    /*  text-align: right;*/
+    float: right;
+  }
+
 }
 
 
@@ -1382,9 +1387,6 @@ footer .sns li {
   /*  background-color: brown;*/
 
 }
-
-
-
 
 
 @media screen and (min-width: 768px) {
@@ -1451,7 +1453,7 @@ footer .local li a::after {
 
 @media screen and (min-width: 768px) {
 
-  /*  下線を左から右に引く設定*/
+  /*  下線を左から右に引く設定 タブレット、スマホでは無効*/
   footer .local li a:hover::after {
     width: 100%;
   }
@@ -1473,7 +1475,8 @@ footer small {
   letter-spacing: 1px;
   display: block;
   text-align: center;
-  margin-top: 130px;
+  margin-top: 30px;
+  padding-bottom: 20px;
 }
 
 main section:last-child {
@@ -1481,14 +1484,9 @@ main section:last-child {
 }
 
 
-
-
-
 section.nodata {
   height: 120px;
 }
-
-
 
 .carousel {
   background: rgba(255, 255, 255, 0);
