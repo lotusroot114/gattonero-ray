@@ -610,8 +610,9 @@ nav.global ul li .fas:hover {
 }
 
 .item .container {
-  margin: 0;
+  margin: 0 0 30px;
 }
+
 
 
 /* main
@@ -1496,7 +1497,7 @@ section.nodata {
 .item_detail {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
 
   padding-top: 80px;
   padding-bottom: 120px;
@@ -1511,20 +1512,29 @@ section.nodata {
 
     flex-direction: row;
     justify-content: center;
+    align-items: flex-start;
     padding-top: 140px;
   }
 
 }
 
-div.item_image {
-  width: 100%;
+.item_image {
+  width: 90%;
 
   /*  background-color: royalblue;*/
 }
 
-@media screen and (min-width: 768px) {
-  div.item_image {
-    width: 600px;
+@media screen and (min-width:768px) and (max-width:1024px) {
+  .item_image {
+    margin-left: 30px;
+    width: 520px;
+  }
+
+}
+
+@media screen and (min-width: 1025px) {
+  .item_image {
+    width: 550px;
   }
 
 }
@@ -1553,7 +1563,15 @@ div.item_image {
   /*  counter-increment: carousel-cell;*/
 }
 
-@media screen and (min-width: 768px) {
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+  .carousel-cell {
+    width: 40vw;
+  }
+}
+
+
+@media screen and (min-width: 1025px) {
   .carousel-cell {
     width: 390px;
     height: 520px;
@@ -1595,7 +1613,13 @@ div.item_image {
 
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width:768px) and (max-width:1024px) {
+  .carousel-main .carousel-cell img {
+    width: 40vw;
+  }
+}
+
+@media screen and (min-width: 1025px) {
   .carousel-main .carousel-cell img {
     width: 390px;
     height: 520px;
@@ -1612,15 +1636,31 @@ div.item_image {
   /*  background-color: green;*/
   /*  background-color: aqua;*/
 
+  /*  background-color: green;*/
+
+
 }
 
 /*タブレット以上のサイズのときはJavascriptでHTMLに直接指定される
 translateXの設定を上書きする*/
 @media screen and (min-width: 768px) {
   .carousel-main .flickity-slider {
-    transform: translateX(62%) !important;
+    /*    transform: translateX(55%) !important;*/
   }
+
 }
+
+
+/*@media screen and (max-width: 600px) {*/
+
+/*JavascriptでHTMLに直接指定される
+translateXの設定を上書きする*/
+/*
+  .carousel-nav .flickity-slider {
+    transform: translateX(10%) !important;
+  }
+  }
+*/
 
 .carousel-nav .carousel-cell {
   height: 81px;
@@ -1630,28 +1670,63 @@ translateXの設定を上書きする*/
   /*  transform: rotate(-90deg);*/
 
   /*  background-color: aqua;*/
+  /*  background-color: aqua;*/
 
 }
 
-
-@media screen and (min-width: 768px) {
+@media screen and (min-width:768px) and (max-width:1024px) {
 
   .carousel-nav {
     /*  rotateでナビを回転、translateで表示位置を調整*/
-    transform: rotate(90deg) translate(-260px, 180px);
-    /*  transform: rotate(90deg);*/
-    /*  transform-origin: left;*/
+    /*    transform: rotate(90deg) translate(-100%, 200%);*/
+    /*    transform: rotate(90deg) translate(-300px, 220px);*/
+
+
+    /*    background-color: green;*/
 
 
   }
 
   .carousel-nav .carousel-cell {
+    /*
     height: 81px;
     width: 61px;
     box-sizing: border-box;
+*/
     /*  ナビゲーションセルの向きを回転*/
-    transform: rotate(-90deg);
+    /*    transform: rotate(-90deg);*/
+
+    /*    background-color: aqua;*/
   }
+
+}
+
+
+
+@media screen and (min-width: 1025px) {
+
+  .carousel-nav {
+    /*  rotateでナビを回転、translateで表示位置を調整*/
+    /*    transform: rotate(90deg) translate(-300px, 220px);*/
+
+    /*    background-color: green;*/
+
+
+  }
+
+  .carousel-nav .carousel-cell {
+    /*
+    height: 81px;
+    width: 61px;
+    box-sizing: border-box;
+*/
+    /*  ナビゲーションセルの向きを回転*/
+    /*    transform: rotate(-90deg);*/
+
+    /*    background-color: aqua;*/
+  }
+
+
 
 
 }
@@ -1669,11 +1744,16 @@ translateXの設定を上書きする*/
   width: 60px;
 }
 
-
+.carousel-nav .carousel-cell.is-nav-selected img {
+  display: block;
+  height: 76px;
+  width: 56px;
+}
 
 .carousel-nav .carousel-cell.is-nav-selected {
   /*  background: #ED2;*/
-  border: 0.5px solid #61bebf;
+  border: 2px solid #61bebf;
+  /*  border: 0.5px solid #61bebf;*/
 
 }
 
@@ -1690,10 +1770,21 @@ translateXの設定を上書きする*/
 
 }
 
-@media screen and (min-width: 768px) {
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+  .item_explain {
+    width: 320px;
+    margin-right: 30px;
+    margin-top: 0;
+
+  }
+
+}
+
+@media screen and (min-width: 1025px) {
   .item_explain {
     width: 350px;
-    height: auto;
+
     margin-top: 0;
 
   }
@@ -1708,7 +1799,7 @@ translateXの設定を上書きする*/
 
 .item_explain_detail {
   margin: 30px auto;
-  width: 60vw;
+  width: 80vw;
   height: auto;
   padding-top: 20px;
   border-top: 1px ridge #a6c3bf;

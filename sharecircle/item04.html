@@ -65,7 +65,6 @@
               <div class="carousel-cell"><img src="images/IMG_6893.png" alt="dress2"></div>
               <div class="carousel-cell"><img src="images/IMG_6891.png" alt="dress2"></div>
             </div>
-            <!--          <div class="carousel carousel-nav" data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false }'>-->
             <div class="carousel carousel-nav" data-flickity>
               <div class="carousel-cell"><img src="images/IMG_6885.png" alt="dress2"></div>
               <div class="carousel-cell"><img src="images/IMG_6886.png" alt="dress2"></div>
@@ -81,13 +80,13 @@
             <p class="item_price">¥3,500</p>
             <div class="item_explain_detail">
               <p>状態は良好です。</p>
-              <p>7部袖、膝上丈のワンピースです。お色に濃いグレーとボルドーを使用しており、お肌が明るく見えます。袖はフレア、襟はVネックですので、手首が細く、デコルテが綺麗に見えます。ファスナーは背中にあります。秋冬の着用がおすすめです。</p>
+              <p>タックを効かせたパフスリーブが目を惹く、ミモレ丈のドレスです。深い赤のサテン生地に、金ボタンがアクセントのゴージャスなデザイン。襟元は襟付きのスキッパーなので、首元・胸元の露出は控えめです。また、ボタンでの前開きなので、バックファスナーが苦手な方にもおすすめです。特別な日にぜひご利用ください。</p>
               <dl>
                 <dt>サイズ：</dt>
-                <dd>Mサイズ</dd>
-                <dt>組成：</dt>
-                <dd>表地 アクリル 90% ウール 10%</dd>
-                <dd>裏地 ポリエステル 100%</dd>
+                <dd>Lサイズ</dd>
+                <dt>素材：</dt>
+                <dd>表地 トリアセテート 81% ポリエステル 19%</dd>
+                <dd>別布部分 ポリエステル 100%</dd>
               </dl>
               <div class="divbutton">
                 <a href="item04.html">レンタルする</a>
@@ -184,15 +183,15 @@
       pageDots: false,
     });
 
-    var carousel = document.querySelector('.carousel-nav');
-    var cells = carousel.querySelectorAll('.carousel-cell');
-    var flkty = new Flickity(carousel, {
+    var carouselNav = document.querySelector('.carousel-nav');
+    var cellsNav = carouselNav.querySelectorAll('.carousel-cell');
+    var flktyNav = new Flickity(carouselNav, {
       //      fade: true,
       prevNextButtons: false,
       asNavFor: ".carousel-main",
       contain: true,
       pageDots: false,
-      draggable: false,
+      draggable: true,
     });
 
 

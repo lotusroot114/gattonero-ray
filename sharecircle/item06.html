@@ -72,15 +72,15 @@
           </div>
           <section class="item_explain">
             <h2>ロングコート キャメル</h2>
-            <p class="item_price">¥2,000</p>
+            <p class="item_price">¥4,000</p>
             <div class="item_explain_detail">
               <p>状態は良好です。</p>
-              <p>7部袖、膝上丈のワンピースです。お色に濃いグレーとボルドーを使用しており、お肌が明るく見えます。袖はフレア、襟はVネックですので、手首が細く、デコルテが綺麗に見えます。ファスナーは背中にあります。秋冬の着用がおすすめです。</p>
+              <p>キャメル色のロングコートです。前身頃は2つボタンのPコートタイプ。スーツに似合いそうなかっちりした印象です。胸元や身幅がぴったり目のお作りですので、冬の隙間風が気になる方におすすめです。</p>
               <dl>
                 <dt>サイズ：</dt>
-                <dd>Mサイズ</dd>
-                <dt>組成：</dt>
-                <dd>表地 アクリル 90% ウール 10%</dd>
+                <dd>Lサイズ</dd>
+                <dt>素材：</dt>
+                <dd>表地 アンゴラ 60% ウール 40%</dd>
                 <dd>裏地 ポリエステル 100%</dd>
               </dl>
               <div class="divbutton">
@@ -179,15 +179,15 @@
       pageDots: false,
     });
 
-    var carousel = document.querySelector('.carousel-nav');
-    var cells = carousel.querySelectorAll('.carousel-cell');
-    var flkty = new Flickity(carousel, {
+    var carouselNav = document.querySelector('.carousel-nav');
+    var cellsNav = carouselNav.querySelectorAll('.carousel-cell');
+    var flktyNav = new Flickity(carouselNav, {
       //      fade: true,
       prevNextButtons: false,
       asNavFor: ".carousel-main",
       contain: true,
       pageDots: false,
-      draggable: false,
+      draggable: true,
     });
 
 

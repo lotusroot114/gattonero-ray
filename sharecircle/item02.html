@@ -78,13 +78,13 @@
             <p class="item_price">¥3,000</p>
             <div class="item_explain_detail">
               <p>状態は良好です。</p>
-              <p>7部袖、膝上丈のワンピースです。お色に濃いグレーとボルドーを使用しており、お肌が明るく見えます。袖はフレア、襟はVネックですので、手首が細く、デコルテが綺麗に見えます。ファスナーは背中にあります。秋冬の着用がおすすめです。</p>
+              <p>膝上丈のワンピースです。フランス製のメタリックツィード地はモノトーンの色合いで大人の雰囲気。画像では光沢が分かりにくいですがグレーではなくシルバーです。ウエストに縫い付けられたストライプのグログラン（平織りの織物）がアクセントです。シルエットはタイトで、伸縮性はあまりございません。春夏のパーティーにおすすめです。</p>
               <dl>
                 <dt>サイズ：</dt>
                 <dd>Lサイズ</dd>
-                <dt>組成：</dt>
-                <dd>表地 アクリル 90% ウール 10%</dd>
-                <dd>裏地 ポリエステル 100%</dd>
+                <dt>素材：</dt>
+                <dd>表地: 綿 33%, ポリエステル 22%, ナイロン 18%, レーヨン 15%, 　アクリル 12%</dd>
+                <dd>裏地 キュプラ 100%</dd>
               </dl>
               <div class="divbutton">
                 <a href="item01.html">レンタルする</a>
@@ -176,15 +176,15 @@
       pageDots: false,
     });
 
-    var carousel = document.querySelector('.carousel-nav');
-    var cells = carousel.querySelectorAll('.carousel-cell');
-    var flkty = new Flickity(carousel, {
+    var carouselNav = document.querySelector('.carousel-nav');
+    var cellsNav = carouselNav.querySelectorAll('.carousel-cell');
+    var flktyNav = new Flickity(carouselNav, {
       //      fade: true,
       prevNextButtons: false,
       asNavFor: ".carousel-main",
       contain: true,
       pageDots: false,
-      draggable: false,
+      draggable: true,
     });
 
 

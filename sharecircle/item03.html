@@ -62,7 +62,6 @@
               <div class="carousel-cell"><img src="images/IMG_6861.png" alt="dress2"></div>
               <div class="carousel-cell"><img src="images/IMG_6864.png" alt="dress2"></div>
             </div>
-            <!--          <div class="carousel carousel-nav" data-flickity='{ "asNavFor": ".carousel-main", "contain": true, "pageDots": false }'>-->
             <div class="carousel carousel-nav" data-flickity>
               <div class="carousel-cell"><img src="images/IMG_6854.png" alt="dress2"></div>
               <div class="carousel-cell"><img src="images/IMG_6860.png" alt="dress2"></div>
@@ -74,14 +73,13 @@
             <h2>ニットワンピース</h2>
             <p class="item_price">¥2,500</p>
             <div class="item_explain_detail">
-              <p>状態は良好です。</p>
-              <p>7部袖、膝上丈のワンピースです。お色に濃いグレーとボルドーを使用しており、お肌が明るく見えます。袖はフレア、襟はVネックですので、手首が細く、デコルテが綺麗に見えます。ファスナーは背中にあります。秋冬の着用がおすすめです。</p>
+              <p>脇、脇腹に小さな毛玉があり、多少の使用感がございます。</p>
+              <p>バルーンスリーブの10部袖、膝丈のニットワンピースです。お色はグレーですが、Uネックの襟にビジューがお顔周りを華やかにしてくれます。チュールのペチコートは縫い付けではなく付属品ですのでシーンによって使い分けていただけます。秋冬の着用がおすすめです。</p>
               <dl>
                 <dt>サイズ：</dt>
-                <dd>Mサイズ</dd>
-                <dt>組成：</dt>
-                <dd>表地 アクリル 90% ウール 10%</dd>
-                <dd>裏地 ポリエステル 100%</dd>
+                <dd>Lサイズ</dd>
+                <dt>素材：</dt>
+                <dd>ウール 100%</dd>
               </dl>
               <div class="divbutton">
                 <a href="item01.html">レンタルする</a>
@@ -92,19 +90,19 @@
         <section class="pickup">
           <h2>YOU MAY ALSO LIKE</h2>
           <div class="pickup-carousel">
-            
+
             <div class="pickup-carousel-cell">
               <div class="item"><a href="item01.html" id="IMG_6839"><img src="images/IMG_6839.png" alt="dress1"></a></div>
               <p class="itemname">ウールワンピース</p>
               <p class="itemprice">¥2,000</p>
             </div>
-            
+
             <div class="pickup-carousel-cell">
               <div class="item"><a href="item02.html" id="IMG_6851"><img src="images/IMG_6851.png" alt="dress2"></a></div>
               <p class="itemname">メタリックツイードワンピース</p>
               <p class="itemprice">¥3,000</p>
             </div>
-<!--
+            <!--
             <div class="pickup-carousel-cell">
               <div class="item"><a href="item03.html" id="IMG_6854"><img src="images/IMG_6854.png" alt="dress3"></a></div>
               <p class="itemname">ニットワンピース</p>
@@ -133,10 +131,6 @@
             </div>
 
           </div>
-          <!--
-          <div class="divbutton">
-            <a href="index.html">もっと見る</a>
-          </div>-->
         </section>
         <hr>
       </main>
@@ -180,15 +174,15 @@
       pageDots: false,
     });
 
-    var carousel = document.querySelector('.carousel-nav');
-    var cells = carousel.querySelectorAll('.carousel-cell');
-    var flkty = new Flickity(carousel, {
+    var carouselNav = document.querySelector('.carousel-nav');
+    var cellsNav = carouselNav.querySelectorAll('.carousel-cell');
+    var flktyNav = new Flickity(carouselNav, {
       //      fade: true,
       prevNextButtons: false,
       asNavFor: ".carousel-main",
       contain: true,
       pageDots: false,
-      draggable: false,
+      draggable: true,
     });
 
 
