@@ -3,6 +3,13 @@
       $('body').removeClass('fadeout');
     });
 
+    //戻るボタンなどブラウザバック時はリロード
+    $(window).on('pageshow', function () {
+      if (event.persisted) {
+        window.location.reload();
+      }
+    });
+
     $(function () {
       // ハッシュリンク(#)と別ウィンドウでページを開く場合はスルー
       $('a:not([href^="#"]):not([target])').on('click', function (e) {

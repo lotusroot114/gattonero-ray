@@ -46,6 +46,10 @@ body::after {
   /* 他の要素にアクセス可能にするためにポインターイベントは無効に */
   opacity: 0;
   /* 初期値 : 透過状態 */
+  -webkit-transition: opacity .8s ease;
+  -ms- transition: opacity .8s ease;
+  -moz- transition: opacity .8s ease;
+  /* アニメーション時間は 0.8秒 */
   transition: opacity .8s ease;
 }
 
