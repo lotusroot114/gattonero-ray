@@ -493,7 +493,7 @@ nav.global ul li .fas:hover {
 
 .firstview-carousel-cell {
   /*  テスト用*/
-  background: blue;
+  /*  background: blue;*/
 
 
   width: 100%;
@@ -599,11 +599,20 @@ nav.global ul li .fas:hover {
   display: block;
   /*  アスペクト比固定*/
   height: auto;
-  /*  width: 100%;*/
-  width: 100vw;
+  /*  スマホサイズの初回ロード時に画像が表示されない不具合の対応*/
+  width: 100%;
+  /*  width: 100vw;*/
 }
 
-
+@media screen and (min-width: 426px) {
+  .firstview-carousel-cell-image {
+    display: block;
+    /*  アスペクト比固定*/
+    height: auto;
+    /*  width: 100%;*/
+    width: 100vw;
+  }
+}
 
 
 
