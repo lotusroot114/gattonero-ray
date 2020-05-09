@@ -252,7 +252,7 @@ header.item h1 {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 9998;
   /*最前面に*/
   width: 90%;
   /*右側に隙間を作る（閉じるカバーを表示）*/
