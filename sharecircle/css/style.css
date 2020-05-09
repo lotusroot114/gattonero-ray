@@ -500,24 +500,13 @@ nav.global ul li .fas:hover {
   height: auto;
   /*  margin-right: 10px;*/
   /* center images in cells with flexbox */
+
+
   display: flex;
   align-items: center;
   justify-content: center;
 
   position: relative;
-
-}
-
-.firstview-carousel.is-fullscreen .firstview-carousel-cell {
-  /*  height: 100%;*/
-  height: auto;
-  width: 100%;
-}
-
-@media screen and (min-width: 768px) {
-  .firstview-carousel-cell {
-    height: auto;
-  }
 
 }
 
@@ -565,33 +554,7 @@ nav.global ul li .fas:hover {
   .firstview-carousel-cell .second {
     right: 5%;
   }
-
-
 }
-
-
-/*
-@media screen and (min-width: 961px) {
-
-  .firstview-carousel-cell .first,
-  .firstview-carousel-cell .second {
-    top: 85%;
-    font-size: 1em;
-  }
-
-  .firstview-carousel-cell .first {
-    left: 5%;
-  }
-
-  .firstview-carousel-cell .second {
-    right: 5%;
-  }
-
-
-}*/
-
-
-
 
 /*firstview上の画像サイズ
 ---------------------------------------*/
@@ -599,7 +562,7 @@ nav.global ul li .fas:hover {
   display: block;
   /*  アスペクト比固定*/
   height: auto;
-  /*  スマホサイズの初回ロード時に画像が表示されない不具合の対応*/
+
   width: 100%;
   /*  width: 100vw;*/
 }
@@ -634,6 +597,9 @@ main {
   /*  width: 630px;*/
   width: auto;
   float: none;
+
+
+
 }
 
 /*main img {*/
@@ -1752,24 +1718,98 @@ translateXの設定を上書きする*/
 ---------------------------------------*/
 
 section.shop {
-  padding-top: 100px;
+  padding-top: 40px;
   padding-bottom: 120px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+
+  /*  background-color: beige;*/
 }
 
 @media screen and (min-width: 768px) {
   section.shop {
-    padding-top: 140px;
+    padding-top: 40px;
 
   }
 }
 
+
+/*shopFv
+.shopFv p
+.shopFv img
+IEでもobject-fit:coverと同等に表示できる方法にする*/
+
+.shopFv {
+  width: 100%;
+  height: 300px;
+  /*  height: 100vh;*/
+  overflow: hidden;
+  position: relative;
+
+}
+
+@media screen and (min-width: 768px) {
+  .shopFv {
+    height: 500px;
+  }
+}
+
+.shopFv p {
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 48%;
+  /*(画像の元サイズの縦幅/画像の元サイズの横幅*100)+0%*/
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+
+
+  background-color: aqua;
+
+}
+
+
+.shopFv img {
+  height: 100%;
+  width: auto;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, 0);
+
+  filter: brightness(60%);
+
+}
+
+
+.shopFv h2 {
+  line-height: 1;
+  position: absolute;
+  bottom: 140px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  font-size: 32px;
+  letter-spacing: 0.1em
+}
+
+@media screen and (min-width: 768px) {
+  .shopFv h2 {
+    bottom: 230px;
+  }
+}
+
+
 .itemList {
   width: 90vw;
   height: auto;
+  margin-top: 80px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
