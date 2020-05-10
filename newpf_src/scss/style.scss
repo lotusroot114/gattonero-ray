@@ -1332,6 +1332,31 @@ html {
             //*--------------------//div.skill終わり
 
             //about.htmlで使用
+
+            div.photo {
+              display: flex;
+              flex-direction: column;
+
+              p {
+                text-align: center;
+                margin-bottom: 30px;
+              }
+
+              img {
+                width: 70vw;
+                height: auto;
+              }
+
+              @include tab {
+                img {
+                  width: 50vw;
+                }
+
+              }
+            }
+
+
+            //about.htmlで使用
             div.sns {
               margin-bottom: 100px;
 
