@@ -1598,6 +1598,25 @@ html {
 
                 }
 
+                img.skyscraper {
+
+                  width: 35vw;
+
+
+                  @include tab {
+                    width: 25vw;
+                  }
+
+                  ;
+
+                  @include pc {
+                    width: 70%;
+                  }
+
+                  ;
+
+                }
+
                 p {
                   margin-bottom: 30px;
 

@@ -1012,6 +1012,14 @@ html {
                 @media (min-width: 961px) {
                   html body div.wrapper div.container main section.default div.detail div.picture img.mock {
                     width: 100%; } }
+              html body div.wrapper div.container main section.default div.detail div.picture img.skyscraper {
+                width: 35vw; }
+                @media (min-width: 768px) {
+                  html body div.wrapper div.container main section.default div.detail div.picture img.skyscraper {
+                    width: 25vw; } }
+                @media (min-width: 961px) {
+                  html body div.wrapper div.container main section.default div.detail div.picture img.skyscraper {
+                    width: 70%; } }
               html body div.wrapper div.container main section.default div.detail div.picture p {
                 margin-bottom: 30px; }
                 @media (min-width: 768px) {
